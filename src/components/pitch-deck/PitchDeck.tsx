@@ -11,6 +11,8 @@ import { Slide09Results } from "./slides/Slide09Results";
 import { Slide10Market } from "./slides/Slide10Market";
 import { Slide11Economics } from "./slides/Slide11Economics";
 import { Slide12Team } from "./slides/Slide12Team";
+import { Slide13CreatorJourney } from "./slides/Slide13CreatorJourney";
+import { Slide14ArchitecturePillars } from "./slides/Slide14ArchitecturePillars";
 import { ShaderBackground } from "../ui/shader-background";
 
 export const PitchDeck = () => {
@@ -42,6 +44,8 @@ export const PitchDeck = () => {
         <Slide10Market />
         <Slide11Economics />
         <Slide12Team />
+        <Slide13CreatorJourney />
+        <Slide14ArchitecturePillars />
       </main>
       
       {/* Print styles */}
