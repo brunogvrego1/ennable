@@ -47,8 +47,9 @@ export const Slide05WhyNow = () => {
             </div>
           </div>
           <ul className="space-y-3 text-muted-foreground">
-            <li className="flex items-start gap-2">✓
-Crafts exactly what you need<span className="text-accent mt-1">✓</span>
+            <li className="flex items-start gap-2">✓ Crafts exactly what you need
+
+            <span className="text-accent mt-1">✓</span>
               AI crafts exactly what you need
             </li>
             <li className="flex items-start gap-2">
