@@ -26,13 +26,13 @@ export const Slide03MarketFailure = () => {
   return (
     <SlideSection id="slide-3">
       <div className="mb-12">
-        <span className="text-accent font-medium text-sm uppercase tracking-wider">Market Failure</span>
+        <span className="text-accent font-medium text-sm uppercase tracking-wider">The Semantic Gap</span>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-3 tracking-tight">
           Three Bad Options
         </h2>
         <p className="text-xl text-muted-foreground mt-4 max-w-3xl">
-          Current options force businesses to change their DNA to fit the software. 
-          It's time for a first-principles rethink.
+          All three are built on <span className="text-foreground font-medium">static code</span>—rigid logic 
+          that can't adapt without expensive rewrites. The gap between what you need and what you get is the Semantic Gap.
         </p>
       </div>
       
@@ -52,6 +52,15 @@ export const Slide03MarketFailure = () => {
             </p>
           </div>
         ))}
+      </div>
+      
+      <div className="mt-10 pt-8 border-t border-border">
+        <p className="text-lg text-muted-foreground">
+          <span className="text-foreground font-semibold">Fluid is different.</span> Built on composable 
+          <span className="text-accent font-medium"> modules</span> and 
+          <span className="text-accent font-medium"> mini apps</span>—not static code. 
+          The system adapts to you, not the other way around.
+        </p>
       </div>
     </SlideSection>
   );
