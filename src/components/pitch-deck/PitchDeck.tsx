@@ -23,7 +23,7 @@ export const PitchDeck = () => {
       <Navigation onDownload={handleDownload} />
       
       {/* Snap scroll container */}
-      <main className="h-screen pt-16 overflow-y-auto snap-y snap-mandatory">
+      <main className="h-screen overflow-y-auto snap-y snap-mandatory">
         <Slide01Title />
         <Slide02Problem />
         <Slide03MarketFailure />
