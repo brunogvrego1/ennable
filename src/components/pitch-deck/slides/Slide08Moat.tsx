@@ -25,7 +25,7 @@ export const Slide08Moat = () => {
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-start gap-3">
                 <span className="text-accent font-bold">1.</span>
-                AI's deep understanding of business intent
+                Deep understanding of business operations enables Credit Services and insurance offerings
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-accent font-bold">2.</span>
