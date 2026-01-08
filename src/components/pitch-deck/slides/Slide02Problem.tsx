@@ -3,7 +3,7 @@ import { AlertTriangle, Layers, Box } from "lucide-react";
 
 export const Slide02Problem = () => {
   return (
-    <SlideSection id="slide-2" className="bg-secondary/30">
+    <SlideSection id="slide-2">
       <div className="mb-12">
         <span className="text-accent font-medium text-sm uppercase tracking-wider">The Problem</span>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-3 tracking-tight">

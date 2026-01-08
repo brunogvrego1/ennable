@@ -30,7 +30,7 @@ const useOfFunds = [
 
 export const Slide12Team = () => {
   return (
-    <SlideSection id="slide-12" className="bg-secondary/30">
+    <SlideSection id="slide-12">
       <div className="mb-12">
         <span className="text-accent font-medium text-sm uppercase tracking-wider">The Ask</span>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-3 tracking-tight">

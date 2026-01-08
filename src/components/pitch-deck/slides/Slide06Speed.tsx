@@ -9,7 +9,7 @@ const timeline = [
 
 export const Slide06Speed = () => {
   return (
-    <SlideSection id="slide-6" className="bg-secondary/30">
+    <SlideSection id="slide-6">
       <div className="mb-12">
         <span className="text-accent font-medium text-sm uppercase tracking-wider">Instant Relevance</span>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-3 tracking-tight">

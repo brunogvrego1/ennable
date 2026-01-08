@@ -11,7 +11,7 @@ const modules = [
 
 export const Slide04Solution = () => {
   return (
-    <SlideSection id="slide-4" className="bg-secondary/30">
+    <SlideSection id="slide-4">
       <div className="mb-12">
         <span className="text-accent font-medium text-sm uppercase tracking-wider">The Solution</span>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-3 tracking-tight">

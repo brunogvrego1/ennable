@@ -29,7 +29,7 @@ export function ShaderBackground({
 
   if (!mounted) {
     return (
-      <div className={cn("relative w-full h-full bg-background", className)}>
+      <div className={cn("relative w-full h-full bg-white", className)}>
         {children}
       </div>
     )
@@ -41,17 +41,17 @@ export function ShaderBackground({
       <div className="absolute inset-0 z-0">
         {effect === "mesh" && (
           <MeshGradient
-            color1="#0d1117"
-            color2="#1a1f2e"
-            color3="#0f1419"
-            color4="#162033"
+            color1="#ffffff"
+            color2="#f0f9ff"
+            color3="#e0f2fe"
+            color4="#bae6fd"
             speed={speed}
             style={{ width: "100%", height: "100%" }}
           />
         )}
 
         {effect === "dots" && (
-          <div className="relative w-full h-full bg-background">
+          <div className="relative w-full h-full bg-white">
             <DotsOrbit
               color1="#00d4aa"
               color2="#ff7b54"
@@ -68,10 +68,10 @@ export function ShaderBackground({
         {effect === "combined" && (
           <>
             <MeshGradient
-              color1="#0d1117"
-              color2="#1a1f2e"
-              color3="#0f1419"
-              color4="#162033"
+              color1="#ffffff"
+              color2="#f0f9ff"
+              color3="#e0f2fe"
+              color4="#bae6fd"
               speed={speed * 0.5}
               style={{ width: "100%", height: "100%" }}
             />

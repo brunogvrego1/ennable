@@ -9,7 +9,7 @@ const flywheel = [
 
 export const Slide08Moat = () => {
   return (
-    <SlideSection id="slide-8" className="bg-secondary/30">
+    <SlideSection id="slide-8">
       <div className="mb-12">
         <span className="text-accent font-medium text-sm uppercase tracking-wider">The Moat</span>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-3 tracking-tight">
