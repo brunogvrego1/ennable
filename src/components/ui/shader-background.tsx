@@ -29,7 +29,7 @@ export function ShaderBackground({
 
   if (!mounted) {
     return (
-      <div className={cn("relative w-full h-full bg-gradient-to-br from-blue-50 to-white", className)}>
+      <div className={cn("relative w-full h-full bg-background", className)}>
         {children}
       </div>
     )
@@ -41,25 +41,25 @@ export function ShaderBackground({
       <div className="absolute inset-0 z-0">
         {effect === "mesh" && (
           <MeshGradient
-            color1="#ffffff"
-            color2="#e0f2fe"
-            color3="#bae6fd"
-            color4="#7dd3fc"
+            color1="#0d1117"
+            color2="#1a1f2e"
+            color3="#0f1419"
+            color4="#162033"
             speed={speed}
             style={{ width: "100%", height: "100%" }}
           />
         )}
 
         {effect === "dots" && (
-          <div className="relative w-full h-full bg-gradient-to-br from-sky-50 via-white to-blue-50">
+          <div className="relative w-full h-full bg-background">
             <DotsOrbit
-              color1="#60a5fa"
-              color2="#93c5fd"
+              color1="#00d4aa"
+              color2="#ff7b54"
               speed={speed}
               style={{
                 position: "absolute",
                 inset: 0,
-                opacity: 0.6,
+                opacity: 0.4,
               }}
             />
           </div>
@@ -68,22 +68,22 @@ export function ShaderBackground({
         {effect === "combined" && (
           <>
             <MeshGradient
-              color1="#ffffff"
-              color2="#f0f9ff"
-              color3="#e0f2fe"
-              color4="#bae6fd"
+              color1="#0d1117"
+              color2="#1a1f2e"
+              color3="#0f1419"
+              color4="#162033"
               speed={speed * 0.5}
               style={{ width: "100%", height: "100%" }}
             />
             <div className="absolute inset-0">
               <DotsOrbit
-                color1="#60a5fa"
-                color2="#38bdf8"
+                color1="#00d4aa"
+                color2="#ff7b54"
                 speed={speed}
                 style={{
                   position: "absolute",
                   inset: 0,
-                  opacity: 0.4,
+                  opacity: 0.3,
                 }}
               />
             </div>
@@ -91,11 +91,10 @@ export function ShaderBackground({
         )}
       </div>
 
-      {/* Soft lighting overlays for low contrast */}
+      {/* Subtle accent glow overlays */}
       <div className="absolute inset-0 z-[1] pointer-events-none">
-        <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-white/60 to-transparent" />
-        <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-sky-100/40 to-transparent" />
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-coral/5 rounded-full blur-3xl" />
       </div>
 
       {/* Content layer */}

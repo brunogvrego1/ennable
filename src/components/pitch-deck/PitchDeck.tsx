@@ -11,6 +11,7 @@ import { Slide09Results } from "./slides/Slide09Results";
 import { Slide10Market } from "./slides/Slide10Market";
 import { Slide11Economics } from "./slides/Slide11Economics";
 import { Slide12Team } from "./slides/Slide12Team";
+import { ShaderBackground } from "../ui/shader-background";
 
 export const PitchDeck = () => {
   const handleDownload = () => {
@@ -19,11 +20,16 @@ export const PitchDeck = () => {
   };
 
   return (
-    <div className="h-screen bg-background overflow-hidden">
+    <div className="h-screen overflow-hidden relative">
+      {/* Fixed shader background */}
+      <div className="fixed inset-0 z-0">
+        <ShaderBackground effect="mesh" speed={0.3} className="w-full h-full" />
+      </div>
+      
       <Navigation onDownload={handleDownload} />
       
       {/* Snap scroll container */}
-      <main className="h-screen overflow-y-auto snap-y snap-mandatory">
+      <main className="h-screen overflow-y-auto snap-y snap-mandatory relative z-10">
         <Slide01Title />
         <Slide02Problem />
         <Slide03MarketFailure />
@@ -42,6 +48,7 @@ export const PitchDeck = () => {
       <style>{`
         @media print {
           nav { display: none !important; }
+          .fixed { display: none !important; }
           main { 
             padding-top: 0 !important;
             overflow: visible !important;
