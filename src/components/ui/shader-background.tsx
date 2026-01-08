@@ -1,0 +1,160 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import { MeshGradient, DotsOrbit } from "@paper-design/shaders-react"
+import { cn } from "@/lib/utils"
+
+type EffectType = "mesh" | "dots" | "combined"
+
+interface ShaderBackgroundProps {
+  effect?: EffectType
+  intensity?: number
+  speed?: number
+  className?: string
+  children?: React.ReactNode
+}
+
+export function ShaderBackground({
+  effect = "mesh",
+  intensity = 0.8,
+  speed = 0.4,
+  className,
+  children,
+}: ShaderBackgroundProps) {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return (
+      <div className={cn("relative w-full h-full bg-gradient-to-br from-blue-50 to-white", className)}>
+        {children}
+      </div>
+    )
+  }
+
+  return (
+    <div className={cn("relative w-full h-full overflow-hidden", className)}>
+      {/* Shader effects layer */}
+      <div className="absolute inset-0 z-0">
+        {effect === "mesh" && (
+          <MeshGradient
+            color1="#ffffff"
+            color2="#e0f2fe"
+            color3="#bae6fd"
+            color4="#7dd3fc"
+            speed={speed}
+            style={{ width: "100%", height: "100%" }}
+          />
+        )}
+
+        {effect === "dots" && (
+          <div className="relative w-full h-full bg-gradient-to-br from-sky-50 via-white to-blue-50">
+            <DotsOrbit
+              color1="#60a5fa"
+              color2="#93c5fd"
+              speed={speed}
+              style={{
+                position: "absolute",
+                inset: 0,
+                opacity: 0.6,
+              }}
+            />
+          </div>
+        )}
+
+        {effect === "combined" && (
+          <>
+            <MeshGradient
+              color1="#ffffff"
+              color2="#f0f9ff"
+              color3="#e0f2fe"
+              color4="#bae6fd"
+              speed={speed * 0.5}
+              style={{ width: "100%", height: "100%" }}
+            />
+            <div className="absolute inset-0">
+              <DotsOrbit
+                color1="#60a5fa"
+                color2="#38bdf8"
+                speed={speed}
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  opacity: 0.4,
+                }}
+              />
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* Soft lighting overlays for low contrast */}
+      <div className="absolute inset-0 z-[1] pointer-events-none">
+        <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-white/60 to-transparent" />
+        <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-sky-100/40 to-transparent" />
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl" />
+      </div>
+
+      {/* Content layer */}
+      <div className="relative z-10">
+        {children}
+      </div>
+    </div>
+  )
+}
+
+export function ShaderBackgroundDemo() {
+  const [effect, setEffect] = useState<EffectType>("mesh")
+  const [speed, setSpeed] = useState(0.4)
+
+  return (
+    <ShaderBackground effect={effect} speed={speed} className="min-h-screen">
+      <div className="flex flex-col items-center justify-center min-h-screen p-8">
+        {/* Controls */}
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-sky-100 max-w-md w-full">
+          <h2 className="text-xl font-semibold text-slate-800 mb-4">Shader Background</h2>
+          
+          {/* Effect selector */}
+          <div className="mb-4">
+            <label className="text-sm text-slate-600 mb-2 block">Effect Type</label>
+            <div className="flex gap-2">
+              {(["mesh", "dots", "combined"] as const).map((e) => (
+                <button
+                  key={e}
+                  onClick={() => setEffect(e)}
+                  className={cn(
+                    "px-4 py-2 rounded-lg text-sm font-medium transition-colors",
+                    effect === e
+                      ? "bg-sky-500 text-white"
+                      : "bg-sky-100 text-sky-700 hover:bg-sky-200"
+                  )}
+                >
+                  {e.charAt(0).toUpperCase() + e.slice(1)}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Speed control */}
+          <div>
+            <label className="text-sm text-slate-600 mb-2 block">
+              Speed: {speed.toFixed(1)}
+            </label>
+            <input
+              type="range"
+              min="0.1"
+              max="2"
+              step="0.1"
+              value={speed}
+              onChange={(e) => setSpeed(parseFloat(e.target.value))}
+              className="w-full accent-sky-500"
+            />
+          </div>
+        </div>
+      </div>
+    </ShaderBackground>
+  )
+}
