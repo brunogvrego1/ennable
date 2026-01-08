@@ -1,5 +1,5 @@
 import { SlideSection } from "../SlideSection";
-import { MessageSquare, GitBranch, Smartphone } from "lucide-react";
+import { MessageSquare, GitBranch, Smartphone, ArrowRight } from "lucide-react";
 
 const steps = [
   {
@@ -27,69 +27,65 @@ const steps = [
 export const Slide13CreatorJourney = () => {
   return (
     <SlideSection id="creator-journey">
-      <div className="space-y-8">
-        <div className="space-y-3">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight text-foreground">
-            The Creator Journey
-          </h2>
-          <p className="text-xl text-muted-foreground font-light">
-            From Intent to Infrastructure in Seconds
-          </p>
-          <p className="text-sm text-muted-foreground/70 max-w-2xl">
-            Building custom mini-apps via the Fluid Generative Engine.
-          </p>
-        </div>
+      <div className="mb-12">
+        <span className="text-accent font-medium text-sm uppercase tracking-wider">The Creator Journey</span>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-3 tracking-tight">
+          From Intent to<br />Infrastructure in Seconds
+        </h2>
+        <p className="text-lg text-muted-foreground mt-4 max-w-2xl">
+          Building custom mini-apps via the Fluid Generative Engine.
+        </p>
+      </div>
 
-        <div className="grid gap-6 md:gap-8">
-          {steps.map((step) => (
-            <div 
-              key={step.number}
-              className="group relative bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg p-6 hover:bg-card/50 transition-all duration-300"
-            >
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
-                    <step.icon className="w-5 h-5 text-primary" />
-                  </div>
-                </div>
-                
-                <div className="flex-1 space-y-3">
-                  <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono text-primary/60">{step.number}</span>
-                    <h3 className="text-lg font-medium text-foreground">{step.title}</h3>
-                  </div>
-                  
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {step.description}
-                  </p>
-                  
-                  {step.example && (
-                    <div className="bg-muted/30 border border-border/30 rounded px-3 py-2">
-                      <p className="text-xs font-mono text-muted-foreground italic">
-                        {step.example}
-                      </p>
-                    </div>
-                  )}
-                  
-                  {step.flow && (
-                    <div className="flex items-center gap-2 flex-wrap">
-                      {step.flow.map((item, idx) => (
-                        <div key={item} className="flex items-center gap-2">
-                          <span className="text-xs font-mono bg-primary/10 text-primary px-2 py-1 rounded">
-                            {item}
-                          </span>
-                          {idx < step.flow.length - 1 && (
-                            <span className="text-muted-foreground/50">→</span>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
+      <div className="grid gap-6">
+        {steps.map((step, index) => (
+          <div 
+            key={step.number}
+            className="p-6 bg-muted/50 rounded-2xl border border-border"
+          >
+            <div className="flex items-start gap-6">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <step.icon className="w-6 h-6 text-accent" />
                 </div>
               </div>
+              
+              <div className="flex-1 space-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="text-accent font-bold">{step.number}</span>
+                  <h3 className="text-lg font-semibold text-foreground">{step.title}</h3>
+                </div>
+                
+                <p className="text-muted-foreground leading-relaxed">
+                  {step.description}
+                </p>
+                
+                {step.example && (
+                  <div className="p-4 bg-secondary/50 border border-border rounded-xl">
+                    <p className="text-sm font-mono text-muted-foreground italic">
+                      {step.example}
+                    </p>
+                  </div>
+                )}
+                
+                {step.flow && (
+                  <div className="flex items-center gap-3 flex-wrap">
+                    {step.flow.map((item, idx) => (
+                      <div key={item} className="flex items-center gap-3">
+                        <span className="text-sm font-medium bg-accent/10 text-accent px-3 py-1.5 rounded-lg">
+                          {item}
+                        </span>
+                        {idx < step.flow.length - 1 && (
+                          <ArrowRight className="w-4 h-4 text-muted-foreground" />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </SlideSection>
   );
