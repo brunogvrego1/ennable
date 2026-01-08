@@ -2,8 +2,8 @@ import { SlideSection } from "../SlideSection";
 import { Check, Rocket } from "lucide-react";
 
 const timeline = [
-  { day: "Day 1", label: "Select Archetype", description: "Choose your business type and core workflows" },
-  { day: "Days 2-3", label: "Visual Config", description: "Customize modules through our no-code builder" },
+  { day: "Day 1", label: "Select Archetype", description: "Choose modules for your business and core Portals and Interfaces" },
+  { day: "Days 2-3", label: "Visual Config", description: "Choose or customize mini apps with our no-code builder" },
   { day: "Day 4", label: "Go Live", description: "Deploy and start processing transactions" },
 ];
 
