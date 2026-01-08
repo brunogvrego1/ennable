@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { MeshGradient, DotsOrbit } from "@paper-design/shaders-react"
 import { cn } from "@/lib/utils"
 
@@ -12,6 +12,78 @@ interface ShaderBackgroundProps {
   speed?: number
   className?: string
   children?: React.ReactNode
+}
+
+// Wrapper component to isolate canvas from React's DOM management
+function ShaderCanvas({ effect, speed }: { effect: EffectType; speed: number }) {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    // Cleanup function to safely remove canvas elements
+    return () => {
+      if (containerRef.current) {
+        // Clear the container manually to prevent React conflicts
+        while (containerRef.current.firstChild) {
+          containerRef.current.removeChild(containerRef.current.firstChild)
+        }
+      }
+    }
+  }, [])
+
+  return (
+    <div ref={containerRef} className="absolute inset-0">
+      {effect === "mesh" && (
+        <MeshGradient
+          color1="#ffffff"
+          color2="#f8fcff"
+          color3="#f0f7ff"
+          color4="#e8f4ff"
+          speed={speed}
+          style={{ width: "100%", height: "100%" }}
+        />
+      )}
+
+      {effect === "dots" && (
+        <div className="relative w-full h-full bg-white">
+          <DotsOrbit
+            color1="#00d4aa"
+            color2="#ff7b54"
+            speed={speed}
+            style={{
+              position: "absolute",
+              inset: 0,
+              opacity: 0.4,
+            }}
+          />
+        </div>
+      )}
+
+      {effect === "combined" && (
+        <>
+          <MeshGradient
+            color1="#ffffff"
+            color2="#f8fcff"
+            color3="#f0f7ff"
+            color4="#e8f4ff"
+            speed={speed * 0.5}
+            style={{ width: "100%", height: "100%" }}
+          />
+          <div className="absolute inset-0">
+            <DotsOrbit
+              color1="#00d4aa"
+              color2="#ff7b54"
+              speed={speed}
+              style={{
+                position: "absolute",
+                inset: 0,
+                opacity: 0.3,
+              }}
+            />
+          </div>
+        </>
+      )}
+    </div>
+  )
 }
 
 export function ShaderBackground({
@@ -37,58 +109,9 @@ export function ShaderBackground({
 
   return (
     <div className={cn("relative w-full h-full overflow-hidden", className)}>
-      {/* Shader effects layer */}
+      {/* Shader effects layer - isolated in separate component */}
       <div className="absolute inset-0 z-0">
-        {effect === "mesh" && (
-          <MeshGradient
-            color1="#ffffff"
-            color2="#f8fcff"
-            color3="#f0f7ff"
-            color4="#e8f4ff"
-            speed={speed}
-            style={{ width: "100%", height: "100%" }}
-          />
-        )}
-
-        {effect === "dots" && (
-          <div className="relative w-full h-full bg-white">
-            <DotsOrbit
-              color1="#00d4aa"
-              color2="#ff7b54"
-              speed={speed}
-              style={{
-                position: "absolute",
-                inset: 0,
-                opacity: 0.4,
-              }}
-            />
-          </div>
-        )}
-
-        {effect === "combined" && (
-          <>
-            <MeshGradient
-              color1="#ffffff"
-              color2="#f8fcff"
-              color3="#f0f7ff"
-              color4="#e8f4ff"
-              speed={speed * 0.5}
-              style={{ width: "100%", height: "100%" }}
-            />
-            <div className="absolute inset-0">
-              <DotsOrbit
-                color1="#00d4aa"
-                color2="#ff7b54"
-                speed={speed}
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  opacity: 0.3,
-                }}
-              />
-            </div>
-          </>
-        )}
+        <ShaderCanvas key={`shader-${effect}`} effect={effect} speed={speed} />
       </div>
 
       {/* Subtle accent glow overlays */}
