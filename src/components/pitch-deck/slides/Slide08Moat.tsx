@@ -19,16 +19,6 @@ export const Slide08Moat = () => {
       
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
-          <div className="p-6 bg-card rounded-xl border border-border">
-            <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
-              <Database className="w-5 h-5 text-accent" />
-              The Semantic Graph
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Our proprietary data layer understands <span className="text-foreground font-medium">"Business Intent"</span>—
-              not just transactions, but the meaning behind every operation.
-            </p>
-          </div>
           
           <div className="p-6 bg-gradient-to-br from-accent/5 to-coral/5 rounded-xl border border-accent/20">
             <h3 className="font-semibold text-lg mb-3">Two-Fold Moat</h3>
