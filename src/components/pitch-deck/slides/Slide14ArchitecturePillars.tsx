@@ -6,29 +6,25 @@ const pillars = [
     icon: Zap,
     type: "Automation",
     tagline: "The Invisible Worker",
-    description: "Background logic that triggers actions across the Semantic Graph without human input.",
-    example: "\"The Re-engagement Trigger\": If a VIP customer hasn't visited in 60 days, auto-generate a personalized WhatsApp offer for their favorite wine."
+    description: "Background logic triggering actions without human input."
   },
   {
     icon: BarChart3,
     type: "Widget",
     tagline: "The Pulse",
-    description: "High-density data components pinned to your dashboard for instant operational awareness.",
-    example: "\"Real-Time Occupancy\": A live heat-map showing table turnover, average check size per table, and server efficiency."
+    description: "High-density data components for instant awareness."
   },
   {
     icon: Monitor,
     type: "Interface",
     tagline: "The Specialist Tool",
-    description: "Custom-built internal screens designed to guide staff through expert workflows.",
-    example: "\"The AI Sommelier\": A dedicated iPad screen that suggests pairings based on the current food order and cellar inventory levels."
+    description: "Custom internal screens for expert workflows."
   },
   {
     icon: Globe,
     type: "Portal",
     tagline: "The Customer Bridge",
-    description: "Full-screen, branded external experiences for direct client interaction.",
-    example: "\"The Digital Concierge\": A mobile-first reservation and pre-order portal where guests can select their table and wine vintage in advance."
+    description: "Branded external experiences for client interaction."
   }
 ];
 
@@ -36,75 +32,69 @@ const technicalPoints = [
   {
     icon: Database,
     title: "Semantic Consistency",
-    description: "Every component reads from the same source of truth—CRM, Inventory, and POS data are never out of sync."
+    description: "Single source of truth—CRM, Inventory, POS always in sync."
   },
   {
     icon: Cpu,
     title: "Generative Assembly",
-    description: "Describe the outcome in the Creator, and the AI selects the correct architecture automatically."
+    description: "Describe outcomes; AI selects the correct architecture."
   },
   {
     icon: Shield,
     title: "Role-Based Security",
-    description: "Portals are public and sandboxed; Interfaces are strictly for staff with specific permissions."
+    description: "Portals are sandboxed; Interfaces require permissions."
   }
 ];
 
 export const Slide14ArchitecturePillars = () => {
   return (
     <SlideSection id="architecture-pillars">
-      <div className="mb-12">
-        <span className="text-accent font-medium text-sm uppercase tracking-wider">Architecture</span>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-3 tracking-tight">
+      <div className="mb-3 md:mb-6">
+        <span className="text-accent font-medium text-xs md:text-sm uppercase tracking-wider">Architecture</span>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 tracking-tight">
           The 4 Pillars
         </h2>
-        <p className="text-lg text-muted-foreground mt-4">
+        <p className="text-sm md:text-base text-muted-foreground mt-2">
           Modular Flexibility by Design
         </p>
       </div>
 
       {/* Pillars Grid */}
-      <div className="grid md:grid-cols-2 gap-6 mb-12">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 mb-4 md:mb-6">
         {pillars.map((pillar) => (
           <div 
             key={pillar.type}
-            className="p-6 bg-muted/50 rounded-2xl border border-border"
+            className="p-3 md:p-4 bg-muted/50 rounded-xl border border-border"
           >
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                <pillar.icon className="w-6 h-6 text-accent" />
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <pillar.icon className="w-4 h-4 md:w-5 md:h-5 text-accent" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg text-foreground">{pillar.type}</h3>
-                <p className="text-sm text-accent">{pillar.tagline}</p>
+                <h3 className="font-semibold text-sm md:text-base text-foreground">{pillar.type}</h3>
+                <p className="text-xs text-accent hidden sm:block">{pillar.tagline}</p>
               </div>
             </div>
             
-            <p className="text-muted-foreground mb-4 leading-relaxed">
+            <p className="text-xs md:text-sm text-muted-foreground leading-relaxed line-clamp-2">
               {pillar.description}
             </p>
-            
-            <div className="p-4 bg-secondary/50 border border-border rounded-xl">
-              <p className="text-sm font-mono text-muted-foreground leading-relaxed">
-                {pillar.example}
-              </p>
-            </div>
           </div>
         ))}
       </div>
 
       {/* Technical Breakdown */}
-      <div className="p-6 bg-gradient-to-br from-accent/5 to-coral/5 rounded-2xl border border-accent/20">
-        <h3 className="font-semibold text-lg mb-4">The "Fluid" Difference</h3>
-        <div className="grid md:grid-cols-3 gap-6">
+      <div className="p-3 md:p-4 bg-gradient-to-br from-accent/5 to-coral/5 rounded-xl border border-accent/20">
+        <h3 className="font-semibold text-sm md:text-base mb-3">The "Fluid" Difference</h3>
+        <div className="grid sm:grid-cols-3 gap-3 md:gap-4">
           {technicalPoints.map((point) => (
-            <div key={point.title} className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                <point.icon className="w-5 h-5 text-accent" />
+            <div key={point.title} className="flex items-start gap-2">
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <point.icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-accent" />
               </div>
               <div>
-                <h4 className="font-medium text-foreground mb-1">{point.title}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <h4 className="font-medium text-xs md:text-sm text-foreground">{point.title}</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed hidden sm:block">
                   {point.description}
                 </p>
               </div>
