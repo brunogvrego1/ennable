@@ -36,6 +36,8 @@ export const PitchDeck = () => {
         <Slide02Problem />
         <Slide03MarketFailure />
         <Slide04Solution />
+        <Slide13CreatorJourney />
+        <Slide14ArchitecturePillars />
         <Slide05WhyNow />
         <Slide06Speed />
         <Slide07Ecosystem />
@@ -44,8 +46,6 @@ export const PitchDeck = () => {
         <Slide10Market />
         <Slide11Economics />
         <Slide12Team />
-        <Slide13CreatorJourney />
-        <Slide14ArchitecturePillars />
       </main>
       
       {/* Print styles */}
