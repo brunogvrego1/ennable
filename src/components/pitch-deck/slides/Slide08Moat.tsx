@@ -35,7 +35,7 @@ export const Slide08Moat = () => {
           </div>
           
           <p className="text-muted-foreground italic">
-            Once business logic is mapped here, switching costs become insurmountable.
+            Once the mini apps are able to offer support for ultra specific needs, switching costs become insurmountable.
           </p>
         </div>
         
