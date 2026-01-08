@@ -1,9 +1,7 @@
 import { SlideSection } from "../SlideSection";
 import { Cpu, Sparkles, ArrowRight } from "lucide-react";
-
 export const Slide05WhyNow = () => {
-  return (
-    <SlideSection id="slide-5">
+  return <SlideSection id="slide-5">
       <div className="mb-12">
         <span className="text-accent font-medium text-sm uppercase tracking-wider">The "Why Now?"</span>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-3 tracking-tight">
@@ -49,8 +47,8 @@ export const Slide05WhyNow = () => {
             </div>
           </div>
           <ul className="space-y-3 text-muted-foreground">
-            <li className="flex items-start gap-2">
-              <span className="text-accent mt-1">✓</span>
+            <li className="flex items-start gap-2">✓
+Crafts exactly what you need<span className="text-accent mt-1">✓</span>
               AI crafts exactly what you need
             </li>
             <li className="flex items-start gap-2">
@@ -70,6 +68,5 @@ export const Slide05WhyNow = () => {
         <ArrowRight className="w-5 h-5" />
         <span>LLMs now enable <span className="text-accent font-medium">specificity at scale</span></span>
       </div>
-    </SlideSection>
-  );
+    </SlideSection>;
 };
