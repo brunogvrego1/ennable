@@ -53,69 +53,63 @@ const technicalPoints = [
 export const Slide14ArchitecturePillars = () => {
   return (
     <SlideSection id="architecture-pillars">
-      <div className="space-y-6">
-        <div className="space-y-2">
-          <h2 className="text-3xl md:text-4xl font-light tracking-tight text-foreground">
-            The 4 Architecture Pillars
-          </h2>
-          <p className="text-lg text-muted-foreground font-light">
-            Modular Flexibility by Design
-          </p>
-        </div>
+      <div className="mb-12">
+        <span className="text-accent font-medium text-sm uppercase tracking-wider">Architecture</span>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-3 tracking-tight">
+          The 4 Pillars
+        </h2>
+        <p className="text-lg text-muted-foreground mt-4">
+          Modular Flexibility by Design
+        </p>
+      </div>
 
-        {/* Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {pillars.map((pillar) => (
-            <div 
-              key={pillar.type}
-              className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg p-4 hover:bg-card/50 transition-all duration-300"
-            >
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded bg-primary/10 border border-primary/20 flex items-center justify-center">
-                    <pillar.icon className="w-4 h-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-medium text-foreground">{pillar.type}</h3>
-                    <p className="text-xs text-primary/70">{pillar.tagline}</p>
-                  </div>
-                </div>
-                
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {pillar.description}
+      {/* Pillars Grid */}
+      <div className="grid md:grid-cols-2 gap-6 mb-12">
+        {pillars.map((pillar) => (
+          <div 
+            key={pillar.type}
+            className="p-6 bg-muted/50 rounded-2xl border border-border"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                <pillar.icon className="w-6 h-6 text-accent" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-foreground">{pillar.type}</h3>
+                <p className="text-sm text-accent">{pillar.tagline}</p>
+              </div>
+            </div>
+            
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              {pillar.description}
+            </p>
+            
+            <div className="p-4 bg-secondary/50 border border-border rounded-xl">
+              <p className="text-sm font-mono text-muted-foreground leading-relaxed">
+                {pillar.example}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Technical Breakdown */}
+      <div className="p-6 bg-gradient-to-br from-accent/5 to-coral/5 rounded-2xl border border-accent/20">
+        <h3 className="font-semibold text-lg mb-4">The "Fluid" Difference</h3>
+        <div className="grid md:grid-cols-3 gap-6">
+          {technicalPoints.map((point) => (
+            <div key={point.title} className="flex items-start gap-3">
+              <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <point.icon className="w-5 h-5 text-accent" />
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-1">{point.title}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {point.description}
                 </p>
-                
-                <div className="bg-muted/20 border border-border/30 rounded px-2 py-1.5">
-                  <p className="text-[10px] font-mono text-muted-foreground/80 leading-relaxed">
-                    {pillar.example}
-                  </p>
-                </div>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Technical Breakdown */}
-        <div className="border-t border-border/30 pt-4">
-          <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-3">
-            The "Fluid" Difference
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {technicalPoints.map((point) => (
-              <div 
-                key={point.title}
-                className="flex items-start gap-2"
-              >
-                <point.icon className="w-3.5 h-3.5 text-primary/60 mt-0.5 flex-shrink-0" />
-                <div>
-                  <h4 className="text-xs font-medium text-foreground">{point.title}</h4>
-                  <p className="text-[10px] text-muted-foreground/70 leading-relaxed">
-                    {point.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </SlideSection>
