@@ -19,11 +19,11 @@ export const PitchDeck = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="h-screen bg-background overflow-hidden">
       <Navigation onDownload={handleDownload} />
       
-      {/* Add top padding to account for fixed nav */}
-      <main className="pt-16">
+      {/* Snap scroll container */}
+      <main className="h-screen pt-16 overflow-y-auto snap-y snap-mandatory">
         <Slide01Title />
         <Slide02Problem />
         <Slide03MarketFailure />
@@ -42,10 +42,16 @@ export const PitchDeck = () => {
       <style>{`
         @media print {
           nav { display: none !important; }
-          main { padding-top: 0 !important; }
+          main { 
+            padding-top: 0 !important;
+            overflow: visible !important;
+            height: auto !important;
+            scroll-snap-type: none !important;
+          }
           section { 
             page-break-after: always;
-            min-height: 100vh;
+            height: 100vh !important;
+            scroll-snap-align: none !important;
           }
           section:last-child {
             page-break-after: auto;
