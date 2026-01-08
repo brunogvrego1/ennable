@@ -42,9 +42,9 @@ export function ShaderBackground({
         {effect === "mesh" && (
           <MeshGradient
             color1="#ffffff"
-            color2="#f0f9ff"
-            color3="#e0f2fe"
-            color4="#bae6fd"
+            color2="#f8fcff"
+            color3="#f0f7ff"
+            color4="#e8f4ff"
             speed={speed}
             style={{ width: "100%", height: "100%" }}
           />
@@ -69,9 +69,9 @@ export function ShaderBackground({
           <>
             <MeshGradient
               color1="#ffffff"
-              color2="#f0f9ff"
-              color3="#e0f2fe"
-              color4="#bae6fd"
+              color2="#f8fcff"
+              color3="#f0f7ff"
+              color4="#e8f4ff"
               speed={speed * 0.5}
               style={{ width: "100%", height: "100%" }}
             />
