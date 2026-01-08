@@ -18,11 +18,10 @@ export const Slide01Title = () => {
         </h1>
         
         <p className="text-2xl md:text-3xl lg:text-4xl font-light text-muted-foreground mb-8">
-          The ERP That Grows With You
+          The world's first generative Operating System for commerce
         </p>
         
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          The world's first generative Operating System for commerce. 
           Not a static product—a living system that adapts to your business intent.
         </p>
       </div>
