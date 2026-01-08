@@ -2,7 +2,7 @@ import { SlideSection } from "../SlideSection";
 
 export const Slide10Market = () => {
   return (
-    <SlideSection id="slide-10" className="bg-secondary/30">
+    <SlideSection id="slide-10">
       <div className="mb-12">
         <span className="text-accent font-medium text-sm uppercase tracking-wider">Market Opportunity</span>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-3 tracking-tight">
