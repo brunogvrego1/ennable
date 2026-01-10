@@ -1,5 +1,5 @@
 import { SlideSection } from "../SlideSection";
-import { CheckCircle2, Rocket } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { itemVariants, cardVariants, gridContainerVariants } from "../motion-variants";
 
@@ -56,9 +56,6 @@ export const Slide06Speed = () => {
         {/* Stats */}
         <div className="space-y-2 sm:space-y-3">
           <motion.div className="tesla-dark-card p-3 text-center sm:p-4 md:p-6" variants={cardVariants}>
-            <div className="tesla-icon-container w-10 h-10 mx-auto mb-2 sm:w-11 sm:h-11 md:w-12 md:h-12 md:mb-3">
-              <Rocket className="w-5 h-5 text-accent sm:w-5 sm:h-5" strokeWidth={1.5} />
-            </div>
             <div className="text-3xl font-semibold text-foreground mb-1 sm:text-4xl md:text-5xl lg:text-6xl">8</div>
             <p className="text-sm text-foreground/60 font-light sm:text-base">Day Average Deployment</p>
           </motion.div>
