@@ -92,10 +92,12 @@
     @apply tesla-card transition-shadow hover:shadow-md;
   }
   
-  /* Tesla dark cards for highlights */
+  /* Tesla glassmorphism cards for highlights */
   .tesla-dark-card {
-    @apply rounded-3xl text-white;
-    background-color: hsl(var(--tesla-dark));
+    @apply rounded-3xl text-white border border-white/10;
+    background: hsl(220 15% 10% / 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
   
   /* Tesla-style labels */
