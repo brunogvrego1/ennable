@@ -30,7 +30,7 @@ export const Slide03MarketFailure = () => {
         <h2 className="slide-title mt-2">
           Three Bad Options
         </h2>
-        <p className="slide-subtitle mt-2 max-w-3xl">
+        <p className="slide-subtitle mt-2 max-w-3xl font-light">
           All three are built on rigid logic that can't adapt without expensive rewrites.
         </p>
       </div>
@@ -39,16 +39,16 @@ export const Slide03MarketFailure = () => {
         {options.map((option, index) => (
           <div 
             key={index} 
-            className="tesla-card p-3 transition-shadow hover:shadow-md sm:p-4 md:p-6"
+            className="tesla-card p-3 sm:p-4 md:p-5"
           >
-            <div className="tesla-icon-container w-10 h-10 mb-2 sm:w-12 sm:h-12 sm:mb-3 md:w-14 md:h-14 md:mb-4">
-              <option.icon className="w-5 h-5 text-muted-foreground sm:w-6 sm:h-6 md:w-7 md:h-7" />
+            <div className="tesla-icon-container w-10 h-10 mb-2 sm:w-11 sm:h-11 sm:mb-3 md:w-12 md:h-12">
+              <option.icon className="w-5 h-5 text-muted-foreground sm:w-5 sm:h-5" strokeWidth={1.5} />
             </div>
-            <h3 className="text-sm font-semibold mb-1 sm:text-base md:text-lg md:mb-1.5">{option.title}</h3>
-            <span className="inline-block px-2 py-0.5 bg-coral/10 text-coral text-xs font-medium rounded-full mb-2 sm:px-3 sm:py-1 sm:text-sm md:mb-3">
+            <h3 className="text-sm font-medium mb-1 sm:text-base md:mb-1.5">{option.title}</h3>
+            <span className="tesla-badge-outline text-accent border-accent/20 mb-2 md:mb-3">
               {option.issue}
             </span>
-            <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3 sm:text-sm">
+            <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3 font-light sm:text-sm">
               {option.description}
             </p>
           </div>

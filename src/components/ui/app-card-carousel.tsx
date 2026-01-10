@@ -17,11 +17,11 @@ interface AppCardProps {
 }
 
 const tagColors = {
-  cyan: "bg-accent/10 text-accent",
-  amber: "bg-amber-500/10 text-amber-600",
-  green: "bg-emerald-500/10 text-emerald-600",
-  blue: "bg-blue-500/10 text-blue-600",
-  purple: "bg-purple-500/10 text-purple-600",
+  cyan: "text-accent border-accent/20",
+  amber: "text-amber-600 border-amber-500/20",
+  green: "text-emerald-600 border-emerald-500/20",
+  blue: "text-blue-600 border-blue-500/20",
+  purple: "text-purple-600 border-purple-500/20",
 };
 
 const AppCard = ({ app }: AppCardProps) => {
@@ -29,17 +29,17 @@ const AppCard = ({ app }: AppCardProps) => {
   const tagColor = tagColors[app.tagVariant || "cyan"];
 
   return (
-    <div className="flex-shrink-0 w-[180px] md:w-[220px] p-3 md:p-4 tesla-card hover:shadow-md transition-shadow cursor-pointer">
+    <div className="flex-shrink-0 w-[160px] md:w-[200px] p-3 md:p-4 tesla-card cursor-pointer transition-all duration-300 hover:translate-y-[-2px]">
       <div className="flex items-start justify-between mb-2 md:mb-3">
-        <div className="tesla-icon-container w-10 h-10 md:w-12 md:h-12">
-          <IconComponent className="w-5 h-5 md:w-6 md:h-6 text-accent" />
+        <div className="tesla-icon-container w-9 h-9 md:w-10 md:h-10">
+          <IconComponent className="w-4 h-4 md:w-5 md:h-5 text-accent" strokeWidth={1.5} />
         </div>
-        <span className={cn("text-[10px] md:text-xs px-2 py-0.5 rounded-full font-medium", tagColor)}>
+        <span className={cn("tesla-badge-outline", tagColor)}>
           {app.tag}
         </span>
       </div>
-      <h4 className="font-semibold text-sm mb-0.5">{app.name}</h4>
-      <p className="text-xs text-muted-foreground line-clamp-2">{app.description}</p>
+      <h4 className="font-medium text-sm mb-0.5">{app.name}</h4>
+      <p className="text-xs text-muted-foreground line-clamp-2 font-light">{app.description}</p>
     </div>
   );
 };
@@ -61,7 +61,7 @@ const AppCardCarousel = React.forwardRef<HTMLDivElement, AppCardCarouselProps>(
         {...props}
       >
         <motion.div
-          className="flex gap-3 md:gap-4"
+          className="flex gap-2.5 md:gap-3"
           animate={{
             x: ["0%", "-50%"],
           }}
