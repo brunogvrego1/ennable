@@ -1,16 +1,18 @@
 import { SlideSection } from "../SlideSection";
-import { Wine, Gift, MessageSquare, Sparkles, Clock, Globe } from "lucide-react";
+import { Wine, Gift, MessageSquare, Sparkles, Clock, Globe, Users, TrendingUp, CreditCard, Utensils } from "lucide-react";
+import { AppCardCarousel, type AppCardItem } from "@/components/ui/app-card-carousel";
 
-const apps = [
-  { icon: Wine, name: "AI Sommelier", description: "Smart wine pairing recommendations", tag: "AI-Powered" },
-  { icon: Gift, name: "Loyalty Rewards", description: "Points & tier-based loyalty program", tag: "Popular" },
-  { icon: MessageSquare, name: "SMS Re-engagement", description: "Automated guest re-engagement", tag: "Marketing" },
-];
-
-const moreApps = [
-  { icon: Sparkles, name: "Sake Pairing" },
-  { icon: Clock, name: "Shift Scheduler" },
-  { icon: Globe, name: "Multi-language" },
+const apps: AppCardItem[] = [
+  { id: 1, icon: Wine, name: "AI Sommelier", description: "Smart wine pairing recommendations for any dish", tag: "AI-Powered", tagVariant: "cyan" },
+  { id: 2, icon: Gift, name: "Loyalty Rewards", description: "Points & tier-based loyalty program", tag: "Popular", tagVariant: "amber" },
+  { id: 3, icon: MessageSquare, name: "SMS Re-engagement", description: "Automated guest re-engagement campaigns", tag: "Marketing", tagVariant: "green" },
+  { id: 4, icon: Sparkles, name: "Sake Pairing", description: "Japanese sake matching for every palate", tag: "AI-Powered", tagVariant: "cyan" },
+  { id: 5, icon: Clock, name: "Shift Scheduler", description: "Staff scheduling & availability management", tag: "Operations", tagVariant: "blue" },
+  { id: 6, icon: Globe, name: "Multi-language", description: "Auto-translation for global guests", tag: "Essential", tagVariant: "purple" },
+  { id: 7, icon: Users, name: "Table Management", description: "Reservations & intelligent seating", tag: "Popular", tagVariant: "amber" },
+  { id: 8, icon: TrendingUp, name: "Analytics Dashboard", description: "Real-time business insights & trends", tag: "Business", tagVariant: "green" },
+  { id: 9, icon: CreditCard, name: "Split Payments", description: "Easy bill splitting for groups", tag: "Essential", tagVariant: "purple" },
+  { id: 10, icon: Utensils, name: "Menu Builder", description: "Dynamic menu creation & updates", tag: "Operations", tagVariant: "blue" },
 ];
 
 export const Slide07Ecosystem = () => {
@@ -36,38 +38,15 @@ export const Slide07Ecosystem = () => {
         </div>
         
         <div className="p-3 md:p-6">
-          <div className="grid md:grid-cols-3 gap-2 md:gap-3 mb-3 md:mb-4">
-            {apps.map((app, index) => (
-              <div 
-                key={index}
-                className="p-3 md:p-4 bg-muted/30 rounded-2xl hover:bg-muted/50 transition-colors cursor-pointer"
-              >
-                <div className="flex items-start justify-between mb-2 md:mb-3">
-                  <div className="tesla-icon-container w-10 h-10 md:w-12 md:h-12">
-                    <app.icon className="w-5 h-5 md:w-6 md:h-6 text-accent" />
-                  </div>
-                  <span className="text-[10px] md:text-xs px-2 py-0.5 bg-accent/10 text-accent rounded-full font-medium">
-                    {app.tag}
-                  </span>
-                </div>
-                <h4 className="font-semibold text-sm mb-0.5">{app.name}</h4>
-                <p className="text-xs text-muted-foreground line-clamp-1">{app.description}</p>
-              </div>
-            ))}
-          </div>
+          {/* Animated App Carousel */}
+          <AppCardCarousel apps={apps} speed={30} className="mb-4" />
           
-          <div className="flex flex-wrap gap-2">
-            {moreApps.map((app, index) => (
-              <div 
-                key={index}
-                className="flex items-center gap-1.5 px-3 py-1.5 tesla-card"
-              >
-                <app.icon className="w-3 h-3 md:w-4 md:h-4 text-muted-foreground" />
-                <span className="text-xs font-medium">{app.name}</span>
-              </div>
-            ))}
+          <div className="flex flex-wrap gap-2 justify-center">
             <div className="px-3 py-1.5 bg-muted/50 rounded-full text-xs text-muted-foreground font-medium">
-              +47 more
+              +47 more apps
+            </div>
+            <div className="px-3 py-1.5 bg-accent/10 rounded-full text-xs text-accent font-medium">
+              Build your own
             </div>
           </div>
         </div>
