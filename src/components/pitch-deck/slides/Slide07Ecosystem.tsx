@@ -23,31 +23,33 @@ export const Slide07Ecosystem = () => {
         <h2 className="slide-title mt-2">
           Infinite Extensibility
         </h2>
-        <p className="slide-subtitle mt-2 max-w-3xl">
+        <p className="slide-subtitle mt-2 max-w-3xl font-light">
           Fluid is a platform, not just a tool. Purpose-built mini-apps created by the community.
         </p>
       </div>
       
-      {/* App Store mockup */}
+      {/* App Store mockup - simplified chrome */}
       <div className="tesla-card overflow-hidden">
-        <div className="p-1.5 border-b border-border/50 flex items-center gap-1.5 bg-muted/30 sm:p-2 md:p-3 md:gap-2">
-          <div className="w-2 h-2 rounded-full bg-coral/60 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3" />
-          <div className="w-2 h-2 rounded-full bg-yellow-400/60 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3" />
-          <div className="w-2 h-2 rounded-full bg-[hsl(142,76%,36%)]/60 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3" />
-          <span className="ml-2 text-xs text-muted-foreground font-medium sm:ml-3 md:ml-4 md:text-sm">Fluid App Store</span>
+        <div className="p-1.5 border-b border-border/30 flex items-center gap-1.5 bg-muted/20 sm:p-2 md:p-2.5">
+          <div className="flex gap-1 sm:gap-1.5">
+            <div className="w-2 h-2 rounded-full bg-foreground/20 sm:w-2.5 sm:h-2.5" />
+            <div className="w-2 h-2 rounded-full bg-foreground/20 sm:w-2.5 sm:h-2.5" />
+            <div className="w-2 h-2 rounded-full bg-foreground/20 sm:w-2.5 sm:h-2.5" />
+          </div>
+          <span className="ml-3 text-[10px] text-muted-foreground font-medium sm:ml-4 sm:text-xs">Fluid App Store</span>
         </div>
         
-        <div className="p-2 sm:p-3 md:p-6">
+        <div className="p-2 sm:p-3 md:p-5">
           {/* Animated App Carousel */}
           <AppCardCarousel apps={apps} speed={30} className="mb-3 sm:mb-4" />
           
           <div className="flex flex-wrap gap-2 justify-center">
-            <div className="px-2 py-1 bg-muted/50 rounded-full text-xs text-muted-foreground font-medium sm:px-3 sm:py-1.5">
+            <span className="tesla-badge-outline text-muted-foreground border-border">
               +47 more apps
-            </div>
-            <div className="px-2 py-1 bg-accent/10 rounded-full text-xs text-accent font-medium sm:px-3 sm:py-1.5">
+            </span>
+            <span className="tesla-badge-filled">
               Build your own
-            </div>
+            </span>
           </div>
         </div>
       </div>

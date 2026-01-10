@@ -1,24 +1,21 @@
 import { SlideSection } from "../SlideSection";
-import { User, Briefcase, Target, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const team = [
   { 
     role: "CEO", 
     name: "2x Founder", 
     description: "Built and exited hospitality tech startup. 15 years in F&B.",
-    icon: User 
   },
   { 
     role: "CTO", 
     name: "Ex-Salesforce", 
     description: "Led platform engineering. ML/AI expertise.",
-    icon: Briefcase 
   },
   { 
     role: "VP Product", 
     name: "Ex-Toast", 
     description: "Scaled product from 100 to 10,000+ customers.",
-    icon: Target 
   },
 ];
 
@@ -39,53 +36,48 @@ export const Slide12Team = () => {
       </div>
       
       <div className="slide-grid-2">
-        {/* Team */}
+        {/* Team - simpler cards without icons */}
         <div>
-          <h3 className="text-sm font-semibold mb-2 sm:mb-3 sm:text-base">Leadership</h3>
-          <div className="space-y-2 sm:space-y-3">
+          <h3 className="text-sm font-medium mb-2 sm:mb-3 sm:text-base">Leadership</h3>
+          <div className="space-y-2 sm:space-y-2.5">
             {team.map((member, index) => (
               <div 
                 key={index}
-                className="tesla-card p-2 flex gap-2 sm:p-3 sm:gap-3 md:p-4"
+                className="tesla-card p-2.5 sm:p-3 md:p-4"
               >
-                <div className="tesla-icon-container w-10 h-10 rounded-full flex-shrink-0 sm:w-12 sm:h-12 md:w-14 md:h-14">
-                  <member.icon className="w-4 h-4 text-muted-foreground sm:w-5 sm:h-5 md:w-6 md:h-6" />
+                <div className="flex items-center gap-1.5 mb-0.5">
+                  <span className="font-medium text-sm sm:text-base">{member.role}</span>
+                  <span className="text-xs text-muted-foreground font-light">• {member.name}</span>
                 </div>
-                <div className="min-w-0">
-                  <div className="flex items-center gap-1.5 mb-0.5">
-                    <span className="font-semibold text-xs sm:text-sm">{member.role}</span>
-                    <span className="text-xs text-muted-foreground">• {member.name}</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground line-clamp-1">{member.description}</p>
-                </div>
+                <p className="text-xs text-muted-foreground font-light line-clamp-1">{member.description}</p>
               </div>
             ))}
           </div>
           
-          <p className="text-xs text-muted-foreground mt-2 italic hidden sm:block">
+          <p className="text-[10px] text-muted-foreground mt-2 font-light hidden sm:block sm:text-xs">
             150+ years combined experience in hospitality and SaaS
           </p>
         </div>
         
         {/* Use of Funds */}
         <div>
-          <div className="tesla-dark-card p-3 mb-2 sm:p-4 sm:mb-3 md:p-6 md:mb-4">
-            <p className="text-xs text-white/60 uppercase tracking-wider mb-0.5 sm:mb-1">Series A Raise</p>
-            <div className="text-2xl font-bold text-white mb-0.5 sm:text-3xl sm:mb-1 md:text-4xl">$6M</div>
-            <p className="text-xs text-white/70 sm:text-sm">To scale to 500 customers</p>
+          <div className="tesla-dark-card p-3 mb-2 sm:p-4 sm:mb-3 md:p-5 md:mb-4">
+            <p className="text-[10px] text-white/40 uppercase tracking-wider mb-0.5 sm:mb-1">Series A Raise</p>
+            <div className="text-2xl font-semibold text-white mb-0.5 sm:text-3xl sm:mb-1 md:text-4xl">$6M</div>
+            <p className="text-xs text-white/50 font-light sm:text-sm">To scale to 500 customers</p>
           </div>
           
-          <h3 className="text-sm font-semibold mb-2 sm:text-base">Allocation</h3>
-          <div className="space-y-2 sm:space-y-3">
+          <h3 className="text-sm font-medium mb-2 sm:text-base">Allocation</h3>
+          <div className="space-y-2 sm:space-y-2.5">
             {useOfFunds.map((item, index) => (
-              <div key={index} className="tesla-card p-2 sm:p-3">
-                <div className="flex items-center justify-between mb-1">
+              <div key={index} className="tesla-card p-2.5 sm:p-3">
+                <div className="flex items-center justify-between mb-1.5">
                   <span className="text-xs font-medium sm:text-sm">{item.category}</span>
-                  <span className="text-xs text-muted-foreground">{item.amount}</span>
+                  <span className="text-[10px] text-muted-foreground font-light sm:text-xs">{item.amount}</span>
                 </div>
-                <div className="h-1 bg-muted rounded-full overflow-hidden sm:h-1.5 md:h-2">
+                <div className="tesla-progress">
                   <div 
-                    className="h-full bg-gradient-to-r from-accent to-coral rounded-full"
+                    className="tesla-progress-fill"
                     style={{ width: `${item.percentage}%` }}
                   />
                 </div>
@@ -96,8 +88,8 @@ export const Slide12Team = () => {
       </div>
       
       {/* CTA */}
-      <div className="mt-4 text-center sm:mt-6 md:mt-8">
-        <p className="text-sm text-muted-foreground mb-2 sm:mb-3 md:mb-4 md:text-base">
+      <div className="mt-4 text-center sm:mt-5 md:mt-6">
+        <p className="text-sm text-muted-foreground font-light mb-2 sm:mb-3 md:text-base">
           Ready to join the future of hospitality operations?
         </p>
         <a 
@@ -105,7 +97,7 @@ export const Slide12Team = () => {
           className="tesla-button-dark gap-2"
         >
           Let's Talk
-          <ArrowRight className="w-4 h-4" />
+          <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
         </a>
       </div>
     </SlideSection>

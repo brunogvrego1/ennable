@@ -19,41 +19,41 @@ export const Slide06Speed = () => {
       
       <div className="slide-grid-2 items-center">
         {/* Timeline */}
-        <div className="space-y-2 sm:space-y-3 md:space-y-4">
+        <div className="space-y-2 sm:space-y-3">
           {timeline.map((step, index) => (
-            <div key={index} className="flex gap-2 sm:gap-3 md:gap-4">
+            <div key={index} className="flex gap-2 sm:gap-3">
               <div className="flex flex-col items-center">
-                <div className="tesla-icon-container w-8 h-8 text-accent font-semibold text-xs sm:w-10 sm:h-10 sm:text-sm md:w-12 md:h-12 md:text-base">
+                <div className="tesla-icon-container w-8 h-8 text-accent font-medium text-xs sm:w-9 sm:h-9 sm:text-sm">
                   {index + 1}
                 </div>
                 {index < timeline.length - 1 && (
-                  <div className="w-px h-full bg-border mt-1" />
+                  <div className="w-px h-full bg-border/60 mt-1" />
                 )}
               </div>
-              <div className="pb-2 sm:pb-3 md:pb-4">
-                <p className="text-xs tesla-label">{step.day}</p>
-                <h3 className="text-sm font-semibold mt-0.5 sm:text-base">{step.label}</h3>
-                <p className="text-xs text-muted-foreground mt-0.5 sm:text-sm">{step.description}</p>
+              <div className="pb-2 sm:pb-3">
+                <p className="text-[10px] tesla-label">{step.day}</p>
+                <h3 className="text-sm font-medium mt-0.5 sm:text-base">{step.label}</h3>
+                <p className="text-xs text-muted-foreground font-light mt-0.5 sm:text-sm">{step.description}</p>
               </div>
             </div>
           ))}
         </div>
         
         {/* Stats */}
-        <div className="space-y-2 sm:space-y-3 md:space-y-4">
+        <div className="space-y-2 sm:space-y-3">
           <div className="tesla-dark-card p-3 text-center sm:p-4 md:p-6">
-            <div className="tesla-icon-container w-10 h-10 mx-auto mb-2 sm:w-12 sm:h-12 md:w-14 md:h-14 md:mb-3">
-              <Rocket className="w-5 h-5 text-accent sm:w-6 sm:h-6 md:w-7 md:h-7" />
+            <div className="tesla-icon-container w-10 h-10 mx-auto mb-2 sm:w-11 sm:h-11 md:w-12 md:h-12 md:mb-3">
+              <Rocket className="w-5 h-5 text-accent sm:w-5 sm:h-5" strokeWidth={1.5} />
             </div>
-            <div className="text-3xl font-bold text-white mb-1 sm:text-4xl md:text-5xl lg:text-6xl">8</div>
-            <p className="text-sm text-white/70 sm:text-base">Day Average Deployment</p>
+            <div className="text-3xl font-semibold text-white mb-1 sm:text-4xl md:text-5xl lg:text-6xl">8</div>
+            <p className="text-sm text-white/60 font-light sm:text-base">Day Average Deployment</p>
           </div>
           
-          <div className="tesla-card p-3 flex items-center gap-2 border-l-4 border-[hsl(142,76%,36%)] sm:gap-3 sm:p-4">
-            <CheckCircle2 className="w-6 h-6 text-[hsl(142,76%,36%)] flex-shrink-0 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+          <div className="tesla-card p-3 flex items-center gap-2 border-l-2 border-accent sm:gap-3 sm:p-4">
+            <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 sm:w-6 sm:h-6" strokeWidth={1.5} />
             <div>
-              <p className="font-semibold text-sm sm:text-base">90% Reduction</p>
-              <p className="text-xs text-muted-foreground sm:text-sm">vs. industry standard of 3–6 months</p>
+              <p className="font-medium text-sm sm:text-base">90% Reduction</p>
+              <p className="text-xs text-muted-foreground font-light sm:text-sm">vs. industry standard of 3–6 months</p>
             </div>
           </div>
         </div>
