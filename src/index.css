@@ -195,7 +195,9 @@
   }
   
   .tesla-badge-outline {
-    @apply tesla-badge border border-current/20 bg-transparent;
+    @apply tesla-badge border bg-transparent;
+    border-color: currentColor;
+    opacity: 0.9;
   }
   
   .tesla-badge-filled {
