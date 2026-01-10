@@ -59,23 +59,42 @@ export const Slide04Solution = () => {
           </motion.div>
         </div>
         
-        {/* Mobile: Linear module list */}
+        {/* Mobile: Circular orbit layout */}
         <motion.div 
-          className="flex flex-wrap gap-2 justify-center sm:hidden"
+          className="relative flex items-center justify-center h-44 sm:hidden"
           variants={scaleInVariants}
         >
-          <div className="tesla-card w-14 h-14 flex flex-col items-center justify-center bg-gradient-to-br from-accent to-accent/80">
-            <Brain className="w-6 h-6 text-white" strokeWidth={1.5} />
-          </div>
-          {modules.map((module, index) => (
-            <div 
-              key={index} 
-              className="tesla-card w-12 h-12 flex flex-col items-center justify-center"
-            >
-              <module.icon className="w-4 h-4 text-accent mb-0.5" strokeWidth={1.5} />
-              <span className="text-[7px] font-medium text-muted-foreground">{module.label}</span>
+          <div className="relative">
+            {/* Central hub */}
+            <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center">
+              <Brain className="w-7 h-7 text-white" strokeWidth={1.5} />
             </div>
-          ))}
+            
+            {/* Thin connecting ring */}
+            <div className="absolute border border-accent/20 rounded-full" style={{ width: 'calc(100% + 50px)', height: 'calc(100% + 50px)', top: '-25px', left: '-25px' }} />
+            
+            {/* Surrounding modules */}
+            {modules.map((module, index) => {
+              const angle = (index * 72 - 90) * (Math.PI / 180);
+              const radius = 58;
+              const x = Math.cos(angle) * radius;
+              const y = Math.sin(angle) * radius;
+              
+              return (
+                <div 
+                  key={index} 
+                  className="absolute tesla-card w-10 h-10 flex flex-col items-center justify-center"
+                  style={{
+                    left: `calc(50% + ${x}px - 20px)`,
+                    top: `calc(50% + ${y}px - 20px)`
+                  }}
+                >
+                  <module.icon className="w-3.5 h-3.5 text-accent mb-0.5" strokeWidth={1.5} />
+                  <span className="text-[7px] font-medium text-muted-foreground">{module.label}</span>
+                </div>
+              );
+            })}
+          </div>
         </motion.div>
         
         {/* Desktop: The Fluid Core orbit - cleaner lines */}
