@@ -31,29 +31,29 @@ const useOfFunds = [
 export const Slide12Team = () => {
   return (
     <SlideSection id="slide-12">
-      <div className="mb-4 md:mb-6">
+      <div className="mb-4 sm:mb-5 md:mb-6">
         <span className="tesla-label">The Ask</span>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 tracking-tight">
+        <h2 className="slide-title mt-2">
           Team & Use of Funds
         </h2>
       </div>
       
-      <div className="grid lg:grid-cols-2 gap-4 md:gap-8">
+      <div className="slide-grid-2">
         {/* Team */}
         <div>
-          <h3 className="text-sm md:text-base font-semibold mb-3">Leadership</h3>
-          <div className="space-y-2 md:space-y-3">
+          <h3 className="text-sm font-semibold mb-2 sm:mb-3 sm:text-base">Leadership</h3>
+          <div className="space-y-2 sm:space-y-3">
             {team.map((member, index) => (
               <div 
                 key={index}
-                className="tesla-card p-3 md:p-4 flex gap-3"
+                className="tesla-card p-2 flex gap-2 sm:p-3 sm:gap-3 md:p-4"
               >
-                <div className="tesla-icon-container w-12 h-12 md:w-14 md:h-14 rounded-full flex-shrink-0">
-                  <member.icon className="w-5 h-5 md:w-6 md:h-6 text-muted-foreground" />
+                <div className="tesla-icon-container w-10 h-10 rounded-full flex-shrink-0 sm:w-12 sm:h-12 md:w-14 md:h-14">
+                  <member.icon className="w-4 h-4 text-muted-foreground sm:w-5 sm:h-5 md:w-6 md:h-6" />
                 </div>
                 <div className="min-w-0">
                   <div className="flex items-center gap-1.5 mb-0.5">
-                    <span className="font-semibold text-sm">{member.role}</span>
+                    <span className="font-semibold text-xs sm:text-sm">{member.role}</span>
                     <span className="text-xs text-muted-foreground">• {member.name}</span>
                   </div>
                   <p className="text-xs text-muted-foreground line-clamp-1">{member.description}</p>
@@ -69,21 +69,21 @@ export const Slide12Team = () => {
         
         {/* Use of Funds */}
         <div>
-          <div className="tesla-dark-card p-4 md:p-6 mb-3 md:mb-4">
-            <p className="text-xs text-white/60 uppercase tracking-wider mb-1">Series A Raise</p>
-            <div className="text-3xl md:text-4xl font-bold text-white mb-1">$6M</div>
-            <p className="text-xs md:text-sm text-white/70">To scale to 500 customers</p>
+          <div className="tesla-dark-card p-3 mb-2 sm:p-4 sm:mb-3 md:p-6 md:mb-4">
+            <p className="text-xs text-white/60 uppercase tracking-wider mb-0.5 sm:mb-1">Series A Raise</p>
+            <div className="text-2xl font-bold text-white mb-0.5 sm:text-3xl sm:mb-1 md:text-4xl">$6M</div>
+            <p className="text-xs text-white/70 sm:text-sm">To scale to 500 customers</p>
           </div>
           
-          <h3 className="text-sm md:text-base font-semibold mb-2">Allocation</h3>
-          <div className="space-y-2 md:space-y-3">
+          <h3 className="text-sm font-semibold mb-2 sm:text-base">Allocation</h3>
+          <div className="space-y-2 sm:space-y-3">
             {useOfFunds.map((item, index) => (
-              <div key={index} className="tesla-card p-3">
+              <div key={index} className="tesla-card p-2 sm:p-3">
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs md:text-sm font-medium">{item.category}</span>
+                  <span className="text-xs font-medium sm:text-sm">{item.category}</span>
                   <span className="text-xs text-muted-foreground">{item.amount}</span>
                 </div>
-                <div className="h-1.5 md:h-2 bg-muted rounded-full overflow-hidden">
+                <div className="h-1 bg-muted rounded-full overflow-hidden sm:h-1.5 md:h-2">
                   <div 
                     className="h-full bg-gradient-to-r from-accent to-coral rounded-full"
                     style={{ width: `${item.percentage}%` }}
@@ -96,8 +96,8 @@ export const Slide12Team = () => {
       </div>
       
       {/* CTA */}
-      <div className="mt-4 md:mt-8 text-center">
-        <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4">
+      <div className="mt-4 text-center sm:mt-6 md:mt-8">
+        <p className="text-sm text-muted-foreground mb-2 sm:mb-3 md:mb-4 md:text-base">
           Ready to join the future of hospitality operations?
         </p>
         <a 

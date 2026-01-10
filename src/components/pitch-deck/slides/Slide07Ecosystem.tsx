@@ -18,34 +18,34 @@ const apps: AppCardItem[] = [
 export const Slide07Ecosystem = () => {
   return (
     <SlideSection id="slide-7">
-      <div className="mb-4 md:mb-6">
+      <div className="mb-3 sm:mb-4 md:mb-6">
         <span className="tesla-label">The Ecosystem</span>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 tracking-tight">
+        <h2 className="slide-title mt-2">
           Infinite Extensibility
         </h2>
-        <p className="text-sm md:text-base text-muted-foreground mt-2 max-w-3xl">
+        <p className="slide-subtitle mt-2 max-w-3xl">
           Fluid is a platform, not just a tool. Purpose-built mini-apps created by the community.
         </p>
       </div>
       
       {/* App Store mockup */}
       <div className="tesla-card overflow-hidden">
-        <div className="p-2 md:p-3 border-b border-border/50 flex items-center gap-1.5 md:gap-2 bg-muted/30">
-          <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-coral/60" />
-          <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-400/60" />
-          <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-[hsl(142,76%,36%)]/60" />
-          <span className="ml-2 md:ml-4 text-xs md:text-sm text-muted-foreground font-medium">Fluid App Store</span>
+        <div className="p-1.5 border-b border-border/50 flex items-center gap-1.5 bg-muted/30 sm:p-2 md:p-3 md:gap-2">
+          <div className="w-2 h-2 rounded-full bg-coral/60 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3" />
+          <div className="w-2 h-2 rounded-full bg-yellow-400/60 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3" />
+          <div className="w-2 h-2 rounded-full bg-[hsl(142,76%,36%)]/60 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3" />
+          <span className="ml-2 text-xs text-muted-foreground font-medium sm:ml-3 md:ml-4 md:text-sm">Fluid App Store</span>
         </div>
         
-        <div className="p-3 md:p-6">
+        <div className="p-2 sm:p-3 md:p-6">
           {/* Animated App Carousel */}
-          <AppCardCarousel apps={apps} speed={30} className="mb-4" />
+          <AppCardCarousel apps={apps} speed={30} className="mb-3 sm:mb-4" />
           
           <div className="flex flex-wrap gap-2 justify-center">
-            <div className="px-3 py-1.5 bg-muted/50 rounded-full text-xs text-muted-foreground font-medium">
+            <div className="px-2 py-1 bg-muted/50 rounded-full text-xs text-muted-foreground font-medium sm:px-3 sm:py-1.5">
               +47 more apps
             </div>
-            <div className="px-3 py-1.5 bg-accent/10 rounded-full text-xs text-accent font-medium">
+            <div className="px-2 py-1 bg-accent/10 rounded-full text-xs text-accent font-medium sm:px-3 sm:py-1.5">
               Build your own
             </div>
           </div>
