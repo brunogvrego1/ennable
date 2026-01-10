@@ -25,12 +25,12 @@ export const Slide08Moat = () => {
       <div className="slide-grid-2 items-center">
         <div className="space-y-2 sm:space-y-3">
           <div className="tesla-dark-card p-3 sm:p-4 md:p-5">
-            <h3 className="font-medium text-sm mb-2 text-white sm:text-base sm:mb-3">Two-Fold Moat</h3>
+            <h3 className="font-medium text-sm mb-2 text-foreground sm:text-base sm:mb-3">Two-Fold Moat</h3>
             <ul className="space-y-2 sm:space-y-2.5">
               {moatPoints.map((point, idx) => (
                 <li key={idx} className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
-                  <span className="text-xs text-white/70 font-light sm:text-sm">{point}</span>
+                  <span className="text-xs text-foreground/70 font-light sm:text-sm">{point}</span>
                 </li>
               ))}
             </ul>

@@ -45,10 +45,10 @@ export const Slide05WhyNow = () => {
             </div>
             <div>
               <p className="text-xs text-accent uppercase tracking-wider">Fluid Approach</p>
-              <h3 className="font-semibold text-sm text-white sm:text-base">Generative Logic</h3>
+              <h3 className="font-semibold text-sm text-foreground sm:text-base">Generative Logic</h3>
             </div>
           </div>
-          <ul className="space-y-2 text-xs text-white/70 sm:space-y-2.5 sm:text-sm md:space-y-3">
+          <ul className="space-y-2 text-xs text-foreground/70 sm:space-y-2.5 sm:text-sm md:space-y-3">
             <li className="flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-[hsl(142,76%,36%)] flex-shrink-0 mt-0.5" />
               AI crafts exactly what you need

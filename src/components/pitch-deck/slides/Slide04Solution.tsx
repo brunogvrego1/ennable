@@ -44,8 +44,8 @@ export const Slide04Solution = () => {
               The Intent-Engine
               <Brain className="w-4 h-4 text-accent sm:w-5 sm:h-5" strokeWidth={1.5} />
             </h3>
-            <p className="text-xs text-white/70 font-light sm:text-sm">
-              The system <span className="text-white font-normal">understands</span> your 
+            <p className="text-xs text-foreground/70 font-light sm:text-sm">
+              The system <span className="text-foreground font-normal">understands</span> your 
               specific business goals and suggests mini-apps accordingly.
             </p>
           </div>

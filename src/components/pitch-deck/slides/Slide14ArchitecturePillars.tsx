@@ -85,7 +85,7 @@ export const Slide14ArchitecturePillars = () => {
 
       {/* Technical Breakdown */}
       <div className="tesla-dark-card p-2.5 sm:p-3 md:p-4">
-        <h3 className="font-medium text-sm mb-2 text-white sm:text-base sm:mb-3">The "Fluid" Difference</h3>
+        <h3 className="font-medium text-sm mb-2 text-foreground sm:text-base sm:mb-3">The "Fluid" Difference</h3>
         <div className="grid gap-2 sm:grid-cols-3 sm:gap-3">
           {technicalPoints.map((point) => (
             <div key={point.title} className="flex items-start gap-2">
@@ -93,8 +93,8 @@ export const Slide14ArchitecturePillars = () => {
                 <point.icon className="w-3.5 h-3.5 text-accent" strokeWidth={1.5} />
               </div>
               <div>
-                <h4 className="font-medium text-xs text-white sm:text-sm">{point.title}</h4>
-                <p className="text-[10px] text-white/50 leading-relaxed hidden font-light sm:block sm:text-xs">
+                <h4 className="font-medium text-xs text-foreground sm:text-sm">{point.title}</h4>
+                <p className="text-[10px] text-foreground/60 leading-relaxed hidden font-light sm:block sm:text-xs">
                   {point.description}
                 </p>
               </div>
