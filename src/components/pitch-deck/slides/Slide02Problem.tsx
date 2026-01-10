@@ -1,7 +1,7 @@
 import { SlideSection } from "../SlideSection";
 import { AlertTriangle, Layers, Box } from "lucide-react";
 import { motion } from "framer-motion";
-import { itemVariants, cardVariants, scaleInVariants } from "../motion-variants";
+import { itemVariants, cardVariants, scaleInVariants, gridContainerVariants } from "../motion-variants";
 
 export const Slide02Problem = () => {
   return (
@@ -13,7 +13,13 @@ export const Slide02Problem = () => {
         </h2>
       </motion.div>
       
-      <div className="slide-grid-2 items-center">
+      <motion.div 
+        className="slide-grid-2 items-center"
+        variants={gridContainerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="space-y-3 sm:space-y-4">
           <motion.p 
             className="text-sm text-muted-foreground leading-relaxed font-light sm:text-base lg:text-lg"
@@ -62,7 +68,7 @@ export const Slide02Problem = () => {
             </div>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </SlideSection>
   );
 };

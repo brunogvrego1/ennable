@@ -1,6 +1,6 @@
 import { SlideSection } from "../SlideSection";
 import { motion } from "framer-motion";
-import { itemVariants, cardVariants, scaleInVariants } from "../motion-variants";
+import { itemVariants, cardVariants, scaleInVariants, gridContainerVariants } from "../motion-variants";
 
 export const Slide10Market = () => {
   return (
@@ -15,7 +15,13 @@ export const Slide10Market = () => {
         </p>
       </motion.div>
       
-      <div className="slide-grid-2 items-center">
+      <motion.div 
+        className="slide-grid-2 items-center"
+        variants={gridContainerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {/* Market visualization - cleaner bubbles */}
         <motion.div className="relative h-32 sm:h-40 md:h-52" variants={scaleInVariants}>
           {/* Small Biz blob */}
@@ -69,7 +75,7 @@ export const Slide10Market = () => {
             </p>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </SlideSection>
   );
 };

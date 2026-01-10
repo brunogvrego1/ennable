@@ -2,7 +2,7 @@ import { SlideSection } from "../SlideSection";
 import { Wine, Gift, MessageSquare, Sparkles, Clock, Globe, Users, TrendingUp, CreditCard, Utensils } from "lucide-react";
 import { AppCardCarousel, type AppCardItem } from "@/components/ui/app-card-carousel";
 import { motion } from "framer-motion";
-import { itemVariants, cardVariants } from "../motion-variants";
+import { itemVariants, cardVariants, gridContainerVariants } from "../motion-variants";
 
 const apps: AppCardItem[] = [
   { id: 1, icon: Wine, name: "AI Sommelier", description: "Smart wine pairing recommendations for any dish", tag: "AI-Powered", tagVariant: "cyan" },
@@ -45,17 +45,23 @@ export const Slide07Ecosystem = () => {
           {/* Animated App Carousel */}
           <AppCardCarousel apps={apps} speed={30} className="mb-3 sm:mb-4" />
           
-          <div className="flex flex-wrap gap-2 justify-center">
-            <span className="tesla-badge-outline text-muted-foreground border-border">
+          <motion.div 
+            className="flex flex-wrap gap-2 justify-center"
+            variants={gridContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.span className="tesla-badge-outline text-muted-foreground border-border" variants={itemVariants}>
               + Apps
-            </span>
-            <span className="tesla-badge-filled">
+            </motion.span>
+            <motion.span className="tesla-badge-filled" variants={itemVariants}>
               Build Your Own
-            </span>
-            <span className="tesla-badge-filled">
+            </motion.span>
+            <motion.span className="tesla-badge-filled" variants={itemVariants}>
               Build From Existing
-            </span>
-          </div>
+            </motion.span>
+          </motion.div>
         </div>
       </motion.div>
     </SlideSection>
