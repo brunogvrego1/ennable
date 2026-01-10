@@ -37,7 +37,13 @@ export const Slide12Team = () => {
         </h2>
       </motion.div>
       
-      <div className="slide-grid-2">
+      <motion.div 
+        className="slide-grid-2"
+        variants={gridContainerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {/* Team - simpler cards without icons */}
         <div>
           <motion.h3 className="text-sm font-medium mb-2 sm:mb-3 sm:text-base" variants={itemVariants}>
@@ -107,7 +113,7 @@ export const Slide12Team = () => {
             ))}
           </motion.div>
         </div>
-      </div>
+      </motion.div>
       
       {/* CTA */}
       <motion.div className="mt-4 text-center sm:mt-5 md:mt-6" variants={itemVariants}>

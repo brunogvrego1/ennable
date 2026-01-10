@@ -1,7 +1,7 @@
 import { SlideSection } from "../SlideSection";
 import { Users, AppWindow, Database, RefreshCw, CheckCircle2, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { itemVariants, cardVariants, scaleInVariants } from "../motion-variants";
+import { itemVariants, cardVariants, scaleInVariants, gridContainerVariants } from "../motion-variants";
 
 const flywheel = [
   { icon: Users, label: "More Users" },
@@ -24,7 +24,13 @@ export const Slide08Moat = () => {
         </h2>
       </motion.div>
       
-      <div className="slide-grid-2 items-center">
+      <motion.div 
+        className="slide-grid-2 items-center"
+        variants={gridContainerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="space-y-2 sm:space-y-3">
           <motion.div className="tesla-dark-card p-3 sm:p-4 md:p-5" variants={cardVariants}>
             <h3 className="font-medium text-sm mb-2 text-foreground sm:text-base sm:mb-3">Two-Fold Moat</h3>
@@ -133,7 +139,7 @@ export const Slide08Moat = () => {
             </svg>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </SlideSection>
   );
 };

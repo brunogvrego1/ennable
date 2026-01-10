@@ -19,9 +19,15 @@ export const Slide06Speed = () => {
         </h2>
       </motion.div>
       
-      <div className="slide-grid-2 items-center">
+      <motion.div 
+        className="slide-grid-2 items-center"
+        variants={gridContainerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {/* Timeline */}
-        <motion.div 
+        <motion.div
           className="space-y-2 sm:space-y-3"
           variants={gridContainerVariants}
           initial="hidden"
@@ -65,7 +71,7 @@ export const Slide06Speed = () => {
             </div>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </SlideSection>
   );
 };

@@ -1,7 +1,7 @@
 import { SlideSection } from "../SlideSection";
 import { Brain, ShoppingCart, Users, Package, Wallet, BarChart3, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
-import { itemVariants, cardVariants, scaleInVariants } from "../motion-variants";
+import { itemVariants, cardVariants, scaleInVariants, gridContainerVariants } from "../motion-variants";
 
 const modules = [
   { icon: ShoppingCart, label: "POS" },
@@ -27,7 +27,13 @@ export const Slide04Solution = () => {
         </h2>
       </motion.div>
       
-      <div className="slide-grid-2 items-center">
+      <motion.div 
+        className="slide-grid-2 items-center"
+        variants={gridContainerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="space-y-2 sm:space-y-3 md:space-y-4">
           <motion.div className="tesla-card p-3 sm:p-4 md:p-5" variants={cardVariants}>
             <h3 className="font-medium text-sm mb-2 sm:text-base sm:mb-3">Modular Architecture</h3>
@@ -109,7 +115,7 @@ export const Slide04Solution = () => {
             })}
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </SlideSection>
   );
 };
