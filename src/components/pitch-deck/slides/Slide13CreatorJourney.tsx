@@ -59,7 +59,7 @@ export const Slide13CreatorJourney = () => {
             
             {step.example && (
               <div className="hidden sm:block p-2 bg-muted/30 rounded-xl md:p-2.5">
-                <p className="text-[10px] font-mono text-muted-foreground/80 italic truncate md:text-xs">
+                <p className="text-[10px] font-mono text-muted-foreground/80 italic md:text-xs">
                   {step.example}
                 </p>
               </div>
