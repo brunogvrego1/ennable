@@ -1,5 +1,5 @@
 import { SlideSection } from "../SlideSection";
-import { Zap, BarChart3, Monitor, Globe, Database, Cpu, Shield, CheckCircle2 } from "lucide-react";
+import { Zap, BarChart3, Monitor, Globe, Database, Cpu, Shield } from "lucide-react";
 
 const pillars = [
   {
@@ -49,34 +49,34 @@ const technicalPoints = [
 export const Slide14ArchitecturePillars = () => {
   return (
     <SlideSection id="architecture-pillars">
-      <div className="mb-3 md:mb-6">
+      <div className="mb-3 sm:mb-4 md:mb-6">
         <span className="tesla-label">Architecture</span>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 tracking-tight">
+        <h2 className="slide-title mt-2">
           The 4 Pillars
         </h2>
-        <p className="text-sm md:text-base text-muted-foreground mt-2">
+        <p className="slide-subtitle mt-2">
           Modular Flexibility by Design
         </p>
       </div>
 
       {/* Pillars Grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 mb-4 md:mb-6">
+      <div className="grid grid-cols-2 gap-2 mb-3 sm:gap-3 md:grid-cols-4 md:gap-4 md:mb-6">
         {pillars.map((pillar) => (
           <div 
             key={pillar.type}
-            className="tesla-card p-3 md:p-4"
+            className="tesla-card p-2 sm:p-3 md:p-4"
           >
-            <div className="flex items-center gap-2 mb-2">
-              <div className="tesla-icon-container w-10 h-10 md:w-12 md:h-12 flex-shrink-0">
-                <pillar.icon className="w-5 h-5 md:w-6 md:h-6 text-accent" />
+            <div className="flex items-center gap-1.5 mb-1.5 sm:gap-2 sm:mb-2">
+              <div className="tesla-icon-container w-8 h-8 flex-shrink-0 sm:w-10 sm:h-10 md:w-12 md:h-12">
+                <pillar.icon className="w-4 h-4 text-accent sm:w-5 sm:h-5 md:w-6 md:h-6" />
               </div>
               <div>
-                <h3 className="font-semibold text-sm md:text-base text-foreground">{pillar.type}</h3>
-                <p className="text-xs text-accent hidden sm:block">{pillar.tagline}</p>
+                <h3 className="font-semibold text-xs text-foreground sm:text-sm md:text-base">{pillar.type}</h3>
+                <p className="text-[10px] text-accent hidden sm:block">{pillar.tagline}</p>
               </div>
             </div>
             
-            <p className="text-xs md:text-sm text-muted-foreground leading-relaxed line-clamp-2">
+            <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2 sm:text-sm">
               {pillar.description}
             </p>
           </div>
@@ -84,16 +84,16 @@ export const Slide14ArchitecturePillars = () => {
       </div>
 
       {/* Technical Breakdown */}
-      <div className="tesla-dark-card p-3 md:p-4">
-        <h3 className="font-semibold text-sm md:text-base mb-3 text-white">The "Fluid" Difference</h3>
-        <div className="grid sm:grid-cols-3 gap-3 md:gap-4">
+      <div className="tesla-dark-card p-2 sm:p-3 md:p-4">
+        <h3 className="font-semibold text-sm mb-2 text-white sm:text-base sm:mb-3">The "Fluid" Difference</h3>
+        <div className="grid gap-2 sm:grid-cols-3 sm:gap-3 md:gap-4">
           {technicalPoints.map((point) => (
             <div key={point.title} className="flex items-start gap-2">
-              <div className="tesla-icon-container w-8 h-8 md:w-10 md:h-10 flex-shrink-0">
-                <point.icon className="w-4 h-4 md:w-5 md:h-5 text-accent" />
+              <div className="tesla-icon-container w-7 h-7 flex-shrink-0 sm:w-8 sm:h-8 md:w-10 md:h-10">
+                <point.icon className="w-3 h-3 text-accent sm:w-4 sm:h-4 md:w-5 md:h-5" />
               </div>
               <div>
-                <h4 className="font-medium text-xs md:text-sm text-white">{point.title}</h4>
+                <h4 className="font-medium text-xs text-white sm:text-sm">{point.title}</h4>
                 <p className="text-xs text-white/60 leading-relaxed hidden sm:block">
                   {point.description}
                 </p>

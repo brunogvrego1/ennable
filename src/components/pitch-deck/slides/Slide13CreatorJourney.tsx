@@ -27,38 +27,38 @@ const steps = [
 export const Slide13CreatorJourney = () => {
   return (
     <SlideSection id="creator-journey">
-      <div className="mb-3 md:mb-6">
+      <div className="mb-3 sm:mb-4 md:mb-6">
         <span className="tesla-label">The Creator Journey</span>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 tracking-tight">
+        <h2 className="slide-title mt-2">
           From Intent to<br />Infrastructure in Seconds
         </h2>
-        <p className="text-sm md:text-base text-muted-foreground mt-2 max-w-2xl">
+        <p className="slide-subtitle mt-2 max-w-2xl">
           Building custom mini-apps via the Fluid Generative Engine.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-3 md:gap-4">
+      <div className="grid gap-2 sm:gap-3 sm:grid-cols-2 md:grid-cols-3 md:gap-4">
         {steps.map((step) => (
           <div 
             key={step.number}
-            className="tesla-card p-3 md:p-4"
+            className="tesla-card p-2 sm:p-3 md:p-4"
           >
-            <div className="flex items-center gap-3 mb-2">
-              <div className="tesla-icon-container w-10 h-10 md:w-12 md:h-12 flex-shrink-0">
-                <step.icon className="w-5 h-5 md:w-6 md:h-6 text-accent" />
+            <div className="flex items-center gap-2 mb-1.5 sm:gap-3 sm:mb-2">
+              <div className="tesla-icon-container w-9 h-9 flex-shrink-0 sm:w-10 sm:h-10 md:w-12 md:h-12">
+                <step.icon className="w-4 h-4 text-accent sm:w-5 sm:h-5 md:w-6 md:h-6" />
               </div>
-              <div className="flex items-center gap-2">
-                <span className="text-accent font-bold text-sm">{step.number}</span>
-                <h3 className="text-sm md:text-base font-semibold text-foreground">{step.title}</h3>
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <span className="text-accent font-bold text-xs sm:text-sm">{step.number}</span>
+                <h3 className="text-sm font-semibold text-foreground sm:text-base">{step.title}</h3>
               </div>
             </div>
             
-            <p className="text-xs md:text-sm text-muted-foreground leading-relaxed mb-2">
+            <p className="text-xs text-muted-foreground leading-relaxed mb-1.5 sm:text-sm sm:mb-2">
               {step.description}
             </p>
             
             {step.example && (
-              <div className="hidden sm:block p-2 md:p-3 bg-muted/50 rounded-xl">
+              <div className="hidden sm:block p-2 bg-muted/50 rounded-xl md:p-3">
                 <p className="text-xs font-mono text-muted-foreground italic truncate">
                   {step.example}
                 </p>
@@ -66,10 +66,10 @@ export const Slide13CreatorJourney = () => {
             )}
             
             {step.flow && (
-              <div className="flex items-center gap-1.5 flex-wrap">
+              <div className="flex items-center gap-1 flex-wrap sm:gap-1.5">
                 {step.flow.map((item, idx) => (
-                  <div key={item} className="flex items-center gap-1.5">
-                    <span className="text-xs font-medium bg-accent/10 text-accent px-2 py-1 rounded-lg">
+                  <div key={item} className="flex items-center gap-1 sm:gap-1.5">
+                    <span className="text-xs font-medium bg-accent/10 text-accent px-1.5 py-0.5 rounded-lg sm:px-2 sm:py-1">
                       {item}
                     </span>
                     {idx < step.flow.length - 1 && (
