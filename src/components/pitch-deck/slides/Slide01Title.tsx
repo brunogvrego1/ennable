@@ -1,4 +1,6 @@
 import { SlideSection } from "../SlideSection";
+import { motion } from "framer-motion";
+import { itemVariants, labelVariants } from "../motion-variants";
 
 export const Slide01Title = () => {
   return (
@@ -8,17 +10,27 @@ export const Slide01Title = () => {
       <div className="absolute bottom-10 left-5 w-24 h-24 bg-coral/5 rounded-full blur-3xl sm:bottom-16 sm:left-8 sm:w-36 sm:h-36 md:bottom-20 md:left-10 md:w-48 md:h-48" />
       
       <div className="relative z-10 text-center">
-        <h1 className="text-3xl font-semibold tracking-tight mb-3 sm:text-4xl md:text-6xl md:mb-6 lg:text-7xl xl:text-8xl" style={{ letterSpacing: '-0.03em' }}>
+        <motion.h1 
+          className="text-3xl font-semibold tracking-tight mb-3 sm:text-4xl md:text-6xl md:mb-6 lg:text-7xl xl:text-8xl" 
+          style={{ letterSpacing: '-0.03em' }}
+          variants={itemVariants}
+        >
           <span className="text-gradient">Project Fluid</span>
-        </h1>
+        </motion.h1>
         
-        <p className="text-lg font-light text-muted-foreground mb-4 sm:text-xl md:text-2xl md:mb-8 lg:text-3xl">
+        <motion.p 
+          className="text-lg font-light text-muted-foreground mb-4 sm:text-xl md:text-2xl md:mb-8 lg:text-3xl"
+          variants={itemVariants}
+        >
           The world's first generative Operating System for commerce
-        </p>
+        </motion.p>
         
-        <p className="text-sm text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed font-light md:text-base lg:text-lg">
+        <motion.p 
+          className="text-sm text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed font-light md:text-base lg:text-lg"
+          variants={labelVariants}
+        >
           Not a static product—a living system that adapts to your business intent.
-        </p>
+        </motion.p>
       </div>
     </SlideSection>
   );

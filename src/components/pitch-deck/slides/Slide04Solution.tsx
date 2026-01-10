@@ -1,5 +1,7 @@
 import { SlideSection } from "../SlideSection";
 import { Brain, ShoppingCart, Users, Package, Wallet, BarChart3, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { itemVariants, cardVariants, scaleInVariants } from "../motion-variants";
 
 const modules = [
   { icon: ShoppingCart, label: "POS" },
@@ -18,16 +20,16 @@ const features = [
 export const Slide04Solution = () => {
   return (
     <SlideSection id="slide-4">
-      <div className="mb-4 sm:mb-6 md:mb-8">
+      <motion.div className="mb-4 sm:mb-6 md:mb-8" variants={itemVariants}>
         <span className="tesla-label">The Solution</span>
         <h2 className="slide-title mt-2">
           Reimagine ERP from<br />First Principles
         </h2>
-      </div>
+      </motion.div>
       
       <div className="slide-grid-2 items-center">
         <div className="space-y-2 sm:space-y-3 md:space-y-4">
-          <div className="tesla-card p-3 sm:p-4 md:p-5">
+          <motion.div className="tesla-card p-3 sm:p-4 md:p-5" variants={cardVariants}>
             <h3 className="font-medium text-sm mb-2 sm:text-base sm:mb-3">Modular Architecture</h3>
             <ul className="space-y-1.5 sm:space-y-2">
               {features.map((feature, idx) => (
@@ -37,9 +39,9 @@ export const Slide04Solution = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
           
-          <div className="tesla-dark-card p-3 sm:p-4 md:p-5">
+          <motion.div className="tesla-dark-card p-3 sm:p-4 md:p-5" variants={cardVariants}>
             <h3 className="font-medium text-sm mb-1 flex items-center gap-2 sm:text-base">
               The Intent-Engine
               <Brain className="w-4 h-4 text-accent sm:w-5 sm:h-5" strokeWidth={1.5} />
@@ -48,11 +50,14 @@ export const Slide04Solution = () => {
               The system <span className="text-foreground font-normal">understands</span> your 
               specific business goals and suggests mini-apps accordingly.
             </p>
-          </div>
+          </motion.div>
         </div>
         
         {/* Mobile: Linear module list */}
-        <div className="flex flex-wrap gap-2 justify-center sm:hidden">
+        <motion.div 
+          className="flex flex-wrap gap-2 justify-center sm:hidden"
+          variants={scaleInVariants}
+        >
           <div className="tesla-card w-14 h-14 flex flex-col items-center justify-center bg-gradient-to-br from-accent to-accent/80">
             <Brain className="w-6 h-6 text-white" strokeWidth={1.5} />
           </div>
@@ -65,10 +70,13 @@ export const Slide04Solution = () => {
               <span className="text-[7px] font-medium text-muted-foreground">{module.label}</span>
             </div>
           ))}
-        </div>
+        </motion.div>
         
         {/* Desktop: The Fluid Core orbit - cleaner lines */}
-        <div className="relative hidden sm:flex items-center justify-center h-48 md:h-64">
+        <motion.div 
+          className="relative hidden sm:flex items-center justify-center h-48 md:h-64"
+          variants={scaleInVariants}
+        >
           <div className="relative">
             {/* Central hub - reduced gradient intensity */}
             <div className="w-20 h-20 rounded-full bg-accent flex items-center justify-center md:w-28 md:h-28">
@@ -100,7 +108,7 @@ export const Slide04Solution = () => {
               );
             })}
           </div>
-        </div>
+        </motion.div>
       </div>
     </SlideSection>
   );

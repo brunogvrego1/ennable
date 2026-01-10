@@ -1,5 +1,7 @@
 import { SlideSection } from "../SlideSection";
 import { Zap, BarChart3, Monitor, Globe, Database, Cpu, Shield } from "lucide-react";
+import { motion } from "framer-motion";
+import { itemVariants, cardVariants, gridContainerVariants } from "../motion-variants";
 
 const pillars = [
   {
@@ -49,7 +51,7 @@ const technicalPoints = [
 export const Slide14ArchitecturePillars = () => {
   return (
     <SlideSection id="architecture-pillars">
-      <div className="mb-3 sm:mb-4 md:mb-6">
+      <motion.div className="mb-3 sm:mb-4 md:mb-6" variants={itemVariants}>
         <span className="tesla-label">Architecture</span>
         <h2 className="slide-title mt-2">
           The 4 Pillars
@@ -57,14 +59,21 @@ export const Slide14ArchitecturePillars = () => {
         <p className="slide-subtitle mt-2 font-light">
           Modular Flexibility by Design
         </p>
-      </div>
+      </motion.div>
 
       {/* Pillars Grid */}
-      <div className="grid grid-cols-2 gap-2 mb-3 sm:gap-2.5 md:grid-cols-4 md:gap-3 md:mb-5">
+      <motion.div 
+        className="grid grid-cols-2 gap-2 mb-3 sm:gap-2.5 md:grid-cols-4 md:gap-3 md:mb-5"
+        variants={gridContainerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {pillars.map((pillar) => (
-          <div 
+          <motion.div 
             key={pillar.type}
             className="tesla-card p-2.5 sm:p-3 md:p-4"
+            variants={cardVariants}
           >
             <div className="flex items-center gap-1.5 mb-1.5 sm:gap-2 sm:mb-2">
               <div className="tesla-icon-container w-8 h-8 flex-shrink-0 sm:w-9 sm:h-9 md:w-10 md:h-10">
@@ -79,12 +88,12 @@ export const Slide14ArchitecturePillars = () => {
             <p className="text-[10px] text-muted-foreground leading-relaxed line-clamp-2 font-light sm:text-xs">
               {pillar.description}
             </p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Technical Breakdown */}
-      <div className="tesla-dark-card p-2.5 sm:p-3 md:p-4">
+      <motion.div className="tesla-dark-card p-2.5 sm:p-3 md:p-4" variants={cardVariants}>
         <h3 className="font-medium text-sm mb-2 text-foreground sm:text-base sm:mb-3">The "Fluid" Difference</h3>
         <div className="grid gap-2 sm:grid-cols-3 sm:gap-3">
           {technicalPoints.map((point) => (
@@ -101,7 +110,7 @@ export const Slide14ArchitecturePillars = () => {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </SlideSection>
   );
 };
