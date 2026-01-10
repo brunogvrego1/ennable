@@ -8,9 +8,9 @@ export const Slide01Title = () => {
       <div className="absolute bottom-10 md:bottom-20 left-5 md:left-10 w-24 md:w-48 h-24 md:h-48 bg-coral/10 rounded-full blur-3xl" />
       
       <div className="relative z-10 text-center">
-        <div className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-secondary rounded-full mb-4 md:mb-8">
-          <div className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-accent" />
-          <span className="text-xs md:text-sm font-medium text-muted-foreground">Pitch Deck</span>
+        <div className="inline-flex items-center gap-2 px-4 md:px-5 py-2 md:py-2.5 tesla-card mb-4 md:mb-8">
+          <div className="w-2 h-2 rounded-full bg-accent" />
+          <span className="tesla-label">Pitch Deck</span>
         </div>
         
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-3 md:mb-6">

@@ -17,7 +17,7 @@ export const Slide07Ecosystem = () => {
   return (
     <SlideSection id="slide-7">
       <div className="mb-4 md:mb-6">
-        <span className="text-accent font-medium text-xs md:text-sm uppercase tracking-wider">The Ecosystem</span>
+        <span className="tesla-label">The Ecosystem</span>
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 tracking-tight">
           Infinite Extensibility
         </h2>
@@ -27,12 +27,12 @@ export const Slide07Ecosystem = () => {
       </div>
       
       {/* App Store mockup */}
-      <div className="bg-card rounded-xl md:rounded-2xl border border-border overflow-hidden">
-        <div className="p-2 md:p-3 border-b border-border flex items-center gap-1.5 md:gap-2">
+      <div className="tesla-card overflow-hidden">
+        <div className="p-2 md:p-3 border-b border-border/50 flex items-center gap-1.5 md:gap-2 bg-muted/30">
           <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-coral/60" />
           <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-400/60" />
-          <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-accent/60" />
-          <span className="ml-2 md:ml-4 text-xs md:text-sm text-muted-foreground">Fluid App Store</span>
+          <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-[hsl(142,76%,36%)]/60" />
+          <span className="ml-2 md:ml-4 text-xs md:text-sm text-muted-foreground font-medium">Fluid App Store</span>
         </div>
         
         <div className="p-3 md:p-6">
@@ -40,13 +40,13 @@ export const Slide07Ecosystem = () => {
             {apps.map((app, index) => (
               <div 
                 key={index}
-                className="p-3 md:p-4 bg-secondary/50 rounded-lg md:rounded-xl hover:bg-secondary transition-colors cursor-pointer"
+                className="p-3 md:p-4 bg-muted/30 rounded-2xl hover:bg-muted/50 transition-colors cursor-pointer"
               >
                 <div className="flex items-start justify-between mb-2 md:mb-3">
-                  <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <app.icon className="w-4 h-4 md:w-5 md:h-5 text-accent" />
+                  <div className="tesla-icon-container w-10 h-10 md:w-12 md:h-12">
+                    <app.icon className="w-5 h-5 md:w-6 md:h-6 text-accent" />
                   </div>
-                  <span className="text-[10px] md:text-xs px-1.5 md:px-2 py-0.5 bg-accent/10 text-accent rounded-full">
+                  <span className="text-[10px] md:text-xs px-2 py-0.5 bg-accent/10 text-accent rounded-full font-medium">
                     {app.tag}
                   </span>
                 </div>
@@ -60,13 +60,13 @@ export const Slide07Ecosystem = () => {
             {moreApps.map((app, index) => (
               <div 
                 key={index}
-                className="flex items-center gap-1.5 px-2 md:px-3 py-1 md:py-1.5 bg-muted rounded-full"
+                className="flex items-center gap-1.5 px-3 py-1.5 tesla-card"
               >
                 <app.icon className="w-3 h-3 md:w-4 md:h-4 text-muted-foreground" />
-                <span className="text-xs">{app.name}</span>
+                <span className="text-xs font-medium">{app.name}</span>
               </div>
             ))}
-            <div className="px-2 md:px-3 py-1 md:py-1.5 bg-muted/50 rounded-full text-xs text-muted-foreground">
+            <div className="px-3 py-1.5 bg-muted/50 rounded-full text-xs text-muted-foreground font-medium">
               +47 more
             </div>
           </div>

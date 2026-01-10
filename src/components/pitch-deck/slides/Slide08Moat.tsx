@@ -1,5 +1,5 @@
 import { SlideSection } from "../SlideSection";
-import { Users, AppWindow, Database, RefreshCw } from "lucide-react";
+import { Users, AppWindow, Database, RefreshCw, CheckCircle2 } from "lucide-react";
 
 const flywheel = [
   { icon: Users, label: "More Users" },
@@ -7,11 +7,16 @@ const flywheel = [
   { icon: Database, label: "Richer Data" },
 ];
 
+const moatPoints = [
+  "Deep understanding enables Credit Services and insurance offerings",
+  "Network effects from community-built app store"
+];
+
 export const Slide08Moat = () => {
   return (
     <SlideSection id="slide-8">
       <div className="mb-4 md:mb-6">
-        <span className="text-accent font-medium text-xs md:text-sm uppercase tracking-wider">The Moat</span>
+        <span className="tesla-label">The Moat</span>
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 tracking-tight">
           Defensibility &<br />Network Effects
         </h2>
@@ -19,21 +24,19 @@ export const Slide08Moat = () => {
       
       <div className="grid lg:grid-cols-2 gap-4 md:gap-8 items-center">
         <div className="space-y-3 md:space-y-4">
-          <div className="p-3 md:p-4 bg-gradient-to-br from-accent/5 to-coral/5 rounded-xl border border-accent/20">
-            <h3 className="font-semibold text-sm md:text-base mb-2">Two-Fold Moat</h3>
-            <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
-              <li className="flex items-start gap-2">
-                <span className="text-accent font-bold">1.</span>
-                Deep understanding enables Credit Services and insurance offerings
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-accent font-bold">2.</span>
-                Network effects from community-built app store
-              </li>
+          <div className="tesla-dark-card p-4 md:p-5">
+            <h3 className="font-semibold text-sm md:text-base mb-3 text-white">Two-Fold Moat</h3>
+            <ul className="space-y-3">
+              {moatPoints.map((point, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                  <span className="text-xs md:text-sm text-white/80">{point}</span>
+                </li>
+              ))}
             </ul>
           </div>
           
-          <p className="text-xs md:text-sm text-muted-foreground italic">
+          <p className="text-xs md:text-sm text-muted-foreground italic tesla-card p-3">
             Once mini apps support ultra-specific needs, switching costs become insurmountable.
           </p>
         </div>
@@ -62,7 +65,7 @@ export const Slide08Moat = () => {
                     top: `calc(50% + ${y}px - 32px)`,
                   }}
                 >
-                  <div className="w-16 h-16 md:w-18 md:h-18 rounded-lg bg-card border border-border shadow-sm flex flex-col items-center justify-center">
+                  <div className="tesla-card w-16 h-16 md:w-18 md:h-18 flex flex-col items-center justify-center">
                     <item.icon className="w-5 h-5 text-accent mb-1" />
                     <span className="text-[10px] md:text-xs font-medium text-center">{item.label}</span>
                   </div>

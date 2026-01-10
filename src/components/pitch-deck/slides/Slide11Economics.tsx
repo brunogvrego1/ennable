@@ -17,7 +17,7 @@ export const Slide11Economics = () => {
   return (
     <SlideSection id="slide-11">
       <div className="mb-4 md:mb-6">
-        <span className="text-accent font-medium text-xs md:text-sm uppercase tracking-wider">Unit Economics</span>
+        <span className="tesla-label">Unit Economics</span>
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 tracking-tight">
           Recurring Revenue<br />& Expansion
         </h2>
@@ -31,9 +31,9 @@ export const Slide11Economics = () => {
             {metrics.map((metric, index) => (
               <div 
                 key={index}
-                className="p-3 md:p-4 bg-card rounded-xl border border-border flex items-center gap-3 md:gap-4"
+                className="tesla-card p-3 md:p-4 flex items-center gap-3 md:gap-4"
               >
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <div className="tesla-icon-container w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
                   <metric.icon className="w-5 h-5 md:w-6 md:h-6 text-accent" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -45,9 +45,9 @@ export const Slide11Economics = () => {
             ))}
           </div>
           
-          <div className="mt-3 p-2 md:p-3 bg-gradient-to-r from-accent/10 to-coral/10 rounded-lg border border-accent/20">
-            <p className="text-xs md:text-sm">
-              <span className="font-semibold">15:1 LTV/CAC ratio</span> — 
+          <div className="mt-3 tesla-dark-card p-3 md:p-4">
+            <p className="text-xs md:text-sm text-white/90">
+              <span className="font-semibold text-accent">15:1 LTV/CAC ratio</span> — 
               above the 3:1 benchmark for healthy SaaS.
             </p>
           </div>
@@ -60,7 +60,7 @@ export const Slide11Economics = () => {
             {revenue.map((item, index) => (
               <div 
                 key={index}
-                className="p-3 md:p-4 bg-secondary/50 rounded-xl"
+                className="tesla-card p-3 md:p-4"
               >
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm font-medium">{item.source}</span>
@@ -76,10 +76,10 @@ export const Slide11Economics = () => {
             ))}
           </div>
           
-          <div className="mt-3 flex items-start gap-2 p-2 md:p-3 bg-card rounded-lg border border-border">
+          <div className="mt-3 flex items-start gap-2 tesla-card p-3">
             <Store className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
             <p className="text-xs text-muted-foreground">
-              Expansion revenue from third-party apps <span className="text-foreground">we didn't build</span>.
+              Expansion revenue from third-party apps <span className="text-foreground font-medium">we didn't build</span>.
             </p>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { SlideSection } from "../SlideSection";
-import { Brain, ShoppingCart, Users, Package, Wallet, BarChart3 } from "lucide-react";
+import { Brain, ShoppingCart, Users, Package, Wallet, BarChart3, CheckCircle2 } from "lucide-react";
 
 const modules = [
   { icon: ShoppingCart, label: "POS" },
@@ -9,11 +9,17 @@ const modules = [
   { icon: BarChart3, label: "Analytics" }
 ];
 
+const features = [
+  "Start with the essentials",
+  "Expand through visual configuration",
+  "No code required"
+];
+
 export const Slide04Solution = () => {
   return (
     <SlideSection id="slide-4">
       <div className="mb-4 md:mb-8">
-        <span className="text-accent font-medium text-xs md:text-sm uppercase tracking-wider">The Solution</span>
+        <span className="tesla-label">The Solution</span>
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 tracking-tight">
           Reimagine ERP from<br />First Principles
         </h2>
@@ -21,21 +27,25 @@ export const Slide04Solution = () => {
       
       <div className="grid lg:grid-cols-2 gap-4 md:gap-8 items-center">
         <div className="space-y-3 md:space-y-4">
-          <div className="p-3 md:p-4 bg-card rounded-xl border border-border">
-            <h3 className="font-semibold text-sm md:text-base mb-1">Modular Architecture</h3>
-            <p className="text-xs md:text-sm text-muted-foreground">
-              Start with the essentials. Expand through visual configuration. 
-              No code required. No consultants needed.
-            </p>
+          <div className="tesla-card p-4 md:p-5">
+            <h3 className="font-semibold text-sm md:text-base mb-3">Modular Architecture</h3>
+            <ul className="space-y-2">
+              {features.map((feature, idx) => (
+                <li key={idx} className="tesla-check-item">
+                  <CheckCircle2 className="tesla-check-icon" />
+                  <span className="text-xs md:text-sm text-muted-foreground">{feature}</span>
+                </li>
+              ))}
+            </ul>
           </div>
           
-          <div className="p-3 md:p-4 bg-gradient-to-br from-accent/5 to-coral/5 rounded-xl border border-accent/20">
+          <div className="tesla-dark-card p-4 md:p-5">
             <h3 className="font-semibold text-sm md:text-base mb-1 flex items-center gap-2">
               The Intent-Engine
               <Brain className="w-4 h-4 md:w-5 md:h-5 text-accent" />
             </h3>
-            <p className="text-xs md:text-sm text-muted-foreground">
-              The system <span className="text-foreground font-medium">understands</span> your 
+            <p className="text-xs md:text-sm text-white/70">
+              The system <span className="text-white font-medium">understands</span> your 
               specific business goals and suggests mini-apps accordingly.
             </p>
           </div>
@@ -59,7 +69,7 @@ export const Slide04Solution = () => {
               return (
                 <div 
                   key={index} 
-                  className="absolute w-12 h-12 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-card border border-border flex flex-col items-center justify-center shadow-sm"
+                  className="absolute tesla-card w-12 h-12 md:w-14 md:h-14 flex flex-col items-center justify-center"
                   style={{
                     left: `calc(50% + ${x}px - 24px)`,
                     top: `calc(50% + ${y}px - 24px)`

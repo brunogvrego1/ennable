@@ -26,7 +26,7 @@ export const Slide03MarketFailure = () => {
   return (
     <SlideSection id="slide-3">
       <div className="mb-4 md:mb-8">
-        <span className="text-accent font-medium text-xs md:text-sm uppercase tracking-wider">Market Failure</span>
+        <span className="tesla-label">Market Failure</span>
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 tracking-tight">
           Three Bad Options
         </h2>
@@ -39,11 +39,13 @@ export const Slide03MarketFailure = () => {
         {options.map((option, index) => (
           <div 
             key={index} 
-            className="p-4 md:p-6 bg-card rounded-xl md:rounded-2xl border border-border hover:border-accent/30 transition-colors"
+            className="tesla-card p-4 md:p-6 transition-shadow hover:shadow-md"
           >
-            <option.icon className="w-7 h-7 md:w-10 md:h-10 text-muted-foreground mb-3 md:mb-4" />
+            <div className="tesla-icon-container w-12 h-12 md:w-14 md:h-14 mb-3 md:mb-4">
+              <option.icon className="w-6 h-6 md:w-7 md:h-7 text-muted-foreground" />
+            </div>
             <h3 className="text-base md:text-lg font-semibold mb-1.5">{option.title}</h3>
-            <span className="inline-block px-2 md:px-3 py-0.5 md:py-1 bg-coral/10 text-coral text-xs md:text-sm font-medium rounded-full mb-2 md:mb-3">
+            <span className="inline-block px-3 py-1 bg-coral/10 text-coral text-xs md:text-sm font-medium rounded-full mb-2 md:mb-3">
               {option.issue}
             </span>
             <p className="text-xs md:text-sm text-muted-foreground leading-relaxed line-clamp-3">
