@@ -47,10 +47,13 @@ export const Slide07Ecosystem = () => {
           
           <div className="flex flex-wrap gap-2 justify-center">
             <span className="tesla-badge-outline text-muted-foreground border-border">
-              +47 more apps
+              + Apps
             </span>
             <span className="tesla-badge-filled">
-              Build your own
+              Build Your Own
+            </span>
+            <span className="tesla-badge-filled">
+              Build From Existing
             </span>
           </div>
         </div>
