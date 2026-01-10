@@ -1,5 +1,5 @@
 import { SlideSection } from "../SlideSection";
-import { Zap, BarChart3, Monitor, Globe, Database, Cpu, Shield } from "lucide-react";
+import { Zap, BarChart3, Monitor, Globe, Database, Cpu, Shield, CheckCircle2 } from "lucide-react";
 
 const pillars = [
   {
@@ -50,7 +50,7 @@ export const Slide14ArchitecturePillars = () => {
   return (
     <SlideSection id="architecture-pillars">
       <div className="mb-3 md:mb-6">
-        <span className="text-accent font-medium text-xs md:text-sm uppercase tracking-wider">Architecture</span>
+        <span className="tesla-label">Architecture</span>
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 tracking-tight">
           The 4 Pillars
         </h2>
@@ -64,11 +64,11 @@ export const Slide14ArchitecturePillars = () => {
         {pillars.map((pillar) => (
           <div 
             key={pillar.type}
-            className="p-3 md:p-4 bg-muted/50 rounded-xl border border-border"
+            className="tesla-card p-3 md:p-4"
           >
             <div className="flex items-center gap-2 mb-2">
-              <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                <pillar.icon className="w-4 h-4 md:w-5 md:h-5 text-accent" />
+              <div className="tesla-icon-container w-10 h-10 md:w-12 md:h-12 flex-shrink-0">
+                <pillar.icon className="w-5 h-5 md:w-6 md:h-6 text-accent" />
               </div>
               <div>
                 <h3 className="font-semibold text-sm md:text-base text-foreground">{pillar.type}</h3>
@@ -84,17 +84,17 @@ export const Slide14ArchitecturePillars = () => {
       </div>
 
       {/* Technical Breakdown */}
-      <div className="p-3 md:p-4 bg-gradient-to-br from-accent/5 to-coral/5 rounded-xl border border-accent/20">
-        <h3 className="font-semibold text-sm md:text-base mb-3">The "Fluid" Difference</h3>
+      <div className="tesla-dark-card p-3 md:p-4">
+        <h3 className="font-semibold text-sm md:text-base mb-3 text-white">The "Fluid" Difference</h3>
         <div className="grid sm:grid-cols-3 gap-3 md:gap-4">
           {technicalPoints.map((point) => (
             <div key={point.title} className="flex items-start gap-2">
-              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                <point.icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-accent" />
+              <div className="tesla-icon-container w-8 h-8 md:w-10 md:h-10 flex-shrink-0">
+                <point.icon className="w-4 h-4 md:w-5 md:h-5 text-accent" />
               </div>
               <div>
-                <h4 className="font-medium text-xs md:text-sm text-foreground">{point.title}</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed hidden sm:block">
+                <h4 className="font-medium text-xs md:text-sm text-white">{point.title}</h4>
+                <p className="text-xs text-white/60 leading-relaxed hidden sm:block">
                   {point.description}
                 </p>
               </div>

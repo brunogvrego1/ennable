@@ -32,7 +32,7 @@ export const Slide12Team = () => {
   return (
     <SlideSection id="slide-12">
       <div className="mb-4 md:mb-6">
-        <span className="text-accent font-medium text-xs md:text-sm uppercase tracking-wider">The Ask</span>
+        <span className="tesla-label">The Ask</span>
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 tracking-tight">
           Team & Use of Funds
         </h2>
@@ -46,10 +46,10 @@ export const Slide12Team = () => {
             {team.map((member, index) => (
               <div 
                 key={index}
-                className="p-3 md:p-4 bg-card rounded-xl border border-border flex gap-3"
+                className="tesla-card p-3 md:p-4 flex gap-3"
               >
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-accent/20 to-coral/20 flex items-center justify-center flex-shrink-0">
-                  <member.icon className="w-4 h-4 md:w-5 md:h-5 text-foreground" />
+                <div className="tesla-icon-container w-12 h-12 md:w-14 md:h-14 rounded-full flex-shrink-0">
+                  <member.icon className="w-5 h-5 md:w-6 md:h-6 text-muted-foreground" />
                 </div>
                 <div className="min-w-0">
                   <div className="flex items-center gap-1.5 mb-0.5">
@@ -69,16 +69,16 @@ export const Slide12Team = () => {
         
         {/* Use of Funds */}
         <div>
-          <div className="p-4 md:p-6 bg-gradient-to-br from-accent/10 to-coral/10 rounded-xl border border-accent/30 mb-3 md:mb-4">
-            <p className="text-xs text-muted-foreground mb-1">Series A Raise</p>
-            <div className="text-3xl md:text-4xl font-bold text-gradient mb-1">$6M</div>
-            <p className="text-xs md:text-sm text-muted-foreground">To scale to 500 customers</p>
+          <div className="tesla-dark-card p-4 md:p-6 mb-3 md:mb-4">
+            <p className="text-xs text-white/60 uppercase tracking-wider mb-1">Series A Raise</p>
+            <div className="text-3xl md:text-4xl font-bold text-white mb-1">$6M</div>
+            <p className="text-xs md:text-sm text-white/70">To scale to 500 customers</p>
           </div>
           
           <h3 className="text-sm md:text-base font-semibold mb-2">Allocation</h3>
           <div className="space-y-2 md:space-y-3">
             {useOfFunds.map((item, index) => (
-              <div key={index}>
+              <div key={index} className="tesla-card p-3">
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-xs md:text-sm font-medium">{item.category}</span>
                   <span className="text-xs text-muted-foreground">{item.amount}</span>
@@ -102,7 +102,7 @@ export const Slide12Team = () => {
         </p>
         <a 
           href="mailto:invest@fluid.io"
-          className="inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-accent to-coral text-white font-semibold text-sm md:text-base rounded-lg md:rounded-xl hover:opacity-90 transition-opacity"
+          className="tesla-button-dark gap-2"
         >
           Let's Talk
           <ArrowRight className="w-4 h-4" />

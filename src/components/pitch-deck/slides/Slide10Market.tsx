@@ -4,7 +4,7 @@ export const Slide10Market = () => {
   return (
     <SlideSection id="slide-10">
       <div className="mb-4 md:mb-6">
-        <span className="text-accent font-medium text-xs md:text-sm uppercase tracking-wider">Market Opportunity</span>
+        <span className="tesla-label">Market Opportunity</span>
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 tracking-tight">
           The $50B "Goldilocks" Zone
         </h2>
@@ -17,7 +17,7 @@ export const Slide10Market = () => {
         {/* Market visualization */}
         <div className="relative h-40 md:h-56">
           {/* Small Biz blob */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-14 h-14 md:w-20 md:h-20 rounded-full bg-muted/50 border border-border flex items-center justify-center">
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 tesla-card w-14 h-14 md:w-20 md:h-20 rounded-full flex items-center justify-center">
             <span className="text-[10px] md:text-xs text-muted-foreground text-center">Small<br/>Biz</span>
           </div>
           
@@ -25,7 +25,7 @@ export const Slide10Market = () => {
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="w-28 h-28 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-accent/20 to-coral/20 border-2 border-accent flex items-center justify-center relative">
               <div className="text-center">
-                <p className="text-[10px] md:text-xs text-accent font-medium">Mid-Market</p>
+                <p className="text-[10px] md:text-xs text-accent font-medium uppercase tracking-wider">Mid-Market</p>
                 <p className="text-xl md:text-2xl font-bold mt-0.5">$50B</p>
                 <p className="text-[10px] md:text-xs text-muted-foreground">Annual Spend</p>
               </div>
@@ -34,14 +34,14 @@ export const Slide10Market = () => {
           </div>
           
           {/* Enterprise blob */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-16 h-16 md:w-24 md:h-24 rounded-full bg-muted/30 border border-border flex items-center justify-center">
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 tesla-card w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center">
             <span className="text-[10px] md:text-xs text-muted-foreground text-center">Enterprise</span>
           </div>
         </div>
         
         {/* TAM/SAM breakdown */}
         <div className="space-y-3 md:space-y-4">
-          <div className="p-3 md:p-4 bg-card rounded-xl border border-border">
+          <div className="tesla-card p-3 md:p-4">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs md:text-sm text-muted-foreground">Total Addressable Market</span>
               <span className="text-lg md:text-xl font-bold">$8B</span>
@@ -51,7 +51,7 @@ export const Slide10Market = () => {
             </div>
           </div>
           
-          <div className="p-3 md:p-4 bg-card rounded-xl border border-border">
+          <div className="tesla-card p-3 md:p-4">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs md:text-sm text-muted-foreground">Serviceable Addressable Market</span>
               <span className="text-lg md:text-xl font-bold">$2B</span>
@@ -61,8 +61,8 @@ export const Slide10Market = () => {
             </div>
           </div>
           
-          <div className="p-2 md:p-3 bg-accent/5 rounded-lg border border-accent/20">
-            <p className="text-xs md:text-sm text-muted-foreground">
+          <div className="tesla-dark-card p-3 md:p-4">
+            <p className="text-xs md:text-sm text-white/80">
               <span className="text-accent font-medium">Strategy:</span> Land and Expand — 
               start with one venue, grow to the entire portfolio.
             </p>
