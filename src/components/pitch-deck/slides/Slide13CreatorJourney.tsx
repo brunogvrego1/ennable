@@ -1,5 +1,7 @@
 import { SlideSection } from "../SlideSection";
 import { MessageSquare, GitBranch, Smartphone, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { itemVariants, cardVariants, gridContainerVariants } from "../motion-variants";
 
 const steps = [
   {
@@ -27,7 +29,7 @@ const steps = [
 export const Slide13CreatorJourney = () => {
   return (
     <SlideSection id="creator-journey">
-      <div className="mb-3 sm:mb-4 md:mb-6">
+      <motion.div className="mb-3 sm:mb-4 md:mb-6" variants={itemVariants}>
         <span className="tesla-label">The Creator Journey</span>
         <h2 className="slide-title mt-2">
           From Intent to<br />Infrastructure in Seconds
@@ -35,13 +37,20 @@ export const Slide13CreatorJourney = () => {
         <p className="slide-subtitle mt-2 max-w-2xl font-light">
           Building custom mini-apps via the Fluid Generative Engine.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="grid gap-2 sm:gap-3 sm:grid-cols-2 md:grid-cols-3 md:gap-4">
+      <motion.div 
+        className="grid gap-2 sm:gap-3 sm:grid-cols-2 md:grid-cols-3 md:gap-4"
+        variants={gridContainerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {steps.map((step) => (
-          <div 
+          <motion.div 
             key={step.number}
             className="tesla-card p-2.5 sm:p-3 md:p-4"
+            variants={cardVariants}
           >
             <div className="flex items-center gap-2 mb-1.5 sm:gap-2.5 sm:mb-2">
               <div className="tesla-icon-container w-8 h-8 flex-shrink-0 sm:w-9 sm:h-9 md:w-10 md:h-10">
@@ -79,9 +88,9 @@ export const Slide13CreatorJourney = () => {
                 ))}
               </div>
             )}
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </SlideSection>
   );
 };

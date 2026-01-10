@@ -1,5 +1,7 @@
 import { SlideSection } from "../SlideSection";
 import { Users, AppWindow, Database, RefreshCw, CheckCircle2, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { itemVariants, cardVariants, scaleInVariants } from "../motion-variants";
 
 const flywheel = [
   { icon: Users, label: "More Users" },
@@ -15,16 +17,16 @@ const moatPoints = [
 export const Slide08Moat = () => {
   return (
     <SlideSection id="slide-8">
-      <div className="mb-4 sm:mb-5 md:mb-6">
+      <motion.div className="mb-4 sm:mb-5 md:mb-6" variants={itemVariants}>
         <span className="tesla-label">The Moat</span>
         <h2 className="slide-title mt-2">
           Defensibility &<br />Network Effects
         </h2>
-      </div>
+      </motion.div>
       
       <div className="slide-grid-2 items-center">
         <div className="space-y-2 sm:space-y-3">
-          <div className="tesla-dark-card p-3 sm:p-4 md:p-5">
+          <motion.div className="tesla-dark-card p-3 sm:p-4 md:p-5" variants={cardVariants}>
             <h3 className="font-medium text-sm mb-2 text-foreground sm:text-base sm:mb-3">Two-Fold Moat</h3>
             <ul className="space-y-2 sm:space-y-2.5">
               {moatPoints.map((point, idx) => (
@@ -34,15 +36,21 @@ export const Slide08Moat = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
           
-          <p className="text-xs text-muted-foreground font-light italic tesla-card p-2.5 sm:p-3 sm:text-sm">
+          <motion.p 
+            className="text-xs text-muted-foreground font-light italic tesla-card p-2.5 sm:p-3 sm:text-sm"
+            variants={itemVariants}
+          >
             Once mini apps support ultra-specific needs, switching costs become insurmountable.
-          </p>
+          </motion.p>
         </div>
         
         {/* Mobile: Linear flywheel */}
-        <div className="flex items-center justify-center gap-1 py-2 sm:hidden">
+        <motion.div 
+          className="flex items-center justify-center gap-1 py-2 sm:hidden"
+          variants={scaleInVariants}
+        >
           {flywheel.map((item, index) => (
             <div key={index} className="flex items-center gap-1">
               <div className="tesla-card w-14 h-14 flex flex-col items-center justify-center">
@@ -54,10 +62,13 @@ export const Slide08Moat = () => {
               )}
             </div>
           ))}
-        </div>
+        </motion.div>
         
         {/* Desktop: Flywheel diagram - thinner lines */}
-        <div className="relative hidden sm:flex items-center justify-center py-4 md:py-6">
+        <motion.div 
+          className="relative hidden sm:flex items-center justify-center py-4 md:py-6"
+          variants={scaleInVariants}
+        >
           <div className="relative w-44 h-44 md:w-56 md:h-56">
             {/* Central refresh icon */}
             <div className="absolute inset-0 flex items-center justify-center">
@@ -121,7 +132,7 @@ export const Slide08Moat = () => {
               />
             </svg>
           </div>
-        </div>
+        </motion.div>
       </div>
     </SlideSection>
   );

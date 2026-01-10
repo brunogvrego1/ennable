@@ -1,9 +1,11 @@
 import { SlideSection } from "../SlideSection";
+import { motion } from "framer-motion";
+import { itemVariants, cardVariants, scaleInVariants } from "../motion-variants";
 
 export const Slide10Market = () => {
   return (
     <SlideSection id="slide-10">
-      <div className="mb-4 sm:mb-5 md:mb-6">
+      <motion.div className="mb-4 sm:mb-5 md:mb-6" variants={itemVariants}>
         <span className="tesla-label">Market Opportunity</span>
         <h2 className="slide-title mt-2">
           The $50B "Goldilocks" Zone
@@ -11,11 +13,11 @@ export const Slide10Market = () => {
         <p className="slide-subtitle mt-2 max-w-3xl font-light">
           The mid-market is underserved—too complex for SMB tools, too nimble for Enterprise bloat.
         </p>
-      </div>
+      </motion.div>
       
       <div className="slide-grid-2 items-center">
         {/* Market visualization - cleaner bubbles */}
-        <div className="relative h-32 sm:h-40 md:h-52">
+        <motion.div className="relative h-32 sm:h-40 md:h-52" variants={scaleInVariants}>
           {/* Small Biz blob */}
           <div className="absolute left-0 top-1/2 -translate-y-1/2 tesla-card w-11 h-11 rounded-full flex items-center justify-center sm:w-12 sm:h-12 md:w-16 md:h-16">
             <span className="text-[8px] text-muted-foreground text-center font-light sm:text-[9px] md:text-[10px]">Small<br/>Biz</span>
@@ -36,11 +38,11 @@ export const Slide10Market = () => {
           <div className="absolute right-0 top-1/2 -translate-y-1/2 tesla-card w-12 h-12 rounded-full flex items-center justify-center sm:w-14 sm:h-14 md:w-20 md:h-20">
             <span className="text-[8px] text-muted-foreground text-center font-light sm:text-[9px] md:text-[10px]">Enterprise</span>
           </div>
-        </div>
+        </motion.div>
         
         {/* TAM/SAM breakdown - cleaner progress bars */}
         <div className="space-y-2 sm:space-y-3">
-          <div className="tesla-card p-2.5 sm:p-3 md:p-4">
+          <motion.div className="tesla-card p-2.5 sm:p-3 md:p-4" variants={cardVariants}>
             <div className="flex items-center justify-between mb-1.5 sm:mb-2">
               <span className="text-xs text-muted-foreground font-light sm:text-sm">Total Addressable Market</span>
               <span className="text-base font-semibold sm:text-lg md:text-xl">$8B</span>
@@ -48,9 +50,9 @@ export const Slide10Market = () => {
             <div className="tesla-progress">
               <div className="tesla-progress-fill w-full opacity-30" />
             </div>
-          </div>
+          </motion.div>
           
-          <div className="tesla-card p-2.5 sm:p-3 md:p-4">
+          <motion.div className="tesla-card p-2.5 sm:p-3 md:p-4" variants={cardVariants}>
             <div className="flex items-center justify-between mb-1.5 sm:mb-2">
               <span className="text-xs text-muted-foreground font-light sm:text-sm">Serviceable Addressable Market</span>
               <span className="text-base font-semibold sm:text-lg md:text-xl">$2B</span>
@@ -58,14 +60,14 @@ export const Slide10Market = () => {
             <div className="tesla-progress">
               <div className="tesla-progress-fill w-1/4" />
             </div>
-          </div>
+          </motion.div>
           
-          <div className="tesla-dark-card p-2.5 sm:p-3 md:p-4">
-            <p className="text-xs text-white/70 font-light sm:text-sm">
+          <motion.div className="tesla-dark-card p-2.5 sm:p-3 md:p-4" variants={cardVariants}>
+            <p className="text-xs text-foreground/70 font-light sm:text-sm">
               <span className="text-accent font-normal">Strategy:</span> Land and Expand — 
               start with one venue, grow to the entire portfolio.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </SlideSection>

@@ -1,5 +1,7 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
+import { motion } from "framer-motion";
+import { containerVariants, viewportSettings } from "./motion-variants";
 
 interface SlideSectionProps {
   id: string;
@@ -16,9 +18,15 @@ export const SlideSection = ({ id, className, children }: SlideSectionProps) => 
         className
       )}
     >
-      <div className="max-w-6xl mx-auto w-full overflow-hidden">
+      <motion.div 
+        className="max-w-6xl mx-auto w-full overflow-hidden"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportSettings}
+      >
         {children}
-      </div>
+      </motion.div>
     </section>
   );
 };

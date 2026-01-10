@@ -1,6 +1,8 @@
 import { SlideSection } from "../SlideSection";
 import { Wine, Gift, MessageSquare, Sparkles, Clock, Globe, Users, TrendingUp, CreditCard, Utensils } from "lucide-react";
 import { AppCardCarousel, type AppCardItem } from "@/components/ui/app-card-carousel";
+import { motion } from "framer-motion";
+import { itemVariants, cardVariants } from "../motion-variants";
 
 const apps: AppCardItem[] = [
   { id: 1, icon: Wine, name: "AI Sommelier", description: "Smart wine pairing recommendations for any dish", tag: "AI-Powered", tagVariant: "cyan" },
@@ -18,7 +20,7 @@ const apps: AppCardItem[] = [
 export const Slide07Ecosystem = () => {
   return (
     <SlideSection id="slide-7">
-      <div className="mb-3 sm:mb-4 md:mb-6">
+      <motion.div className="mb-3 sm:mb-4 md:mb-6" variants={itemVariants}>
         <span className="tesla-label">The Ecosystem</span>
         <h2 className="slide-title mt-2">
           Infinite Extensibility
@@ -26,10 +28,10 @@ export const Slide07Ecosystem = () => {
         <p className="slide-subtitle mt-2 max-w-3xl font-light">
           Fluid is a platform, not just a tool. Purpose-built mini-apps created by the community.
         </p>
-      </div>
+      </motion.div>
       
       {/* App Store mockup - simplified chrome */}
-      <div className="tesla-card overflow-hidden">
+      <motion.div className="tesla-card overflow-hidden" variants={cardVariants}>
         <div className="p-1.5 border-b border-border/30 flex items-center gap-1.5 bg-muted/20 sm:p-2 md:p-2.5">
           <div className="flex gap-1 sm:gap-1.5">
             <div className="w-2 h-2 rounded-full bg-foreground/20 sm:w-2.5 sm:h-2.5" />
@@ -52,7 +54,7 @@ export const Slide07Ecosystem = () => {
             </span>
           </div>
         </div>
-      </div>
+      </motion.div>
     </SlideSection>
   );
 };
