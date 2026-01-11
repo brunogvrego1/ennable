@@ -33,7 +33,7 @@ export const LogoRolodex = ({ logos, className }: LogoRolodexProps) => {
         transformStyle: "preserve-3d",
       }}
       className={cn(
-        "relative z-0 h-20 w-28 shrink-0 rounded-lg border border-border/50 bg-white/90",
+        "relative z-0 h-10 w-14 shrink-0 rounded-md border border-border/50 bg-white/90 sm:h-11 sm:w-16 md:h-12 md:w-18",
         className
       )}
     >
@@ -91,8 +91,8 @@ export const LogoRolodex = ({ logos, className }: LogoRolodexProps) => {
 
 const LogoItem = ({ src }: { src: string }) => {
   return (
-    <div className="grid h-16 w-24 place-content-center rounded-md bg-white p-2">
-      <img src={src} alt="" className="h-10 w-auto object-contain" />
+    <div className="grid h-8 w-12 place-content-center rounded bg-white p-1 sm:h-9 sm:w-14 md:h-10 md:w-16">
+      <img src={src} alt="" className="h-5 w-auto object-contain sm:h-6 md:h-7" />
     </div>
   );
 };
