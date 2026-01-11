@@ -2,10 +2,8 @@ import { SlideSection } from "../SlideSection";
 import { Cpu, Sparkles, ArrowRight, X, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { itemVariants, cardVariants } from "../motion-variants";
-
 export const Slide05WhyNow = () => {
-  return (
-    <SlideSection id="slide-5">
+  return <SlideSection id="slide-5">
       <motion.div className="mb-4 sm:mb-5 md:mb-6" variants={itemVariants}>
         <span className="tesla-label">The "Why Now?"</span>
         <h2 className="slide-title mt-2">
@@ -46,7 +44,7 @@ export const Slide05WhyNow = () => {
               <Sparkles className="w-4 h-4 text-accent sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </div>
             <div>
-              <p className="text-xs text-accent uppercase tracking-wider">Fluid Approach</p>
+              <p className="text-xs text-accent uppercase tracking-wider">ENNABLE APPROACH</p>
               <h3 className="font-semibold text-sm text-foreground sm:text-base">Generative Logic</h3>
             </div>
           </div>
@@ -67,14 +65,10 @@ export const Slide05WhyNow = () => {
         </motion.div>
       </div>
       
-      <motion.div 
-        className="flex items-center justify-center gap-2 text-xs text-muted-foreground tesla-card px-3 py-2 mx-auto w-fit sm:gap-3 sm:px-4 sm:py-3 sm:text-sm md:gap-4"
-        variants={itemVariants}
-      >
+      <motion.div className="flex items-center justify-center gap-2 text-xs text-muted-foreground tesla-card px-3 py-2 mx-auto w-fit sm:gap-3 sm:px-4 sm:py-3 sm:text-sm md:gap-4" variants={itemVariants}>
         <span>Modular ERPs failed before</span>
         <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
         <span>LLMs now enable <span className="text-accent font-medium">specificity at scale</span></span>
       </motion.div>
-    </SlideSection>
-  );
+    </SlideSection>;
 };
