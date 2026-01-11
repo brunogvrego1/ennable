@@ -21,11 +21,6 @@ const team = [
   },
 ];
 
-const useOfFunds = [
-  { category: "Go-to-Market", percentage: 45, amount: "$2.7M" },
-  { category: "AI Development", percentage: 35, amount: "$2.1M" },
-  { category: "Team Growth", percentage: 20, amount: "$1.2M" },
-];
 
 export const Slide12Team = () => {
   return (
@@ -79,40 +74,6 @@ export const Slide12Team = () => {
           </motion.p>
         </div>
         
-        {/* Use of Funds */}
-        <div>
-          <motion.div className="tesla-dark-card p-3 mb-2 sm:p-4 sm:mb-3 md:p-5 md:mb-4" variants={cardVariants}>
-            <p className="text-[10px] text-foreground/40 uppercase tracking-wider mb-0.5 sm:mb-1">Series A Raise</p>
-            <div className="text-2xl font-semibold text-foreground mb-0.5 sm:text-3xl sm:mb-1 md:text-4xl">$6M</div>
-            <p className="text-xs text-foreground/50 font-light sm:text-sm">To scale to 500 customers</p>
-          </motion.div>
-          
-          <motion.h3 className="text-sm font-medium mb-2 sm:text-base" variants={itemVariants}>
-            Allocation
-          </motion.h3>
-          <motion.div 
-            className="space-y-2 sm:space-y-2.5"
-            variants={gridContainerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            {useOfFunds.map((item, index) => (
-              <motion.div key={index} className="tesla-card p-2.5 sm:p-3" variants={cardVariants}>
-                <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-xs font-medium sm:text-sm">{item.category}</span>
-                  <span className="text-[10px] text-muted-foreground font-light sm:text-xs">{item.amount}</span>
-                </div>
-                <div className="tesla-progress">
-                  <div 
-                    className="tesla-progress-fill"
-                    style={{ width: `${item.percentage}%` }}
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
       </motion.div>
       
       {/* CTA */}
