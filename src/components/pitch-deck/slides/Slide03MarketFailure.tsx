@@ -61,7 +61,7 @@ export const Slide03MarketFailure = () => {
             className="tesla-card p-3 sm:p-4 md:p-5"
             variants={cardVariants}
           >
-            <div className="mb-3 sm:mb-4 flex justify-center" style={{ perspective: "1000px" }}>
+            <div className="mb-2 sm:mb-3 flex justify-start" style={{ perspective: "1000px" }}>
               <LogoRolodex logos={option.logos} />
             </div>
             <h3 className="text-sm font-medium mb-1 sm:text-base md:mb-1.5">{option.title}</h3>
