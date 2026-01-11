@@ -2,40 +2,28 @@ import { SlideSection } from "../SlideSection";
 import { MessageSquare, GitBranch, Smartphone, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { itemVariants, cardVariants, gridContainerVariants } from "../motion-variants";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const steps = [
-  {
-    number: "01",
-    icon: MessageSquare,
-    title: "Define Intent",
-    description: "Type what you need into the Chat Bar.",
-    example: "\"Create a reservation portal for The Sushi Den\""
-  },
-  {
-    number: "02",
-    icon: GitBranch,
-    title: "Logic Assembly",
-    description: "The Intent-Engine maps out the business logic:",
-    flow: ["Trigger", "Logic", "Module"]
-  },
-  {
-    number: "03",
-    icon: Smartphone,
-    title: "Instant Deploy",
-    description: "Mobile-responsive interface generated. Publish immediately."
-  }
-];
+const stepIcons = [MessageSquare, GitBranch, Smartphone];
 
 export const Slide13CreatorJourney = () => {
+  const { t } = useLanguage();
+  const stepsData = t('slide13.steps') as { number: string; title: string; description: string; example?: string; flow?: string[] }[];
+  
+  const steps = stepsData.map((step, idx) => ({
+    ...step,
+    icon: stepIcons[idx]
+  }));
+
   return (
     <SlideSection id="creator-journey">
       <motion.div className="mb-3 sm:mb-4 md:mb-6" variants={itemVariants}>
-        <span className="tesla-label">The Creator Journey</span>
-        <h2 className="slide-title mt-2">
-          From Intent to<br />Infrastructure in Seconds
+        <span className="tesla-label">{t('slide13.label') as string}</span>
+        <h2 className="slide-title mt-2 whitespace-pre-line">
+          {t('slide13.title') as string}
         </h2>
         <p className="slide-subtitle mt-2 max-w-2xl font-light">
-          Building custom mini-apps via the Fluid Generative Engine.
+          {t('slide13.subtitle') as string}
         </p>
       </motion.div>
 
@@ -81,7 +69,7 @@ export const Slide13CreatorJourney = () => {
                     <span className="tesla-badge-filled text-[9px] px-1.5 py-0.5 sm:text-[10px] sm:px-2">
                       {item}
                     </span>
-                    {idx < step.flow.length - 1 && (
+                    {idx < step.flow!.length - 1 && (
                       <ArrowRight className="w-2.5 h-2.5 text-muted-foreground/50" strokeWidth={1.5} />
                     )}
                   </div>

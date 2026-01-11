@@ -13,54 +13,61 @@ import { Slide12Team } from "./slides/Slide12Team";
 import { Slide13CreatorJourney } from "./slides/Slide13CreatorJourney";
 import { Slide14ArchitecturePillars } from "./slides/Slide14ArchitecturePillars";
 import { ShaderBackground } from "../ui/shader-background";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import { LanguageSwitcher } from "@/components/ui/language-switcher";
 
 export const PitchDeck = () => {
   return (
-    <div className="h-screen overflow-hidden relative">
-      {/* Fixed shader background */}
-      <div className="fixed inset-0 z-0">
-        <ShaderBackground effect="mesh" speed={0.3} className="w-full h-full" />
+    <LanguageProvider>
+      <div className="h-screen overflow-hidden relative">
+        {/* Language Switcher */}
+        <LanguageSwitcher />
+        
+        {/* Fixed shader background */}
+        <div className="fixed inset-0 z-0">
+          <ShaderBackground effect="mesh" speed={0.3} className="w-full h-full" />
+        </div>
+        
+        {/* Snap scroll container */}
+        <main className="h-screen overflow-y-auto snap-y snap-mandatory relative z-10">
+          <Slide01Title />
+          <Slide02Problem />
+          <Slide03MarketFailure />
+          <Slide04Solution />
+          <Slide13CreatorJourney />
+          <Slide14ArchitecturePillars />
+          <Slide05WhyNow />
+          <Slide06Speed />
+          <Slide07Ecosystem />
+          <Slide08Moat />
+          <Slide09Results />
+          <Slide10Market />
+          <Slide11Economics />
+          <Slide12Team />
+        </main>
+        
+        {/* Print styles */}
+        <style>{`
+          @media print {
+            nav { display: none !important; }
+            .fixed { display: none !important; }
+            main { 
+              padding-top: 0 !important;
+              overflow: visible !important;
+              height: auto !important;
+              scroll-snap-type: none !important;
+            }
+            section { 
+              page-break-after: always;
+              height: 100vh !important;
+              scroll-snap-align: none !important;
+            }
+            section:last-child {
+              page-break-after: auto;
+            }
+          }
+        `}</style>
       </div>
-      
-      {/* Snap scroll container */}
-      <main className="h-screen overflow-y-auto snap-y snap-mandatory relative z-10">
-        <Slide01Title />
-        <Slide02Problem />
-        <Slide03MarketFailure />
-        <Slide04Solution />
-        <Slide13CreatorJourney />
-        <Slide14ArchitecturePillars />
-        <Slide05WhyNow />
-        <Slide06Speed />
-        <Slide07Ecosystem />
-        <Slide08Moat />
-        <Slide09Results />
-        <Slide10Market />
-        <Slide11Economics />
-        <Slide12Team />
-      </main>
-      
-      {/* Print styles */}
-      <style>{`
-        @media print {
-          nav { display: none !important; }
-          .fixed { display: none !important; }
-          main { 
-            padding-top: 0 !important;
-            overflow: visible !important;
-            height: auto !important;
-            scroll-snap-type: none !important;
-          }
-          section { 
-            page-break-after: always;
-            height: 100vh !important;
-            scroll-snap-align: none !important;
-          }
-          section:last-child {
-            page-break-after: auto;
-          }
-        }
-      `}</style>
-    </div>
+    </LanguageProvider>
   );
 };

@@ -2,25 +2,27 @@ import { SlideSection } from "../SlideSection";
 import { Users, AppWindow, Database, RefreshCw, CheckCircle2, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { itemVariants, cardVariants, scaleInVariants, gridContainerVariants } from "../motion-variants";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const flywheel = [
-  { icon: Users, label: "More Users" },
-  { icon: AppWindow, label: "More Mini-Apps" },
-  { icon: Database, label: "Richer Data" },
-];
-
-const moatPoints = [
-  "Deep understanding enables Credit Services and insurance offerings",
-  "Network effects from community-built app store"
-];
+const flywheelIcons = [Users, AppWindow, Database];
 
 export const Slide08Moat = () => {
+  const { t } = useLanguage();
+  const moatPoints = t('slide08.moatPoints') as string[];
+  const flywheelData = t('slide08.flywheel') as { moreUsers: string; moreApps: string; richerData: string };
+  
+  const flywheel = [
+    { icon: flywheelIcons[0], label: flywheelData.moreUsers },
+    { icon: flywheelIcons[1], label: flywheelData.moreApps },
+    { icon: flywheelIcons[2], label: flywheelData.richerData },
+  ];
+
   return (
     <SlideSection id="slide-8">
       <motion.div className="mb-4 sm:mb-5 md:mb-6" variants={itemVariants}>
-        <span className="tesla-label">The Moat</span>
-        <h2 className="slide-title mt-2">
-          Defensibility &<br />Network Effects
+        <span className="tesla-label">{t('slide08.label') as string}</span>
+        <h2 className="slide-title mt-2 whitespace-pre-line">
+          {t('slide08.title') as string}
         </h2>
       </motion.div>
       
@@ -33,7 +35,7 @@ export const Slide08Moat = () => {
       >
         <div className="space-y-2 sm:space-y-3">
           <motion.div className="tesla-dark-card p-3 sm:p-4 md:p-5" variants={cardVariants}>
-            <h3 className="font-medium text-sm mb-2 text-foreground sm:text-base sm:mb-3">Two-Fold Moat</h3>
+            <h3 className="font-medium text-sm mb-2 text-foreground sm:text-base sm:mb-3">{t('slide08.moatTitle') as string}</h3>
             <ul className="space-y-2 sm:space-y-2.5">
               {moatPoints.map((point, idx) => (
                 <li key={idx} className="flex items-start gap-2">
@@ -48,7 +50,7 @@ export const Slide08Moat = () => {
             className="text-xs text-muted-foreground font-light italic tesla-card p-2.5 sm:p-3 sm:text-sm"
             variants={itemVariants}
           >
-            Once mini apps support ultra-specific needs, switching costs become insurmountable.
+            {t('slide08.switchingCosts') as string}
           </motion.p>
         </div>
         
