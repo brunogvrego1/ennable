@@ -2,55 +2,42 @@ import { SlideSection } from "../SlideSection";
 import { Zap, BarChart3, Monitor, Globe, Database, Cpu, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 import { itemVariants, cardVariants, gridContainerVariants } from "../motion-variants";
-
-const pillars = [
-  {
-    icon: Zap,
-    type: "Automation",
-    tagline: "The Invisible Worker",
-    description: "Background logic triggering actions without human input."
-  },
-  {
-    icon: BarChart3,
-    type: "Widget",
-    tagline: "The Pulse",
-    description: "High-density data components for instant awareness."
-  },
-  {
-    icon: Monitor,
-    type: "Interface",
-    tagline: "The Specialist Tool",
-    description: "Custom internal screens for expert workflows."
-  },
-  {
-    icon: Globe,
-    type: "Portal",
-    tagline: "The Customer Bridge",
-    description: "Branded external experiences for client interaction."
-  }
-];
-
-const technicalPoints = [
-  {
-    icon: Database,
-    title: "Semantic Consistency",
-    description: "Single source of truth—CRM, Inventory, POS always in sync."
-  },
-  {
-    icon: Cpu,
-    title: "Generative Assembly",
-    description: "Describe outcomes; AI selects the correct architecture."
-  },
-  {
-    icon: Shield,
-    title: "Role-Based Security",
-    description: "Portals are sandboxed; Interfaces require permissions."
-  }
-];
-
+const pillars = [{
+  icon: Zap,
+  type: "Automation",
+  tagline: "The Invisible Worker",
+  description: "Background logic triggering actions without human input."
+}, {
+  icon: BarChart3,
+  type: "Widget",
+  tagline: "The Pulse",
+  description: "High-density data components for instant awareness."
+}, {
+  icon: Monitor,
+  type: "Interface",
+  tagline: "The Specialist Tool",
+  description: "Custom internal screens for expert workflows."
+}, {
+  icon: Globe,
+  type: "Portal",
+  tagline: "The Customer Bridge",
+  description: "Branded external experiences for client interaction."
+}];
+const technicalPoints = [{
+  icon: Database,
+  title: "Semantic Consistency",
+  description: "Single source of truth—CRM, Inventory, POS always in sync."
+}, {
+  icon: Cpu,
+  title: "Generative Assembly",
+  description: "Describe outcomes; AI selects the correct architecture."
+}, {
+  icon: Shield,
+  title: "Role-Based Security",
+  description: "Portals are sandboxed; Interfaces require permissions."
+}];
 export const Slide14ArchitecturePillars = () => {
-  return (
-    <SlideSection id="architecture-pillars">
+  return <SlideSection id="architecture-pillars">
       <motion.div className="mb-3 sm:mb-4 md:mb-6" variants={itemVariants}>
         <span className="tesla-label">Architecture</span>
         <h2 className="slide-title mt-2">
@@ -62,19 +49,11 @@ export const Slide14ArchitecturePillars = () => {
       </motion.div>
 
       {/* Pillars Grid */}
-      <motion.div 
-        className="grid grid-cols-2 gap-2 mb-3 sm:gap-2.5 md:grid-cols-4 md:gap-3 md:mb-5"
-        variants={gridContainerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        {pillars.map((pillar) => (
-          <motion.div 
-            key={pillar.type}
-            className="tesla-card p-2.5 sm:p-3 md:p-4"
-            variants={cardVariants}
-          >
+      <motion.div className="grid grid-cols-2 gap-2 mb-3 sm:gap-2.5 md:grid-cols-4 md:gap-3 md:mb-5" variants={gridContainerVariants} initial="hidden" whileInView="visible" viewport={{
+      once: true,
+      amount: 0.2
+    }}>
+        {pillars.map(pillar => <motion.div key={pillar.type} className="tesla-card p-2.5 sm:p-3 md:p-4" variants={cardVariants}>
             <div className="flex items-center gap-1.5 mb-1.5 sm:gap-2 sm:mb-2">
               <div className="tesla-icon-container w-8 h-8 flex-shrink-0 sm:w-9 sm:h-9 md:w-10 md:h-10">
                 <pillar.icon className="w-4 h-4 text-accent" strokeWidth={1.5} />
@@ -88,16 +67,14 @@ export const Slide14ArchitecturePillars = () => {
             <p className="text-[10px] text-muted-foreground leading-relaxed line-clamp-2 font-light sm:text-xs">
               {pillar.description}
             </p>
-          </motion.div>
-        ))}
+          </motion.div>)}
       </motion.div>
 
       {/* Technical Breakdown */}
       <motion.div className="tesla-dark-card p-2.5 sm:p-3 md:p-4" variants={cardVariants}>
-        <h3 className="font-medium text-sm mb-2 text-foreground sm:text-base sm:mb-3">The "Fluid" Difference</h3>
+        <h3 className="font-medium text-sm mb-2 text-foreground sm:text-base sm:mb-3">The "Ennable" Difference</h3>
         <div className="grid gap-2 sm:grid-cols-3 sm:gap-3">
-          {technicalPoints.map((point) => (
-            <div key={point.title} className="flex items-start gap-2">
+          {technicalPoints.map(point => <div key={point.title} className="flex items-start gap-2">
               <div className="tesla-icon-container w-7 h-7 flex-shrink-0 sm:w-8 sm:h-8">
                 <point.icon className="w-3.5 h-3.5 text-accent" strokeWidth={1.5} />
               </div>
@@ -107,10 +84,8 @@ export const Slide14ArchitecturePillars = () => {
                   {point.description}
                 </p>
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
       </motion.div>
-    </SlideSection>
-  );
+    </SlideSection>;
 };
