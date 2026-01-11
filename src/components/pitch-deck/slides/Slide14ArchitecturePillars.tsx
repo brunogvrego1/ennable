@@ -2,49 +2,35 @@ import { SlideSection } from "../SlideSection";
 import { Zap, BarChart3, Monitor, Globe, Database, Cpu, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 import { itemVariants, cardVariants, gridContainerVariants } from "../motion-variants";
-const pillars = [{
-  icon: Zap,
-  type: "Automation",
-  tagline: "The Invisible Worker",
-  description: "Background logic triggering actions without human input."
-}, {
-  icon: BarChart3,
-  type: "Widget",
-  tagline: "The Pulse",
-  description: "High-density data components for instant awareness."
-}, {
-  icon: Monitor,
-  type: "Interface",
-  tagline: "The Specialist Tool",
-  description: "Custom internal screens for expert workflows."
-}, {
-  icon: Globe,
-  type: "Portal",
-  tagline: "The Customer Bridge",
-  description: "Branded external experiences for client interaction."
-}];
-const technicalPoints = [{
-  icon: Database,
-  title: "Semantic Consistency",
-  description: "Single source of truth—CRM, Inventory, POS always in sync."
-}, {
-  icon: Cpu,
-  title: "Generative Assembly",
-  description: "Describe outcomes; AI selects the correct architecture."
-}, {
-  icon: Shield,
-  title: "Role-Based Security",
-  description: "Portals are sandboxed; Interfaces require permissions."
-}];
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const pillarIcons = [Zap, BarChart3, Monitor, Globe];
+const technicalIcons = [Database, Cpu, Shield];
+
 export const Slide14ArchitecturePillars = () => {
-  return <SlideSection id="architecture-pillars">
+  const { t } = useLanguage();
+  const pillarsData = t('slide14.pillars') as { type: string; tagline: string; description: string }[];
+  const technicalPointsData = t('slide14.technicalPoints') as { title: string; description: string }[];
+  
+  const pillars = pillarsData.map((pillar, idx) => ({
+    ...pillar,
+    icon: pillarIcons[idx]
+  }));
+  
+  const technicalPoints = technicalPointsData.map((point, idx) => ({
+    ...point,
+    icon: technicalIcons[idx]
+  }));
+
+  return (
+    <SlideSection id="architecture-pillars">
       <motion.div className="mb-3 sm:mb-4 md:mb-6" variants={itemVariants}>
-        <span className="tesla-label">Architecture</span>
+        <span className="tesla-label">{t('slide14.label') as string}</span>
         <h2 className="slide-title mt-2">
-          The 4 Pillars
+          {t('slide14.title') as string}
         </h2>
         <p className="slide-subtitle mt-2 font-light">
-          Modular Flexibility by Design
+          {t('slide14.subtitle') as string}
         </p>
       </motion.div>
 
@@ -72,7 +58,7 @@ export const Slide14ArchitecturePillars = () => {
 
       {/* Technical Breakdown */}
       <motion.div className="tesla-dark-card p-2.5 sm:p-3 md:p-4" variants={cardVariants}>
-        <h3 className="font-medium text-sm mb-2 text-foreground sm:text-base sm:mb-3">The "Ennable" Difference</h3>
+        <h3 className="font-medium text-sm mb-2 text-foreground sm:text-base sm:mb-3">{t('slide14.technicalTitle') as string}</h3>
         <div className="grid gap-2 sm:grid-cols-3 sm:gap-3">
           {technicalPoints.map(point => <div key={point.title} className="flex items-start gap-2">
               <div className="tesla-icon-container w-7 h-7 flex-shrink-0 sm:w-8 sm:h-8">
@@ -87,5 +73,6 @@ export const Slide14ArchitecturePillars = () => {
             </div>)}
         </div>
       </motion.div>
-    </SlideSection>;
+    </SlideSection>
+  );
 };

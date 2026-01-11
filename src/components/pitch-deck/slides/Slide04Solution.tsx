@@ -2,28 +2,25 @@ import { SlideSection } from "../SlideSection";
 import { Brain, ShoppingCart, Users, Package, Wallet, BarChart3, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { itemVariants, cardVariants, scaleInVariants, gridContainerVariants } from "../motion-variants";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const modules = [
-  { icon: ShoppingCart, label: "POS" },
-  { icon: Users, label: "CRM" },
-  { icon: Package, label: "Inventory" },
-  { icon: Wallet, label: "Finance" },
-  { icon: BarChart3, label: "Analytics" }
-];
-
-const features = [
-  "Start with the essentials",
-  "Expand through visual configuration & mini-apps",
-  "No code required"
-];
+const moduleIcons = [ShoppingCart, Users, Package, Wallet, BarChart3];
+const moduleKeys = ['pos', 'crm', 'inventory', 'finance', 'analytics'] as const;
 
 export const Slide04Solution = () => {
+  const { t } = useLanguage();
+  const features = t('slide04.features') as string[];
+  const modules = moduleKeys.map((key, idx) => ({
+    icon: moduleIcons[idx],
+    label: (t(`slide04.modules.${key}`) as string)
+  }));
+
   return (
     <SlideSection id="slide-4">
       <motion.div className="mb-4 sm:mb-6 md:mb-8" variants={itemVariants}>
-        <span className="tesla-label">The Solution</span>
-        <h2 className="slide-title mt-2">
-          Reimagine ERP from<br />First Principles
+        <span className="tesla-label">{t('slide04.label') as string}</span>
+        <h2 className="slide-title mt-2 whitespace-pre-line">
+          {t('slide04.title') as string}
         </h2>
       </motion.div>
       
@@ -36,7 +33,7 @@ export const Slide04Solution = () => {
       >
         <div className="space-y-2 sm:space-y-3 md:space-y-4">
           <motion.div className="tesla-card p-3 sm:p-4 md:p-5" variants={cardVariants}>
-            <h3 className="font-medium text-sm mb-2 sm:text-base sm:mb-3">Modular Architecture</h3>
+            <h3 className="font-medium text-sm mb-2 sm:text-base sm:mb-3">{t('slide04.modularTitle') as string}</h3>
             <ul className="space-y-1.5 sm:space-y-2">
               {features.map((feature, idx) => (
                 <li key={idx} className="tesla-check-item">
@@ -49,12 +46,11 @@ export const Slide04Solution = () => {
           
           <motion.div className="tesla-dark-card p-3 sm:p-4 md:p-5" variants={cardVariants}>
             <h3 className="font-medium text-sm mb-1 flex items-center gap-2 sm:text-base">
-              The Intent-Engine
+              {t('slide04.intentEngineTitle') as string}
               <Brain className="w-4 h-4 text-accent sm:w-5 sm:h-5" strokeWidth={1.5} />
             </h3>
             <p className="text-xs text-foreground/70 font-light sm:text-sm">
-              The system <span className="text-foreground font-normal">understands</span> your 
-              specific business goals and suggests mini-apps accordingly.
+              {t('slide04.intentEngineDescription') as string} <span className="text-foreground font-normal">{t('slide04.intentEngineHighlight') as string}</span> {t('slide04.intentEngineContinue') as string}
             </p>
           </motion.div>
         </div>

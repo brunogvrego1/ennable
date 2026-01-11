@@ -1,8 +1,11 @@
 import { SlideSection } from "../SlideSection";
 import { motion } from "framer-motion";
 import { itemVariants, labelVariants } from "../motion-variants";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Slide01Title = () => {
+  const { t } = useLanguage();
+
   return (
     <SlideSection id="slide-1" className="relative overflow-hidden">
       {/* Subtle decorative shapes - reduced opacity for Nordic minimalism */}
@@ -15,21 +18,21 @@ export const Slide01Title = () => {
           style={{ letterSpacing: '-0.03em' }}
           variants={itemVariants}
         >
-          <span className="text-gradient">Ennable</span>
+          <span className="text-gradient">{t('slide01.title') as string}</span>
         </motion.h1>
         
         <motion.p 
           className="text-lg font-light text-muted-foreground mb-4 sm:text-xl md:text-2xl md:mb-8 lg:text-3xl"
           variants={itemVariants}
         >
-          The world's first generative Operating System for commerce
+          {t('slide01.subtitle') as string}
         </motion.p>
         
         <motion.p 
           className="text-sm text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed font-light md:text-base lg:text-lg"
           variants={labelVariants}
         >
-          Not a static product—a living system that adapts to your business intent.
+          {t('slide01.description') as string}
         </motion.p>
       </div>
     </SlideSection>

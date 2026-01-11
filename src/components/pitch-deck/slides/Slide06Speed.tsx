@@ -1,20 +1,18 @@
 import { SlideSection } from "../SlideSection";
 import { motion } from "framer-motion";
 import { itemVariants, cardVariants, gridContainerVariants } from "../motion-variants";
-
-const timeline = [
-  { day: "Day 1", label: "Select Archetype", description: "Choose modules for your business" },
-  { day: "Days 2-3", label: "Visual Config & Mini-Apps", description: "Customize Mini-Apps with no-code builder" },
-  { day: "Day 4", label: "Go Live", description: "Deploy and start processing" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Slide06Speed = () => {
+  const { t } = useLanguage();
+  const timeline = t('slide06.timeline') as { day: string; label: string; description: string }[];
+
   return (
     <SlideSection id="slide-6">
       <motion.div className="mb-4 sm:mb-5 md:mb-6" variants={itemVariants}>
-        <span className="tesla-label">Instant Relevance</span>
-        <h2 className="slide-title mt-2">
-          From Setup to Operations<br />in Days
+        <span className="tesla-label">{t('slide06.label') as string}</span>
+        <h2 className="slide-title mt-2 whitespace-pre-line">
+          {t('slide06.title') as string}
         </h2>
       </motion.div>
       

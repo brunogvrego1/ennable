@@ -2,33 +2,18 @@ import { SlideSection } from "../SlideSection";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { itemVariants, cardVariants, gridContainerVariants } from "../motion-variants";
-
-const team = [
-  { 
-    role: "CEO", 
-    name: "2x Founder", 
-    description: "Built and exited hospitality tech startup. 15 years in F&B.",
-  },
-  { 
-    role: "CTO", 
-    name: "Ex-Salesforce", 
-    description: "Led platform engineering. ML/AI expertise.",
-  },
-  { 
-    role: "VP Product", 
-    name: "Ex-Toast", 
-    description: "Scaled product from 100 to 10,000+ customers.",
-  },
-];
-
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Slide12Team = () => {
+  const { t } = useLanguage();
+  const team = t('slide12.team') as { role: string; name: string; description: string }[];
+
   return (
     <SlideSection id="slide-12">
       <motion.div className="mb-4 sm:mb-5 md:mb-6" variants={itemVariants}>
-        <span className="tesla-label">The Ask</span>
+        <span className="tesla-label">{t('slide12.label') as string}</span>
         <h2 className="slide-title mt-2">
-          Team & Use of Funds
+          {t('slide12.title') as string}
         </h2>
       </motion.div>
       
@@ -42,7 +27,7 @@ export const Slide12Team = () => {
         {/* Team - simpler cards without icons */}
         <div>
           <motion.h3 className="text-sm font-medium mb-2 sm:mb-3 sm:text-base" variants={itemVariants}>
-            Leadership
+            {t('slide12.leadershipTitle') as string}
           </motion.h3>
           <motion.div 
             className="space-y-2 sm:space-y-2.5"
@@ -70,7 +55,7 @@ export const Slide12Team = () => {
             className="text-[10px] text-muted-foreground mt-2 font-light hidden sm:block sm:text-xs"
             variants={itemVariants}
           >
-            150+ years combined experience in hospitality and SaaS
+            {t('slide12.experience') as string}
           </motion.p>
         </div>
         
@@ -79,13 +64,13 @@ export const Slide12Team = () => {
       {/* CTA */}
       <motion.div className="mt-4 text-center sm:mt-5 md:mt-6" variants={itemVariants}>
         <p className="text-sm text-muted-foreground font-light mb-2 sm:mb-3 md:text-base">
-          Ready to join the future of hospitality operations?
+          {t('slide12.cta') as string}
         </p>
         <a 
           href="mailto:invest@fluid.io"
           className="tesla-button-dark gap-2"
         >
-          Let's Talk
+          {t('slide12.ctaButton') as string}
           <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
         </a>
       </motion.div>

@@ -2,14 +2,17 @@ import { SlideSection } from "../SlideSection";
 import { AlertTriangle, Layers, Box } from "lucide-react";
 import { motion } from "framer-motion";
 import { itemVariants, cardVariants, scaleInVariants, gridContainerVariants } from "../motion-variants";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Slide02Problem = () => {
+  const { t } = useLanguage();
+
   return (
     <SlideSection id="slide-2" className="bg-secondary/20">
       <motion.div className="mb-4 sm:mb-6 md:mb-8" variants={itemVariants}>
-        <span className="tesla-label">The Problem</span>
+        <span className="tesla-label">{t('slide02.label') as string}</span>
         <h2 className="slide-title mt-2">
-          One Size Fits None
+          {t('slide02.title') as string}
         </h2>
       </motion.div>
       
@@ -25,8 +28,7 @@ export const Slide02Problem = () => {
             className="text-sm text-muted-foreground leading-relaxed font-light sm:text-base lg:text-lg"
             variants={itemVariants}
           >
-            Mid-market businesses face the <span className="text-foreground font-medium">Hospitality Paradox</span>: 
-            too complex for basic POS tools, but suffocated by the rigidity of legacy Enterprise ERPs.
+            {t('slide02.paragraph') as string} <span className="text-foreground font-medium">{t('slide02.paradox') as string}</span>{t('slide02.paradoxContinue') as string}
           </motion.p>
           
           <motion.div className="tesla-card p-3 border-l-2 border-accent sm:p-4" variants={cardVariants}>
@@ -35,9 +37,9 @@ export const Slide02Problem = () => {
                 <AlertTriangle className="w-4 h-4 text-accent sm:w-5 sm:h-5" strokeWidth={1.5} />
               </div>
               <div>
-                <p className="font-medium text-sm text-foreground mb-0.5 sm:text-base">EBITDA Loss</p>
+                <p className="font-medium text-sm text-foreground mb-0.5 sm:text-base">{t('slide02.ebitdaTitle') as string}</p>
                 <p className="text-xs text-muted-foreground font-light sm:text-sm">
-                  Fragmented stacks lead to operational leakage and missed revenue opportunities.
+                  {t('slide02.ebitdaDescription') as string}
                 </p>
               </div>
             </div>
@@ -53,7 +55,7 @@ export const Slide02Problem = () => {
               <div className="tesla-icon-container w-10 h-10 mb-2 sm:w-12 sm:h-12 md:w-14 md:h-14 md:mb-3">
                 <Layers className="w-5 h-5 text-muted-foreground sm:w-6 sm:h-6" strokeWidth={1.5} />
               </div>
-              <p className="text-[10px] text-center text-muted-foreground font-medium sm:text-xs">Fragmented<br/>Legacy Apps</p>
+              <p className="text-[10px] text-center text-muted-foreground font-medium whitespace-pre-line sm:text-xs">{t('slide02.fragmentedApps') as string}</p>
             </div>
           </div>
           
@@ -64,7 +66,7 @@ export const Slide02Problem = () => {
               <div className="tesla-icon-container w-10 h-10 mb-2 sm:w-12 sm:h-12 md:w-14 md:h-14 md:mb-3">
                 <Box className="w-5 h-5 text-muted-foreground sm:w-6 sm:h-6" strokeWidth={1.5} />
               </div>
-              <p className="text-[10px] text-center text-muted-foreground font-medium sm:text-xs">Rigid<br/>Enterprise ERP</p>
+              <p className="text-[10px] text-center text-muted-foreground font-medium whitespace-pre-line sm:text-xs">{t('slide02.rigidErp') as string}</p>
             </div>
           </div>
         </motion.div>

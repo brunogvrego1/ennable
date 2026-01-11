@@ -2,26 +2,26 @@ import { SlideSection } from "../SlideSection";
 import { Store } from "lucide-react";
 import { motion } from "framer-motion";
 import { itemVariants, cardVariants, gridContainerVariants } from "../motion-variants";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const metrics = [
-  { label: "LTV", value: "$45K", description: "Lifetime Value" },
-  { label: "CAC", value: "$3K", description: "Customer Acquisition Cost" },
-  { label: "Payback", value: "8 mo", description: "Payback Period" },
-];
-
-const revenue = [
-  { source: "SaaS Subscription", range: "$300 - $2K/mo", percentage: 70 },
-  { source: "App Store Fees", range: "30% of txns", percentage: 20 },
-  { source: "Data Insights", range: "Premium tier", percentage: 10 },
-];
+const revenuePercentages = [70, 20, 10];
 
 export const Slide11Economics = () => {
+  const { t } = useLanguage();
+  const metrics = t('slide11.metrics') as { label: string; value: string; description: string }[];
+  const revenueItems = t('slide11.revenue') as { source: string; range: string }[];
+  
+  const revenue = revenueItems.map((item, idx) => ({
+    ...item,
+    percentage: revenuePercentages[idx]
+  }));
+
   return (
     <SlideSection id="slide-11">
       <motion.div className="mb-4 sm:mb-5 md:mb-6" variants={itemVariants}>
-        <span className="tesla-label">Unit Economics</span>
-        <h2 className="slide-title mt-2">
-          Recurring Revenue<br />& Expansion
+        <span className="tesla-label">{t('slide11.label') as string}</span>
+        <h2 className="slide-title mt-2 whitespace-pre-line">
+          {t('slide11.title') as string}
         </h2>
       </motion.div>
       
@@ -35,7 +35,7 @@ export const Slide11Economics = () => {
         {/* Key metrics - number-focused, no icons */}
         <div>
           <motion.h3 className="text-sm font-medium mb-2 sm:mb-3 sm:text-base" variants={itemVariants}>
-            World-Class SaaS Metrics
+            {t('slide11.metricsTitle') as string}
           </motion.h3>
           <motion.div 
             className="grid gap-2 sm:gap-2.5"
@@ -61,8 +61,7 @@ export const Slide11Economics = () => {
           
           <motion.div className="mt-2 tesla-dark-card p-2.5 sm:mt-3 sm:p-3 md:p-4" variants={cardVariants}>
             <p className="text-xs text-foreground/80 font-light sm:text-sm">
-              <span className="font-normal text-accent">15:1 LTV/CAC ratio</span> — 
-              above the 3:1 benchmark for healthy SaaS.
+              <span className="font-normal text-accent">{t('slide11.ltvCac') as string}</span> {t('slide11.ltvCacSuffix') as string}
             </p>
           </motion.div>
         </div>
@@ -70,7 +69,7 @@ export const Slide11Economics = () => {
         {/* Revenue breakdown - solid progress bars */}
         <div>
           <motion.h3 className="text-sm font-medium mb-2 sm:mb-3 sm:text-base" variants={itemVariants}>
-            Revenue Streams
+            {t('slide11.revenueTitle') as string}
           </motion.h3>
           <motion.div 
             className="space-y-2 sm:space-y-2.5"
@@ -102,7 +101,7 @@ export const Slide11Economics = () => {
           <motion.div className="mt-2 flex items-start gap-2 tesla-card p-2.5 sm:mt-3 sm:p-3" variants={cardVariants}>
             <Store className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
             <p className="text-xs text-muted-foreground font-light">
-              Expansion revenue from third-party apps <span className="text-foreground font-normal">we didn't build</span>.
+              {t('slide11.expansionRevenue') as string} <span className="text-foreground font-normal">{t('slide11.expansionHighlight') as string}</span>.
             </p>
           </motion.div>
         </div>
