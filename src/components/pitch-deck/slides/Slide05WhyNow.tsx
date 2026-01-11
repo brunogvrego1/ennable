@@ -55,7 +55,7 @@ export const Slide05WhyNow = () => {
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-[hsl(142,76%,36%)] flex-shrink-0 mt-0.5" />
-              Days, not months
+              Minutes, not months
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-[hsl(142,76%,36%)] flex-shrink-0 mt-0.5" />
