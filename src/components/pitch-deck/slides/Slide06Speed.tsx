@@ -4,7 +4,7 @@ import { itemVariants, cardVariants, gridContainerVariants } from "../motion-var
 
 const timeline = [
   { day: "Day 1", label: "Select Archetype", description: "Choose modules for your business" },
-  { day: "Days 2-3", label: "Visual Config", description: "Customize with no-code builder" },
+  { day: "Days 2-3", label: "Visual Config & Mini-Apps", description: "Customize with no-code builder" },
   { day: "Day 4", label: "Go Live", description: "Deploy and start processing" },
 ];
 
