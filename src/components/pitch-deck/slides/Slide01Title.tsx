@@ -15,7 +15,7 @@ export const Slide01Title = () => {
           style={{ letterSpacing: '-0.03em' }}
           variants={itemVariants}
         >
-          <span className="text-gradient">Project Fluid</span>
+          <span className="text-gradient">Ennable</span>
         </motion.h1>
         
         <motion.p 
