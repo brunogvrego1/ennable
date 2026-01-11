@@ -1,23 +1,34 @@
 import { SlideSection } from "../SlideSection";
-import { Building2, Hotel, Puzzle } from "lucide-react";
 import { motion } from "framer-motion";
 import { itemVariants, cardVariants, gridContainerVariants } from "../motion-variants";
+import { LogoRolodex } from "@/components/ui/logo-rolodex";
+
+// Import logos
+import salesforce from "@/assets/logos/salesforce.png";
+import sap from "@/assets/logos/sap.png";
+import oracleErp from "@/assets/logos/oracle-erp.png";
+import oracleHospitality from "@/assets/logos/oracle-hospitality.png";
+import cloudbeds from "@/assets/logos/cloudbeds.png";
+import totvs from "@/assets/logos/totvs.png";
+import trello from "@/assets/logos/trello.png";
+import mailchimp from "@/assets/logos/mailchimp.png";
+import opentable from "@/assets/logos/opentable.png";
 
 const options = [
   {
-    icon: Building2,
+    logos: [salesforce, sap, oracleErp],
     title: "Enterprise Systems",
     issue: "Bloated",
     description: "Massive feature sets you'll never use. 18-month implementations. $500K+ annual costs."
   },
   {
-    icon: Hotel,
+    logos: [oracleHospitality, cloudbeds, totvs],
     title: "Hospitality-Specific",
     issue: "Rigid",
     description: "Built for one use case. Can't adapt as your business model evolves."
   },
   {
-    icon: Puzzle,
+    logos: [trello, mailchimp, opentable],
     title: "Point Solutions",
     issue: "Siloed",
     description: "10+ apps that don't talk to each other. Data chaos and manual reconciliation."
@@ -50,8 +61,8 @@ export const Slide03MarketFailure = () => {
             className="tesla-card p-3 sm:p-4 md:p-5"
             variants={cardVariants}
           >
-            <div className="tesla-icon-container w-10 h-10 mb-2 sm:w-11 sm:h-11 sm:mb-3 md:w-12 md:h-12">
-              <option.icon className="w-5 h-5 text-muted-foreground sm:w-5 sm:h-5" strokeWidth={1.5} />
+            <div className="mb-3 sm:mb-4 flex justify-center" style={{ perspective: "1000px" }}>
+              <LogoRolodex logos={option.logos} />
             </div>
             <h3 className="text-sm font-medium mb-1 sm:text-base md:mb-1.5">{option.title}</h3>
             <span className="tesla-badge-outline text-accent border-accent/20 mb-2 md:mb-3">
