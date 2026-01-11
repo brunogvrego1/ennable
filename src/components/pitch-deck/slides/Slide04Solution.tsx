@@ -13,7 +13,7 @@ const modules = [
 
 const features = [
   "Start with the essentials",
-  "Expand through visual configuration",
+  "Expand through visual configuration & mini-apps",
   "No code required"
 ];
 
