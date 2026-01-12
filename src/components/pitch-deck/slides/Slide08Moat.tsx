@@ -9,7 +9,7 @@ const flywheelIcons = [Users, AppWindow, Database];
 export const Slide08Moat = () => {
   const { t } = useLanguage();
   const moatPoints = t('slide08.moatPoints') as string[];
-  const flywheelData = t('slide08.flywheel') as { moreUsers: string; moreApps: string; richerData: string };
+  const flywheelData = t('slide08.flywheel') as unknown as { moreUsers: string; moreApps: string; richerData: string };
   
   const flywheel = [
     { icon: flywheelIcons[0], label: flywheelData.moreUsers },
