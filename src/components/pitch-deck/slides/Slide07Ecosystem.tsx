@@ -13,7 +13,7 @@ export const Slide07Ecosystem = () => {
   const { t } = useLanguage();
   
   const apps: AppCardItem[] = appKeys.map((key, idx) => {
-    const appData = t(`slide07.apps.${key}`) as { name: string; description: string; tag: string };
+    const appData = t(`slide07.apps.${key}`) as unknown as { name: string; description: string; tag: string };
     return {
       id: idx + 1,
       icon: appIcons[idx],
@@ -24,7 +24,7 @@ export const Slide07Ecosystem = () => {
     };
   });
 
-  const badges = t('slide07.badges') as { moreApps: string; buildOwn: string; buildFromExisting: string };
+  const badges = t('slide07.badges') as unknown as { moreApps: string; buildOwn: string; buildFromExisting: string };
 
   return (
     <SlideSection id="slide-7">
