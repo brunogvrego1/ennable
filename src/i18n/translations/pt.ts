@@ -119,7 +119,7 @@ export const pt = {
     miniAppsTitle: "Mini Apps",
     miniApps: ["Sommelier IA", "Fidelidade", "Mapa de Mesas", "Display Cozinha"],
     more: "Infinito",
-    miniAppsDescription: "Fluidos, descartáveis, gerados por IA. Mude quando quiser.",
+    miniAppsDescription: "Fluidos, ultra específicos, gerados por IA. Mude quando quiser.",
     coreTitle: "Módulos Core",
     modules: {
       orders: "Pedidos",
