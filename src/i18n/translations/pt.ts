@@ -234,5 +234,12 @@ export const pt = {
     sam: "Mercado Endereçável Disponível",
     strategy: "Estratégia:",
     strategyText: "Land and Expand — comece com uma unidade, cresça para todo o portfólio."
+  },
+
+  // Slide Contact
+  slideContact: {
+    title: "Vamos Conversar",
+    button: "Falar no WhatsApp",
+    subtitle: "Pronto para transformar seu negócio? Vamos iniciar uma conversa."
   }
 };
