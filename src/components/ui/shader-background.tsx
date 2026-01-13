@@ -1,5 +1,5 @@
 "use client"
-
+// Animated shader background with mesh gradient effects
 import { useState, useEffect, useRef } from "react"
 import { MeshGradient, DotsOrbit } from "@paper-design/shaders-react"
 import { cn } from "@/lib/utils"
