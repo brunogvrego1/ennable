@@ -11,6 +11,7 @@ import { SlideValueProp } from "./slides/SlideValueProp";
 import { Slide05WhyNow } from "./slides/Slide05WhyNow";
 import { Slide08Moat } from "./slides/Slide08Moat";
 import { Slide10Market } from "./slides/Slide10Market";
+import { SlideContact } from "./slides/SlideContact";
 import { ShaderBackground } from "../ui/shader-background";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
 
@@ -40,6 +41,7 @@ export const PitchDeck = () => {
           <Slide05WhyNow />
           <Slide08Moat />
           <Slide10Market />
+          <SlideContact />
         </main>
         
         {/* Print styles */}

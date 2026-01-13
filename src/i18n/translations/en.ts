@@ -234,5 +234,12 @@ export const en = {
     sam: "Serviceable Addressable Market",
     strategy: "Strategy:",
     strategyText: "Land and Expand — start with one venue, grow to the entire portfolio."
+  },
+
+  // Slide Contact
+  slideContact: {
+    title: "Let's Talk",
+    button: "Chat on WhatsApp",
+    subtitle: "Ready to transform your business? Let's start a conversation."
   }
 };
