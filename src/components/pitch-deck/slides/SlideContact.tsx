@@ -39,14 +39,6 @@ export const SlideContact = () => {
           {t('slideContact.button') as string}
         </motion.a>
         
-        <motion.p
-          className="text-muted-foreground text-sm sm:text-base max-w-md"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-        >
-          {t('slideContact.subtitle') as string}
-        </motion.p>
       </motion.div>
     </SlideSection>
   );
