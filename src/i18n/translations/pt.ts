@@ -9,64 +9,151 @@ export const pt = {
     description: "Não é um produto estático—é um sistema vivo que se adapta à intenção do seu negócio."
   },
 
-  // Slide 02 - Problem
-  slide02: {
+  // Slide New Problem - SaaS é uma Camisa de Força
+  slideNewProblem: {
     label: "O Problema",
-    title: "Tamanho Único Não Serve",
-    paragraph: "Empresas de médio porte enfrentam o",
-    paradox: "Paradoxo da Hospitalidade",
-    paradoxContinue: ": complexas demais para ferramentas básicas de PDV, mas sufocadas pela rigidez de ERPs legados.",
-    ebitdaTitle: "Perda de EBITDA",
-    ebitdaDescription: "Sistemas fragmentados levam a vazamentos operacionais e oportunidades de receita perdidas.",
-    fragmentedApps: "Apps Legados\nFragmentados",
-    rigidErp: "ERP\nRígido"
+    title: "SaaS é uma Camisa de Força",
+    description: "Cada negócio é único. Mas o SaaS tradicional força você a uma caixa—mudando seus processos para caber no software em vez do contrário.",
+    quote: "Por que negócios únicos usam software genérico?",
+    saasLabel: "SaaS Tradicional",
+    businessLabel: "Seu Negócio"
   },
 
-  // Slide 03 - Market Failure
-  slide03: {
-    label: "Falha de Mercado",
-    title: "Três Opções Ruins",
-    subtitle: "Todas são construídas com lógica rígida que não se adapta sem reescritas caras.",
-    options: [
-      {
-        title: "Sistemas Empresariais",
-        issue: "Inchados",
-        description: "Conjuntos massivos de recursos que você nunca usará. Implementações de 18 meses. Custos anuais de $500K+."
-      },
-      {
-        title: "Específicos para Hospitalidade",
-        issue: "Rígidos",
-        description: "Construídos para um caso de uso. Não se adaptam conforme seu modelo de negócio evolui."
-      },
-      {
-        title: "Soluções Pontuais",
-        issue: "Isolados",
-        description: "10+ apps que não se comunicam. Caos de dados e reconciliação manual."
-      }
-    ]
-  },
-
-  // Slide 04 - Solution
-  slide04: {
-    label: "A Solução",
-    title: "Reimagine o ERP desde\nos Princípios Básicos",
-    modularTitle: "Arquitetura Modular",
-    features: [
-      "Comece com o essencial",
-      "Expanda através de configuração visual e mini-apps",
-      "Sem necessidade de código"
+  // Slide Use Case - Le Petit Bistro
+  slideUseCase: {
+    label: "Caso de Uso",
+    title: "Le Petit Bistro",
+    characteristics: "Requintado • Romântico • Carta de Vinhos Exclusiva",
+    experienceTitle: "A Experiência",
+    experienceSubtitle: "O que eles entregam",
+    experiencePoints: [
+      "Harmonizações de vinho curadas para cada prato",
+      "Ambiente intimista com serviço personalizado",
+      "Menus sazonais com ingredientes locais"
     ],
-    intentEngineTitle: "O Motor de Intenção",
-    intentEngineDescription: "O sistema",
-    intentEngineHighlight: "entende",
-    intentEngineContinue: "seus objetivos de negócio específicos e sugere mini-apps adequados.",
+    softwareTitle: "O Software",
+    softwareSubtitle: "O que são forçados a usar",
+    softwarePoints: [
+      "PDV genérico com templates de pizzaria",
+      "Premissas de workflow de fast food",
+      "Sem capacidade de harmonização de vinhos"
+    ],
+    gapTitle: "O Gap da Experiência",
+    gapDescription: "O software que usam não corresponde à experiência que entregam."
+  },
+
+  // Slide Friction - Problema da Pizza UI
+  slideFriction: {
+    label: "A Fricção",
+    title: "O Problema da Pizza UI",
+    appName: "Quick-POS v2.1",
+    field1Label: "Tipo de Massa",
+    field1Value: "Tradicional",
+    field2Label: "Coberturas",
+    field2Value: "Pepperoni, Cogumelos",
+    field3Label: "Safra do Vinho",
+    field3Value: "Cabernet Reserva 2018",
+    errorMessage: "Campo não existe",
+    quote: "Ferramentas genéricas forçam workflows genéricos."
+  },
+
+  // Slide Solution Marketplace
+  slideSolutionMarketplace: {
+    label: "Solução A",
+    title: "O Marketplace",
+    description: "Em vez de forçar seu negócio em um molde, escolha uma interface projetada para negócios como o seu.",
+    quote: "Troque toda sua interface com um clique.",
+    searchPlaceholder: "Buscar interfaces...",
+    apps: [
+      { name: "Fine Dining POS", installed: true },
+      { name: "Café & Padaria", installed: false },
+      { name: "Restaurante Casual", installed: false }
+    ],
+    installed: "Instalado"
+  },
+
+  // Slide Solution Custom
+  slideSolutionCustom: {
+    label: "Solução B",
+    title: "Customização Natural",
+    appName: "Le Petit Bistro - POS",
+    buttons: ["Sobremesa", "Entradas", "Prato Principal", "Bebidas"],
+    prompt: "Faz o botão da sobremesa dourado e move-o para o topo",
+    description: "Vá além dos templates. Descreva o que você quer em linguagem natural—o sistema se reconstrói em tempo real.",
+    quote: "Se consegues dizer, consegues construir."
+  },
+
+  // Slide Power Move - Sommelier IA
+  slidePowerMove: {
+    label: "O Power Move",
+    title: "O Sommelier IA",
+    orderNumber: "Pedido #247",
+    table: "Mesa 12",
+    dish: "Filé Mignon com Redução de Trufas",
+    dishPrice: "R$280",
+    aiSuggestionLabel: "Sommelier IA",
+    aiSuggestion: "Harmonize com Cabernet Sauvignon Reserva 2018 — complementa as notas terrosas da trufa.",
+    description: "Quando um template não é suficiente, construa um Mini App sob medida que entende profundamente seu negócio.",
+    managerTitle: "Gerente cria app customizado",
+    managerPrompt: "Construa um assistente de harmonização de vinhos que aprende com as recomendações do nosso sommelier",
+    quote: "Inteligência bespoke, implementada em minutos."
+  },
+
+  // Slide Result - Bespoke à Escala
+  slideResult: {
+    label: "O Resultado",
+    title: "Bespoke à Escala",
+    metrics: {
+      time: { value: "10min", label: "Tempo Dev" },
+      cost: { value: "50", label: "Blocks" },
+      satisfaction: { value: "100%", label: "Adequação" }
+    },
+    calloutLabel: "O Poder do Ennable",
+    quote: "Seu Negócio, Seu Software."
+  },
+
+  // Slide Architecture - Módulos vs Mini Apps
+  slideArchitecture: {
+    label: "A Arquitetura",
+    title: "Módulos vs. Mini Apps",
+    miniAppsTitle: "Mini Apps",
+    miniApps: ["Sommelier IA", "Fidelidade", "Mapa de Mesas", "Display Cozinha"],
+    more: "Infinito",
+    miniAppsDescription: "Fluidos, descartáveis, gerados por IA. Mude quando quiser.",
+    coreTitle: "Módulos Core",
     modules: {
-      pos: "PDV",
-      crm: "CRM",
+      orders: "Pedidos",
       inventory: "Estoque",
-      finance: "Finanças",
-      analytics: "Análises"
-    }
+      billing: "Faturação"
+    },
+    coreDescription: "Fundação estável. Enterprise-grade. Sempre confiável.",
+    callout: "Fundação Estável, Interface Fluida."
+  },
+
+  // Slide Value Prop - Porquê Mudar?
+  slideValueProp: {
+    label: "Proposta de Valor",
+    title: "Por Que Mudar?",
+    saasTitle: "Stack SaaS",
+    saasPrice: "$500/mês",
+    saasPoints: [
+      "10+ apps que não integram",
+      "Preso aos roadmaps dos fornecedores",
+      "80% de recursos que não usa"
+    ],
+    ennableTitle: "Ennable",
+    ennablePrice: "$150/mês",
+    ennablePoints: [
+      "Uma plataforma unificada",
+      "Construa exatamente o que precisa",
+      "Pague apenas pelo que usa"
+    ],
+    benefits: {
+      cost: { title: "Menor Custo", subtitle: "70% economia" },
+      ownership: { title: "Controlo Total", subtitle: "Seus dados, suas regras" },
+      fit: { title: "Adequação Perfeita", subtitle: "Zero desperdício" }
+    },
+    quote: "Menor Custo. Controlo Total. Zero Desperdício."
   },
 
   // Slide 05 - Why Now
@@ -90,17 +177,6 @@ export const pt = {
     conclusion: "ERPs modulares falharam antes",
     conclusionHighlight: "especificidade em escala",
     conclusionPrefix: "LLMs agora permitem"
-  },
-
-  // Slide 06 - Speed
-  slide06: {
-    label: "Relevância Instantânea",
-    title: "Da Configuração às Operações\nem Dias",
-    timeline: [
-      { day: "Dia 1", label: "Selecionar Arquétipo", description: "Escolha módulos para seu negócio" },
-      { day: "Dias 2-3", label: "Config Visual & Mini-Apps", description: "Customize Mini-Apps com construtor no-code" },
-      { day: "Dia 4", label: "Ir ao Ar", description: "Implante e comece a processar" }
-    ]
   },
 
   // Slide 07 - Ecosystem
@@ -145,20 +221,6 @@ export const pt = {
     }
   },
 
-  // Slide 09 - Results
-  slide09: {
-    label: "Resultados Reais",
-    title: "Operadores Reais,\nImpacto Real",
-    caseStudies: [
-      { segment: "Fine Dining", metric: "-40%", label: "Tempo de Pedido" },
-      { segment: "Hotel Boutique", metric: "-60%", label: "Overhead de TI" },
-      { segment: "Casas Noturnas", metric: "+28%", label: "Receita" }
-    ],
-    activeOperators: "Operadores Ativos",
-    netRetention: "Retenção Líquida",
-    expansion: "Uma vez que um cliente começa com um módulo, eles expandem organicamente."
-  },
-
   // Slide 10 - Market
   slide10: {
     label: "Oportunidade de Mercado",
@@ -172,87 +234,5 @@ export const pt = {
     sam: "Mercado Endereçável Disponível",
     strategy: "Estratégia:",
     strategyText: "Land and Expand — comece com uma unidade, cresça para todo o portfólio."
-  },
-
-  // Slide 11 - Economics
-  slide11: {
-    label: "Economia Unitária",
-    title: "Receita Recorrente\n& Expansão",
-    metricsTitle: "Métricas SaaS de Classe Mundial",
-    metrics: [
-      { label: "LTV", value: "$45K", description: "Valor Vitalício" },
-      { label: "CAC", value: "$3K", description: "Custo de Aquisição de Cliente" },
-      { label: "Payback", value: "8 meses", description: "Período de Payback" }
-    ],
-    ltvCac: "Ratio LTV/CAC 15:1",
-    ltvCacSuffix: "— acima do benchmark 3:1 para SaaS saudável.",
-    revenueTitle: "Fontes de Receita",
-    revenue: [
-      { source: "Assinatura SaaS", range: "$300 - $2K/mês" },
-      { source: "Taxas da App Store", range: "30% das txns" },
-      { source: "Insights de Dados", range: "Tier Premium" }
-    ],
-    expansionRevenue: "Receita de expansão de apps de terceiros",
-    expansionHighlight: "que não construímos"
-  },
-
-  // Slide 12 - Team
-  slide12: {
-    label: "O Pedido",
-    title: "Equipe & Uso de Fundos",
-    leadershipTitle: "Liderança",
-    team: [
-      { role: "CEO", name: "2x Fundador", description: "Construiu e vendeu startup de tech hospitalidade. 15 anos em A&B." },
-      { role: "CTO", name: "Ex-Salesforce", description: "Liderou engenharia de plataforma. Expertise em ML/IA." },
-      { role: "VP Produto", name: "Ex-Toast", description: "Escalou produto de 100 para 10.000+ clientes." }
-    ],
-    experience: "150+ anos de experiência combinada em hospitalidade e SaaS",
-    cta: "Pronto para se juntar ao futuro das operações de hospitalidade?",
-    ctaButton: "Vamos Conversar"
-  },
-
-  // Slide 13 - Creator Journey
-  slide13: {
-    label: "A Jornada do Criador",
-    title: "Da Intenção à\nInfraestrutura em Segundos",
-    subtitle: "Construindo mini-apps customizados via Motor Generativo Fluid.",
-    steps: [
-      {
-        number: "01",
-        title: "Definir Intenção",
-        description: "Digite o que você precisa na Barra de Chat.",
-        example: "\"Criar um portal de reservas para O Sushi Den\""
-      },
-      {
-        number: "02",
-        title: "Montagem de Lógica",
-        description: "O Motor de Intenção mapeia a lógica de negócios:",
-        flow: ["Gatilho", "Lógica", "Módulo"]
-      },
-      {
-        number: "03",
-        title: "Deploy Instantâneo",
-        description: "Interface responsiva gerada. Publique imediatamente."
-      }
-    ]
-  },
-
-  // Slide 14 - Architecture Pillars
-  slide14: {
-    label: "Arquitetura",
-    title: "Os 4 Pilares",
-    subtitle: "Flexibilidade Modular por Design",
-    pillars: [
-      { type: "Automação", tagline: "O Trabalhador Invisível", description: "Lógica em segundo plano disparando ações sem input humano." },
-      { type: "Widget", tagline: "O Pulso", description: "Componentes de dados de alta densidade para consciência instantânea." },
-      { type: "Interface", tagline: "A Ferramenta Especialista", description: "Telas internas customizadas para fluxos de trabalho especializados." },
-      { type: "Portal", tagline: "A Ponte com o Cliente", description: "Experiências externas de marca para interação com clientes." }
-    ],
-    technicalTitle: "A Diferença \"Ennable\"",
-    technicalPoints: [
-      { title: "Consistência Semântica", description: "Fonte única de verdade—CRM, Estoque, PDV sempre em sincronia." },
-      { title: "Montagem Generativa", description: "Descreva resultados; IA seleciona a arquitetura correta." },
-      { title: "Segurança Baseada em Papéis", description: "Portais são isolados; Interfaces requerem permissões." }
-    ]
   }
 };

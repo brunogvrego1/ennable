@@ -9,64 +9,151 @@ export const en = {
     description: "Not a static product—a living system that adapts to your business intent."
   },
 
-  // Slide 02 - Problem
-  slide02: {
+  // Slide New Problem - SaaS is a Straitjacket
+  slideNewProblem: {
     label: "The Problem",
-    title: "One Size Fits None",
-    paragraph: "Mid-market businesses face the",
-    paradox: "Hospitality Paradox",
-    paradoxContinue: ": too complex for basic POS tools, but suffocated by the rigidity of legacy Enterprise ERPs.",
-    ebitdaTitle: "EBITDA Loss",
-    ebitdaDescription: "Fragmented stacks lead to operational leakage and missed revenue opportunities.",
-    fragmentedApps: "Fragmented\nLegacy Apps",
-    rigidErp: "Rigid\nEnterprise ERP"
+    title: "SaaS is a Straitjacket",
+    description: "Every business is unique. But traditional SaaS forces you into a box—changing your processes to fit the software instead of the other way around.",
+    quote: "Why do unique businesses use generic software?",
+    saasLabel: "Traditional SaaS",
+    businessLabel: "Your Business"
   },
 
-  // Slide 03 - Market Failure
-  slide03: {
-    label: "Market Failure",
-    title: "Three Bad Options",
-    subtitle: "All three are built on rigid logic that can't adapt without expensive rewrites.",
-    options: [
-      {
-        title: "Enterprise Systems",
-        issue: "Bloated",
-        description: "Massive feature sets you'll never use. 18-month implementations. $500K+ annual costs."
-      },
-      {
-        title: "Hospitality-Specific",
-        issue: "Rigid",
-        description: "Built for one use case. Can't adapt as your business model evolves."
-      },
-      {
-        title: "Point Solutions",
-        issue: "Siloed",
-        description: "10+ apps that don't talk to each other. Data chaos and manual reconciliation."
-      }
-    ]
-  },
-
-  // Slide 04 - Solution
-  slide04: {
-    label: "The Solution",
-    title: "Reimagine ERP from\nFirst Principles",
-    modularTitle: "Modular Architecture",
-    features: [
-      "Start with the essentials",
-      "Expand through visual configuration & mini-apps",
-      "No code required"
+  // Slide Use Case - Le Petit Bistro
+  slideUseCase: {
+    label: "Use Case",
+    title: "Le Petit Bistro",
+    characteristics: "Refined • Romantic • Exclusive Wine List",
+    experienceTitle: "The Experience",
+    experienceSubtitle: "What they deliver",
+    experiencePoints: [
+      "Curated wine pairings for each dish",
+      "Intimate ambiance with personalized service",
+      "Seasonal menus with local ingredients"
     ],
-    intentEngineTitle: "The Intent-Engine",
-    intentEngineDescription: "The system",
-    intentEngineHighlight: "understands",
-    intentEngineContinue: "your specific business goals and suggests mini-apps accordingly.",
+    softwareTitle: "The Software",
+    softwareSubtitle: "What they're forced to use",
+    softwarePoints: [
+      "Generic POS with pizza templates",
+      "Fast food workflow assumptions",
+      "No wine pairing capabilities"
+    ],
+    gapTitle: "The Experience Gap",
+    gapDescription: "The software they use doesn't match the experience they deliver."
+  },
+
+  // Slide Friction - Pizza UI Problem
+  slideFriction: {
+    label: "The Friction",
+    title: "The Pizza UI Problem",
+    appName: "Quick-POS v2.1",
+    field1Label: "Dough Type",
+    field1Value: "Traditional",
+    field2Label: "Toppings",
+    field2Value: "Pepperoni, Mushrooms",
+    field3Label: "Wine Vintage",
+    field3Value: "2018 Reserve Cabernet",
+    errorMessage: "Field not found",
+    quote: "Generic tools force generic workflows."
+  },
+
+  // Slide Solution Marketplace
+  slideSolutionMarketplace: {
+    label: "Solution A",
+    title: "The Marketplace",
+    description: "Instead of forcing your business into a mold, pick an interface designed for businesses like yours.",
+    quote: "Swap your entire interface with one click.",
+    searchPlaceholder: "Search interfaces...",
+    apps: [
+      { name: "Fine Dining POS", installed: true },
+      { name: "Cafe & Bakery", installed: false },
+      { name: "Casual Restaurant", installed: false }
+    ],
+    installed: "Installed"
+  },
+
+  // Slide Solution Custom
+  slideSolutionCustom: {
+    label: "Solution B",
+    title: "Natural Customization",
+    appName: "Le Petit Bistro - POS",
+    buttons: ["Dessert", "Appetizers", "Main Course", "Drinks"],
+    prompt: "Make the dessert button golden and move it to the top",
+    description: "Go beyond templates. Just describe what you want in plain language—the system rebuilds around your needs in real-time.",
+    quote: "If you can say it, you can build it."
+  },
+
+  // Slide Power Move - AI Sommelier
+  slidePowerMove: {
+    label: "The Power Move",
+    title: "The AI Sommelier",
+    orderNumber: "Order #247",
+    table: "Table 12",
+    dish: "Filet Mignon with Truffle Reduction",
+    dishPrice: "$68",
+    aiSuggestionLabel: "AI Sommelier",
+    aiSuggestion: "Pair with 2018 Cabernet Sauvignon Reserve — complements the earthy truffle notes.",
+    description: "When a template isn't enough, build a bespoke Mini App that understands your business deeply.",
+    managerTitle: "Manager creates custom app",
+    managerPrompt: "Build me a wine pairing assistant that learns from our sommelier's recommendations",
+    quote: "Bespoke intelligence, deployed in minutes."
+  },
+
+  // Slide Result - Bespoke at Scale
+  slideResult: {
+    label: "The Result",
+    title: "Bespoke at Scale",
+    metrics: {
+      time: { value: "10min", label: "Dev Time" },
+      cost: { value: "50", label: "Blocks" },
+      satisfaction: { value: "100%", label: "Fit" }
+    },
+    calloutLabel: "The Power of Ennable",
+    quote: "Your Business, Your Software."
+  },
+
+  // Slide Architecture - Modules vs Mini Apps
+  slideArchitecture: {
+    label: "The Architecture",
+    title: "Modules vs. Mini Apps",
+    miniAppsTitle: "Mini Apps",
+    miniApps: ["AI Sommelier", "Loyalty", "Table Map", "Kitchen Display"],
+    more: "Infinite",
+    miniAppsDescription: "Fluid, disposable, AI-generated. Change them anytime.",
+    coreTitle: "Core Modules",
     modules: {
-      pos: "POS",
-      crm: "CRM",
+      orders: "Orders",
       inventory: "Inventory",
-      finance: "Finance",
-      analytics: "Analytics"
-    }
+      billing: "Billing"
+    },
+    coreDescription: "Stable foundation. Enterprise-grade. Always reliable.",
+    callout: "Stable Foundation, Fluid Interface."
+  },
+
+  // Slide Value Prop - Why Switch?
+  slideValueProp: {
+    label: "Value Proposition",
+    title: "Why Switch?",
+    saasTitle: "SaaS Stack",
+    saasPrice: "$500/mo",
+    saasPoints: [
+      "10+ apps that don't integrate",
+      "Locked into vendor roadmaps",
+      "80% of features you don't use"
+    ],
+    ennableTitle: "Ennable",
+    ennablePrice: "$150/mo",
+    ennablePoints: [
+      "One unified platform",
+      "Build exactly what you need",
+      "Only pay for what you use"
+    ],
+    benefits: {
+      cost: { title: "Lower Cost", subtitle: "70% savings" },
+      ownership: { title: "Full Control", subtitle: "Your data, your rules" },
+      fit: { title: "Perfect Fit", subtitle: "Zero waste" }
+    },
+    quote: "Lower Cost. Full Control. Zero Waste."
   },
 
   // Slide 05 - Why Now
@@ -90,17 +177,6 @@ export const en = {
     conclusion: "Modular ERPs failed before",
     conclusionHighlight: "specificity at scale",
     conclusionPrefix: "LLMs now enable"
-  },
-
-  // Slide 06 - Speed
-  slide06: {
-    label: "Instant Relevance",
-    title: "From Setup to Operations\nin Days",
-    timeline: [
-      { day: "Day 1", label: "Select Archetype", description: "Choose modules for your business" },
-      { day: "Days 2-3", label: "Visual Config & Mini-Apps", description: "Customize Mini-Apps with no-code builder" },
-      { day: "Day 4", label: "Go Live", description: "Deploy and start processing" }
-    ]
   },
 
   // Slide 07 - Ecosystem
@@ -145,20 +221,6 @@ export const en = {
     }
   },
 
-  // Slide 09 - Results
-  slide09: {
-    label: "Real Results",
-    title: "Real Operators,\nReal Impact",
-    caseStudies: [
-      { segment: "Fine Dining", metric: "-40%", label: "Order Time" },
-      { segment: "Boutique Hotel", metric: "-60%", label: "IT Overhead" },
-      { segment: "Nightclubs", metric: "+28%", label: "Revenue" }
-    ],
-    activeOperators: "Active Operators",
-    netRetention: "Net Retention",
-    expansion: "Once a customer starts with one module, they organically expand."
-  },
-
   // Slide 10 - Market
   slide10: {
     label: "Market Opportunity",
@@ -172,87 +234,5 @@ export const en = {
     sam: "Serviceable Addressable Market",
     strategy: "Strategy:",
     strategyText: "Land and Expand — start with one venue, grow to the entire portfolio."
-  },
-
-  // Slide 11 - Economics
-  slide11: {
-    label: "Unit Economics",
-    title: "Recurring Revenue\n& Expansion",
-    metricsTitle: "World-Class SaaS Metrics",
-    metrics: [
-      { label: "LTV", value: "$45K", description: "Lifetime Value" },
-      { label: "CAC", value: "$3K", description: "Customer Acquisition Cost" },
-      { label: "Payback", value: "8 mo", description: "Payback Period" }
-    ],
-    ltvCac: "15:1 LTV/CAC ratio",
-    ltvCacSuffix: "— above the 3:1 benchmark for healthy SaaS.",
-    revenueTitle: "Revenue Streams",
-    revenue: [
-      { source: "SaaS Subscription", range: "$300 - $2K/mo" },
-      { source: "App Store Fees", range: "30% of txns" },
-      { source: "Data Insights", range: "Premium tier" }
-    ],
-    expansionRevenue: "Expansion revenue from third-party apps",
-    expansionHighlight: "we didn't build"
-  },
-
-  // Slide 12 - Team
-  slide12: {
-    label: "The Ask",
-    title: "Team & Use of Funds",
-    leadershipTitle: "Leadership",
-    team: [
-      { role: "CEO", name: "2x Founder", description: "Built and exited hospitality tech startup. 15 years in F&B." },
-      { role: "CTO", name: "Ex-Salesforce", description: "Led platform engineering. ML/AI expertise." },
-      { role: "VP Product", name: "Ex-Toast", description: "Scaled product from 100 to 10,000+ customers." }
-    ],
-    experience: "150+ years combined experience in hospitality and SaaS",
-    cta: "Ready to join the future of hospitality operations?",
-    ctaButton: "Let's Talk"
-  },
-
-  // Slide 13 - Creator Journey
-  slide13: {
-    label: "The Creator Journey",
-    title: "From Intent to\nInfrastructure in Seconds",
-    subtitle: "Building custom mini-apps via the Fluid Generative Engine.",
-    steps: [
-      {
-        number: "01",
-        title: "Define Intent",
-        description: "Type what you need into the Chat Bar.",
-        example: "\"Create a reservation portal for The Sushi Den\""
-      },
-      {
-        number: "02",
-        title: "Logic Assembly",
-        description: "The Intent-Engine maps out the business logic:",
-        flow: ["Trigger", "Logic", "Module"]
-      },
-      {
-        number: "03",
-        title: "Instant Deploy",
-        description: "Mobile-responsive interface generated. Publish immediately."
-      }
-    ]
-  },
-
-  // Slide 14 - Architecture Pillars
-  slide14: {
-    label: "Architecture",
-    title: "The 4 Pillars",
-    subtitle: "Modular Flexibility by Design",
-    pillars: [
-      { type: "Automation", tagline: "The Invisible Worker", description: "Background logic triggering actions without human input." },
-      { type: "Widget", tagline: "The Pulse", description: "High-density data components for instant awareness." },
-      { type: "Interface", tagline: "The Specialist Tool", description: "Custom internal screens for expert workflows." },
-      { type: "Portal", tagline: "The Customer Bridge", description: "Branded external experiences for client interaction." }
-    ],
-    technicalTitle: "The \"Ennable\" Difference",
-    technicalPoints: [
-      { title: "Semantic Consistency", description: "Single source of truth—CRM, Inventory, POS always in sync." },
-      { title: "Generative Assembly", description: "Describe outcomes; AI selects the correct architecture." },
-      { title: "Role-Based Security", description: "Portals are sandboxed; Interfaces require permissions." }
-    ]
   }
 };
