@@ -19,7 +19,7 @@ import { LanguageSwitcher } from "@/components/ui/language-switcher";
 export const PitchDeck = () => {
   return (
     <LanguageProvider>
-      <div className="h-screen overflow-hidden relative">
+      <div className="h-screen w-full overflow-hidden relative">
         {/* Language Switcher */}
         <LanguageSwitcher />
         
