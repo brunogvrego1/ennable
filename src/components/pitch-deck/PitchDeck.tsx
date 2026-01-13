@@ -5,7 +5,6 @@ import { SlideFriction } from "./slides/SlideFriction";
 import { SlideSolutionMarketplace } from "./slides/SlideSolutionMarketplace";
 import { SlideSolutionCustom } from "./slides/SlideSolutionCustom";
 import { SlidePowerMove } from "./slides/SlidePowerMove";
-import { SlideResult } from "./slides/SlideResult";
 import { SlideArchitecture } from "./slides/SlideArchitecture";
 import { Slide07Ecosystem } from "./slides/Slide07Ecosystem";
 import { SlideValueProp } from "./slides/SlideValueProp";
@@ -35,7 +34,6 @@ export const PitchDeck = () => {
           <SlideSolutionMarketplace />
           <SlideSolutionCustom />
           <SlidePowerMove />
-          <SlideResult />
           <SlideArchitecture />
           <Slide07Ecosystem />
           <SlideValueProp />
