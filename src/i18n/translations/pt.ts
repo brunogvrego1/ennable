@@ -45,7 +45,7 @@ export const pt = {
   // Slide Friction - Problema da Pizza UI
   slideFriction: {
     label: "A Fricção",
-    title: "O Problema da Pizza UI",
+    title: "O Problema do Genérico UI",
     appName: "Quick-POS v2.1",
     field1Label: "Tipo de Massa",
     field1Value: "Tradicional",
