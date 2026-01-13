@@ -34,9 +34,9 @@ export const pt = {
     softwareTitle: "O Software",
     softwareSubtitle: "O que são forçados a usar",
     softwarePoints: [
-      "PDV genérico com templates de pizzaria",
-      "Premissas de workflow de fast food",
-      "Sem capacidade de harmonização de vinhos"
+      "PDV Genérico",
+      "Premissas de Workflow de Qualquer restaurante",
+      "Sem capacidade de se adaptar a necessidades ultra específicas"
     ],
     gapTitle: "O Gap da Experiência",
     gapDescription: "O software que usam não corresponde à experiência que entregam."
