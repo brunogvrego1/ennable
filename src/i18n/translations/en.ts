@@ -95,7 +95,7 @@ export const en = {
     aiSuggestion: "Pair with 2018 Cabernet Sauvignon Reserve — complements the earthy truffle notes.",
     description: "When a template isn't enough, build a bespoke Mini App that understands your business deeply.",
     managerTitle: "Manager creates custom app",
-    managerPrompt: "Build me a wine pairing assistant that learns from our sommelier's recommendations",
+    managerPrompt: "Build me a wine pairing assistant that pairs my dishes with wines available in inventory",
     quote: "Bespoke intelligence, deployed in minutes."
   },
 

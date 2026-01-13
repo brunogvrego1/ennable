@@ -95,7 +95,7 @@ export const pt = {
     aiSuggestion: "Harmonize com Cabernet Sauvignon Reserva 2018 — complementa as notas terrosas da trufa.",
     description: "Quando um template não é suficiente, construa um Mini App sob medida que entende profundamente seu negócio.",
     managerTitle: "Gerente cria app customizado",
-    managerPrompt: "Construa um assistente de harmonização de vinhos que aprende com as recomendações do nosso sommelier",
+    managerPrompt: "Construa um assistente de harmonização de vinhos que harmonize os meus pratos aos vinhos disponíveis no inventário",
     quote: "Inteligência bespoke, implementada em minutos."
   },
 
