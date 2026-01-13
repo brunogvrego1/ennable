@@ -13,15 +13,13 @@ import { Slide05WhyNow } from "./slides/Slide05WhyNow";
 import { Slide08Moat } from "./slides/Slide08Moat";
 import { Slide10Market } from "./slides/Slide10Market";
 import { ShaderBackground } from "../ui/shader-background";
-import { LanguageProvider } from "@/contexts/LanguageContext";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
 
 export const PitchDeck = () => {
   return (
-    <LanguageProvider>
-      <div className="h-screen w-full overflow-hidden relative">
-        {/* Language Switcher */}
-        <LanguageSwitcher />
+    <div className="h-screen w-full overflow-hidden relative">
+      {/* Language Switcher */}
+      <LanguageSwitcher />
         
         {/* Fixed shader background */}
         <div className="fixed inset-0 z-0">
@@ -67,7 +65,6 @@ export const PitchDeck = () => {
             }
           }
         `}</style>
-      </div>
-    </LanguageProvider>
+    </div>
   );
 };
