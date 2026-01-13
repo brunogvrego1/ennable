@@ -1,4 +1,4 @@
-// Language context for i18n support
+// Language context for i18n support - Provides translations and language switching
 import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import { en } from '@/i18n/translations/en';
 import { pt } from '@/i18n/translations/pt';
