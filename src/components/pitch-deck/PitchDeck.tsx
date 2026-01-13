@@ -23,7 +23,7 @@ export const PitchDeck = () => {
         
         {/* Fixed shader background */}
         <div className="fixed inset-0 z-0">
-          <ShaderBackground effect="mesh" speed={0.3} className="w-full h-full" />
+          <ShaderBackground effect="mesh" speed={0.6} className="w-full h-full" />
         </div>
         
         {/* Snap scroll container */}
