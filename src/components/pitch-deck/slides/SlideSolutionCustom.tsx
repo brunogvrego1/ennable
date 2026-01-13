@@ -16,6 +16,7 @@ export const SlideSolutionCustom = () => {
   const [animationPhase, setAnimationPhase] = useState<AnimationPhase>('idle');
   const [buttonOrder, setButtonOrder] = useState([0, 1, 2, 3]);
   const [highlightedButton, setHighlightedButton] = useState<number | null>(null);
+  const [hasStarted, setHasStarted] = useState(false);
 
   const buttons = t('slideSolutionCustom.buttons') as string[];
   
@@ -24,22 +25,23 @@ export const SlideSolutionCustom = () => {
     ? "Faz o botão da sobremesa dourado e move-o para o topo"
     : "Make the dessert button gold and move it to the top";
 
+  // Start animation once when in view
+  useEffect(() => {
+    if (isInView && !hasStarted) {
+      setHasStarted(true);
+      setAnimationPhase('typing');
+    }
+  }, [isInView, hasStarted]);
+
   const { displayedText, isTyping } = useTypingEffect({
     text: typingText,
     speed: 45,
     delay: 1000,
-    enabled: isInView && (animationPhase === 'idle' || animationPhase === 'typing'),
+    enabled: hasStarted,
     onComplete: () => {
       setAnimationPhase('transforming');
     },
   });
-
-  // Start typing phase when in view
-  useEffect(() => {
-    if (isInView && animationPhase === 'idle') {
-      setAnimationPhase('typing');
-    }
-  }, [isInView]);
 
   // Handle transformation after typing completes
   useEffect(() => {

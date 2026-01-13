@@ -27,7 +27,6 @@ export const useTypingEffect = ({
 
   useEffect(() => {
     if (!enabled) {
-      reset();
       return;
     }
 
