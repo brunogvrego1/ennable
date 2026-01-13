@@ -34,10 +34,10 @@ function ShaderCanvas({ effect, speed }: { effect: EffectType; speed: number }) 
     <div ref={containerRef} className="absolute inset-0">
       {effect === "mesh" && (
         <MeshGradient
-          color1="#e0f2fe"
-          color2="#bae6fd"
-          color3="#7dd3fc"
-          color4="#38bdf8"
+          color1="#ffffff"
+          color2="#f0f9ff"
+          color3="#e0f2fe"
+          color4="#bae6fd"
           speed={speed}
           style={{ width: "100%", height: "100%" }}
         />
@@ -61,10 +61,10 @@ function ShaderCanvas({ effect, speed }: { effect: EffectType; speed: number }) 
       {effect === "combined" && (
         <>
           <MeshGradient
-            color1="#e0f2fe"
-            color2="#bae6fd"
-            color3="#7dd3fc"
-            color4="#38bdf8"
+            color1="#ffffff"
+            color2="#f0f9ff"
+            color3="#e0f2fe"
+            color4="#bae6fd"
             speed={speed * 0.5}
             style={{ width: "100%", height: "100%" }}
           />
