@@ -1,14 +1,17 @@
 import { Slide01Title } from "./slides/Slide01Title";
-import { Slide02Problem } from "./slides/Slide02Problem";
-import { Slide03MarketFailure } from "./slides/Slide03MarketFailure";
-import { Slide04Solution } from "./slides/Slide04Solution";
-import { Slide05WhyNow } from "./slides/Slide05WhyNow";
-import { Slide06Speed } from "./slides/Slide06Speed";
+import { SlideNewProblem } from "./slides/SlideNewProblem";
+import { SlideUseCase } from "./slides/SlideUseCase";
+import { SlideFriction } from "./slides/SlideFriction";
+import { SlideSolutionMarketplace } from "./slides/SlideSolutionMarketplace";
+import { SlideSolutionCustom } from "./slides/SlideSolutionCustom";
+import { SlidePowerMove } from "./slides/SlidePowerMove";
+import { SlideResult } from "./slides/SlideResult";
+import { SlideArchitecture } from "./slides/SlideArchitecture";
 import { Slide07Ecosystem } from "./slides/Slide07Ecosystem";
+import { SlideValueProp } from "./slides/SlideValueProp";
+import { Slide05WhyNow } from "./slides/Slide05WhyNow";
 import { Slide08Moat } from "./slides/Slide08Moat";
 import { Slide10Market } from "./slides/Slide10Market";
-import { Slide13CreatorJourney } from "./slides/Slide13CreatorJourney";
-import { Slide14ArchitecturePillars } from "./slides/Slide14ArchitecturePillars";
 import { ShaderBackground } from "../ui/shader-background";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
@@ -28,14 +31,17 @@ export const PitchDeck = () => {
         {/* Snap scroll container */}
         <main className="h-screen overflow-y-auto snap-y snap-mandatory relative z-10">
           <Slide01Title />
-          <Slide02Problem />
-          <Slide03MarketFailure />
-          <Slide04Solution />
-          <Slide13CreatorJourney />
-          <Slide14ArchitecturePillars />
-          <Slide05WhyNow />
-          <Slide06Speed />
+          <SlideNewProblem />
+          <SlideUseCase />
+          <SlideFriction />
+          <SlideSolutionMarketplace />
+          <SlideSolutionCustom />
+          <SlidePowerMove />
+          <SlideResult />
+          <SlideArchitecture />
           <Slide07Ecosystem />
+          <SlideValueProp />
+          <Slide05WhyNow />
           <Slide08Moat />
           <Slide10Market />
         </main>
