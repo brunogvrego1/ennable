@@ -24,11 +24,11 @@ export const SlideSolutionCustom = () => {
     ? "Faz o botão da sobremesa dourado e move-o para o topo"
     : "Make the dessert button gold and move it to the top";
 
-  const { displayedText, isTyping, isComplete } = useTypingEffect({
+  const { displayedText, isTyping } = useTypingEffect({
     text: typingText,
     speed: 45,
     delay: 1000,
-    enabled: isInView && animationPhase === 'idle',
+    enabled: isInView && (animationPhase === 'idle' || animationPhase === 'typing'),
     onComplete: () => {
       setAnimationPhase('transforming');
     },
@@ -39,7 +39,7 @@ export const SlideSolutionCustom = () => {
     if (isInView && animationPhase === 'idle') {
       setAnimationPhase('typing');
     }
-  }, [isInView, animationPhase]);
+  }, [isInView]);
 
   // Handle transformation after typing completes
   useEffect(() => {
