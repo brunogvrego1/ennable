@@ -4,26 +4,25 @@ import { motion, LayoutGroup, useInView } from "framer-motion";
 import { itemVariants, cardVariants, gridContainerVariants } from "../motion-variants";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTypingEffect } from "@/hooks/use-typing-effect";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 
 type AnimationPhase = 'idle' | 'typing' | 'transforming' | 'complete';
 
 export const SlideSolutionCustom = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.5 });
   
   const [animationPhase, setAnimationPhase] = useState<AnimationPhase>('idle');
-  const [buttonOrder, setButtonOrder] = useState([0, 1, 2, 3]);
+  // Sobremesa starts at bottom-right (index 3 in render order)
+  const [buttonOrder, setButtonOrder] = useState([1, 2, 3, 0]);
   const [highlightedButton, setHighlightedButton] = useState<number | null>(null);
   const [hasStarted, setHasStarted] = useState(false);
 
   const buttons = t('slideSolutionCustom.buttons') as string[];
   
-  // Get the prompt text based on language
-  const typingText = language === 'pt' 
-    ? "Faz o botão da sobremesa dourado e move-o para o topo"
-    : "Make the dessert button gold and move it to the top";
+  // Get the prompt text from translations
+  const typingText = t('slideSolutionCustom.prompt') as string;
 
   // Start animation once when in view
   useEffect(() => {
@@ -33,14 +32,17 @@ export const SlideSolutionCustom = () => {
     }
   }, [isInView, hasStarted]);
 
+  // Memoize callback to prevent effect re-runs
+  const handleTypingComplete = useCallback(() => {
+    setAnimationPhase('transforming');
+  }, []);
+
   const { displayedText, isTyping } = useTypingEffect({
     text: typingText,
     speed: 45,
     delay: 1000,
     enabled: hasStarted,
-    onComplete: () => {
-      setAnimationPhase('transforming');
-    },
+    onComplete: handleTypingComplete,
   });
 
   // Handle transformation after typing completes
@@ -52,10 +54,10 @@ export const SlideSolutionCustom = () => {
         setHighlightedButton(0); // Sobremesa is at index 0
       }, 500);
 
-      // Then swap positions
+      // Then move Sobremesa to top-left
       const timeout2 = setTimeout(() => {
-        // Swap Sobremesa (index 0) with Prato Principal (index 2)
-        setButtonOrder([2, 1, 0, 3]);
+        // Sobremesa (index 0) moves to top-left position
+        setButtonOrder([0, 2, 3, 1]);
         setAnimationPhase('complete');
       }, 900);
 
